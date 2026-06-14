@@ -1945,4 +1945,187 @@
             <span>אני לא טכנית בכלל. האם זה בשבילי?</span>
             <span class="faq-arrow"><svg viewBox="0 0 12 12" width="12" fill="none" stroke="#F26B1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6,8 10,4"/></svg></span>
           </button>
-          <div class="faq-a">כן. בדיוק בשבילך. כל מה שנבנה מגיע עם הסבר בשפה פשוטה ותיעוד שאת יכולה 
+          <div class="faq-a">כן. בדיוק בשבילך. כל מה שנבנה מגיע עם הסבר בשפה פשוטה ותיעוד שאת יכולה לעבוד לפיו לבד.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>כמה זה עולה בערך?</span>
+            <span class="faq-arrow"><svg viewBox="0 0 12 12" width="12" fill="none" stroke="#F26B1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6,8 10,4"/></svg></span>
+          </button>
+          <div class="faq-a">פתרון ממוקד אחד מתחיל בכמה אלפי שקלים. אחרי האבחון נשלחת הצעה מפורטת עם מחיר קבוע.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>נמאס לי מגיליונות אקסל. מה האלטרנטיבה?</span>
+            <span class="faq-arrow"><svg viewBox="0 0 12 12" width="12" fill="none" stroke="#F26B1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6,8 10,4"/></svg></span>
+          </button>
+          <div class="faq-a">CRM - מסד לקוחות מרכזי שמחזיק את כל הפניות, ההיסטוריה, והמעקב במקום אחד. כל פנייה חדשה נכנסת אוטומטית.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>כמה זמן לוקח לראות תוצאות?</span>
+            <span class="faq-arrow"><svg viewBox="0 0 12 12" width="12" fill="none" stroke="#F26B1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6,8 10,4"/></svg></span>
+          </button>
+          <div class="faq-a">פרויקט ממוקד לוקח 1-3 שבועות. ביום שהמערכת עולה כבר רואים שינוי.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>מה ההבדל בינך לבין עוד מישהי שעושה אוטומציות?</span>
+            <span class="faq-arrow"><svg viewBox="0 0 12 12" width="12" fill="none" stroke="#F26B1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6,8 10,4"/></svg></span>
+          </button>
+          <div class="faq-a">לא בונה לפי תבנית. מתחילה מהעסק שלך ומסיימת עם תיעוד שמישהו אחר יכול להמשיך.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final">
+    <div class="cta-inner">
+      <div class="cta-label reveal">מוכנה?</div>
+      <h2 class="reveal delay-1">
+        בואי נבין יחד<br>
+        <span class="accent">מה הכי כדאי לאוטומט.</span>
+      </h2>
+      <p class="reveal delay-2">שאלון קצר של 3 דקות - ותקבלי מפת עומסים אישית ללא עלות.</p>
+      <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" class="btn-cta-final reveal delay-3" target="_blank">
+        קבלי מפת עומסים אישית ב-3 דקות &larr;
+      </a>
+      <div class="cta-alts reveal delay-4">
+        <a href="mailto:hadas@flowli.co.il" class="cta-alt-link">לקבוע שיחה קצרה</a>
+        <span class="cta-alt-sep">·</span>
+        <button class="cta-alt-link" onclick="openLeadPopup()">להשאיר פרטים</button>
+      </div>
+      <p class="cta-note reveal delay-4">בלי התחייבות. בלי שיחת מכירה. רק מפת עומסים אמיתית.</p>
+    </div>
+  </section>
+
+  <!-- LEAD POPUP -->
+  <div class="lead-overlay" id="leadOverlay" onclick="closeLeadPopup(event)">
+    <div class="lead-popup">
+      <button class="lead-popup-close" onclick="closeLeadPopupDirect()">&#x2715;</button>
+      <div id="leadForm">
+        <h3>נשאיר פרטים?</h3>
+        <p>אחזור אליך תוך יום עסקים.</p>
+        <input type="text" class="lead-field" id="leadName" placeholder="שם מלא *" required>
+        <input type="tel" class="lead-field" id="leadPhone" placeholder="טלפון *" required>
+        <input type="email" class="lead-field" id="leadEmail" placeholder="מייל (אופציונלי)">
+        <button class="lead-submit" id="leadSubmit" onclick="submitLead()">שלחי &larr;</button>
+      </div>
+      <div class="lead-success" id="leadSuccess">
+        <div class="lead-success-icon">&#x2705;</div>
+        <h4>קיבלתי!</h4>
+        <p>אחזור אליך בהקדם.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 30 Q25 15 40 30 Q55 45 70 30" stroke="rgba(255,255,255,.5)" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M10 45 Q25 30 40 45 Q55 60 70 45" stroke="rgba(255,255,255,.5)" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M10 60 Q25 45 40 60 Q55 75 70 60" stroke="#F26B1F" stroke-width="6" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span><span class="fl">flow</span><span class="li">li</span></span>
+      </a>
+      <span>&#169; 2026 flowli &middot; כל הזכויות שמורות</span>
+      <a href="mailto:hadas@flowli.co.il" style="color:rgba(255,255,255,.3);text-decoration:none;">hadas@flowli.co.il</a>
+    </div>
+  </footer>
+
+  <script>
+    // ─── REVEAL ON SCROLL ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.observe(el));
+
+    // ─── FAQ ───
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    }
+
+    // ─── DREAM ANIMATION ───
+    (function() {
+      const section = document.getElementById('dream');
+      const notes = document.querySelectorAll('.sticky-note');
+      const wave  = document.getElementById('dreamWave');
+      const bubbles = document.getElementById('dreamBubbles');
+      let played = false;
+      const dreamObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !played) {
+          played = true;
+          notes.forEach((n, i) => {
+            setTimeout(() => n.classList.add('note-visible'), i * 220);
+          });
+          setTimeout(() => {
+            notes.forEach(n => { n.classList.remove('note-visible'); n.classList.add('note-vanish'); });
+            wave.classList.add('wave-rise');
+          }, 2400);
+          setTimeout(() => {
+            bubbles.classList.add('bubbles-show');
+          }, 3300);
+        }
+      }, { threshold: 0.3 });
+      dreamObs.observe(section);
+    })();
+
+    // ─── LEAD POPUP ───
+    function openLeadPopup() {
+      document.getElementById('leadOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLeadPopup(e) {
+      if (e.target === document.getElementById('leadOverlay')) closeLeadPopupDirect();
+    }
+    function closeLeadPopupDirect() {
+      document.getElementById('leadOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    async function submitLead() {
+      const name  = document.getElementById('leadName').value.trim();
+      const phone = document.getElementById('leadPhone').value.trim();
+      const email = document.getElementById('leadEmail').value.trim();
+      if (!name || !phone) { alert('שם וטלפון הם שדות חובה'); return; }
+      const btn = document.getElementById('leadSubmit');
+      btn.disabled = true; btn.textContent = 'שולחת...';
+      try {
+        await fetch('https://whuuevjoqitwslnykvgd.supabase.co/rest/v1/leads', {
+          method: 'POST',
+          headers: {
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndodXVldmpvcWl0d3NsbnlrdmdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMTk3NDQsImV4cCI6MjA5NDY5NTc0NH0.r_lxvPFY275H7ODxYGHs0-NvqfQd8_e3fKHYy4sgq34',
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ name, phone, email: email || null, consent: true, source: 'website' })
+        });
+      } catch(e) { console.warn('supabase error', e); }
+      document.getElementById('leadForm').style.display = 'none';
+      document.getElementById('leadSuccess').style.display = 'block';
+      setTimeout(closeLeadPopupDirect, 2800);
+    }
+  </script>
+</body>
+</html>
