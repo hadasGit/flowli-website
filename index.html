@@ -20,7 +20,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Heebo:wght@400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Assistant:wght@400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -43,7 +43,7 @@
 
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Heebo', system-ui, sans-serif;
+      font-family: 'Assistant', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       -webkit-font-smoothing: antialiased;
@@ -97,7 +97,7 @@
     }
     .nav-logo svg { width: 40px; height: 40px; }
     .nav-logo-text {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: clamp(26px, 3.5vw, 36px);
       letter-spacing: -.035em;
@@ -109,7 +109,7 @@
       color: #fff;
       padding: 9px 20px;
       border-radius: 100px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       font-size: 13px;
       text-decoration: none;
@@ -184,20 +184,29 @@
       50%       { opacity: .5; transform: scale(.7); }
     }
     h1.hero-title {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
-      font-size: clamp(2rem, 4.8vw, 3.6rem);
-      line-height: 1.1;
+      font-size: clamp(1.45rem, 4.8vw, 3.6rem);
+      line-height: 1.2;
       letter-spacing: -.03em;
       color: var(--ink);
       margin-bottom: 22px;
     }
+    @media (max-width: 640px) {
+      h1.hero-title { font-size: 1.45rem; line-height: 1.25; }
+    }
     h1.hero-title .accent { color: var(--orange); }
     h1.hero-title .soft {
-      font-family: 'Frank Ruhl Libre', serif;
+      font-family: 'Rubik', sans-serif;
       font-style: italic;
       font-weight: 400;
       color: var(--muted);
+    }
+    h1.hero-title .soft-orange {
+      font-family: 'Rubik', sans-serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--orange);
     }
     .hero-sub {
       font-size: clamp(1rem, 1.8vw, 1.2rem);
@@ -218,7 +227,7 @@
       color: #fff;
       padding: 15px 28px;
       border-radius: 100px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       font-size: 15px;
       text-decoration: none;
@@ -313,6 +322,15 @@
       justify-content: flex-start;
     }
     @media (max-width: 900px) { .hero-laptop-wrap { display: none; } }
+    .hero-img-mobile {
+      display: none;
+      width: 100%;
+      max-width: 340px;
+      margin: 28px auto 0;
+      border-radius: 14px;
+      box-shadow: 0 16px 48px rgba(0,0,0,.14);
+    }
+    @media (max-width: 900px) { .hero-img-mobile { display: block; } }
 
     /* ─── HERO IMAGE ─── */
     .hero-img-frame {
@@ -408,7 +426,7 @@
       margin-bottom: 24px;
     }
     .qm-title {
-      font-family: 'Frank Ruhl Libre', serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       font-size: clamp(1.8rem, 4vw, 3rem);
       line-height: 1.25;
@@ -431,7 +449,7 @@
     /* ─── PROBLEM ─── */
     #problem { background: var(--cream); }
     #problem h2 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: clamp(1.6rem, 3.2vw, 2.4rem);
       letter-spacing: -.025em;
@@ -471,14 +489,22 @@
       background: linear-gradient(to left, var(--orange), var(--orange-soft));
     }
     .moment-num {
-      font-family: 'Inter', sans-serif;
-      font-weight: 900;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
       font-size: 4.8rem;
       line-height: 1;
       letter-spacing: -.04em;
       color: var(--orange);
       margin-bottom: 18px;
       text-shadow: 0 2px 16px rgba(242,107,31,.18);
+      text-align: center;
+    }
+    .moment-num-label {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      color: var(--muted);
+      font-family: 'Assistant', sans-serif;
     }
     .moment-scenario {
       font-size: 15px;
@@ -512,7 +538,7 @@
     /* ─── SERVICES ─── */
     #services { background: var(--bg); }
     #services h2 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: clamp(1.6rem, 3.2vw, 2.4rem);
       letter-spacing: -.025em;
@@ -562,7 +588,7 @@
     }
     .service-icon svg { width: 22px; height: 22px; }
     .service-card h3 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       font-size: 16px;
       color: var(--ink);
@@ -602,7 +628,7 @@
       margin-bottom: 14px;
     }
     .cs-title {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: clamp(1.6rem, 3.2vw, 2.4rem);
       letter-spacing: -.025em;
@@ -646,7 +672,7 @@
       margin-bottom: 16px;
     }
     .cs-story {
-      font-family: 'Frank Ruhl Libre', serif;
+      font-family: 'Rubik', sans-serif;
       font-style: italic;
       font-size: 1.15rem;
       color: rgba(255,255,255,.75);
@@ -674,7 +700,7 @@
       text-align: center;
     }
     .cs-num-val {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 2.2rem;
       letter-spacing: -.04em;
@@ -728,7 +754,7 @@
       position: absolute;
       background: #FEF3C7;
       color: #78350F;
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       font-size: 12px;
       font-weight: 600;
       padding: 8px 14px;
@@ -789,7 +815,7 @@
       margin-bottom: 28px;
     }
     .dream-headline {
-      font-family: 'Frank Ruhl Libre', serif;
+      font-family: 'Rubik', sans-serif;
       font-size: clamp(1.8rem, 4vw, 2.9rem);
       font-weight: 700;
       color: rgba(255,255,255,.92);
@@ -824,7 +850,7 @@
       border: 1px solid rgba(255,255,255,.1);
       border-radius: 100px;
       padding: 10px 20px;
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       font-size: 14px;
       color: rgba(255,255,255,.75);
       backdrop-filter: blur(6px);
@@ -840,7 +866,7 @@
 
     /* משפט סיום */
     .dream-closing {
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       font-size: clamp(1rem, 2vw, 1.2rem);
       color: rgba(255,255,255,.45);
       line-height: 1.8;
@@ -848,7 +874,7 @@
       margin: 0 auto 12px;
     }
     .dream-brand-line {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 2.4rem;
       letter-spacing: -.04em;
@@ -921,14 +947,14 @@
       flex-wrap: wrap;
     }
     .crm-name {
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       font-size: 13.5px;
       font-weight: 700;
       color: rgba(255,255,255,.85);
     }
     .crm-badge {
       font-size: 11px;
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       padding: 3px 10px;
       border-radius: 20px;
       font-weight: 600;
@@ -943,7 +969,7 @@
       gap: 4px;
     }
     .crm-meta-item {
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       font-size: 12px;
       color: rgba(255,255,255,.45);
       display: flex;
@@ -1004,7 +1030,7 @@
     /* ─── HOW ─── */
     #how { background: var(--cream); }
     #how h2 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: clamp(1.6rem, 3.2vw, 2.4rem);
       letter-spacing: -.025em;
@@ -1052,7 +1078,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 20px;
       color: var(--orange);
@@ -1064,7 +1090,7 @@
       color: #fff;
     }
     .step h3 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       font-size: 15px;
       color: var(--ink);
@@ -1126,7 +1152,7 @@
     .about-how-item:last-child { border-bottom: none; padding-bottom: 0; }
     .about-how-item:first-child { padding-top: 0; }
     .about-how-num {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 11px;
       color: var(--orange);
@@ -1136,7 +1162,7 @@
       padding-top: 2px;
     }
     .about-how-text {
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       font-size: 15px;
       line-height: 1.55;
       color: var(--text);
@@ -1187,7 +1213,7 @@
       width: 100%;
     }
     #about h2 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       letter-spacing: -.025em;
@@ -1195,7 +1221,7 @@
       margin-bottom: 24px;
     }
     .about-quote {
-      font-family: 'Frank Ruhl Libre', serif;
+      font-family: 'Rubik', sans-serif;
       font-style: italic;
       font-size: 1.15rem;
       line-height: 1.7;
@@ -1235,7 +1261,7 @@
     /* ─── FAQ ─── */
     #faq { background: var(--cream); }
     #faq h2 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: clamp(1.6rem, 3.2vw, 2.4rem);
       letter-spacing: -.025em;
@@ -1269,7 +1295,7 @@
       gap: 16px;
       cursor: pointer;
       text-align: right;
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       font-size: 16px;
       font-weight: 600;
       color: var(--ink);
@@ -1318,7 +1344,7 @@
       margin-bottom: 24px;
     }
     #cta-final h2 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: clamp(1.7rem, 3.8vw, 2.8rem);
       letter-spacing: -.025em;
@@ -1339,7 +1365,7 @@
       color: #fff;
       padding: 16px 34px;
       border-radius: 100px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       font-size: 15px;
       text-decoration: none;
@@ -1355,7 +1381,7 @@
       margin-top: 24px;
       font-size: 14px;
       color: rgba(255,255,255,.45);
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       letter-spacing: .04em;
     }
 
@@ -1377,7 +1403,7 @@
       border-radius: 100px;
       padding: 9px 20px;
       color: rgba(255,255,255,.7);
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       font-size: 14px;
       font-weight: 500;
       text-decoration: none;
@@ -1443,7 +1469,7 @@
     }
     .lead-popup-close:hover { background: var(--bg); }
     .lead-popup h3 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 1.35rem;
       color: var(--ink);
@@ -1462,7 +1488,7 @@
       border: 1.5px solid var(--bg-warm);
       border-radius: 10px;
       padding: 12px 16px;
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Assistant', sans-serif;
       font-size: 15px;
       color: var(--ink);
       margin-bottom: 12px;
@@ -1480,7 +1506,7 @@
       border: none;
       border-radius: 100px;
       padding: 14px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       font-size: 15px;
       cursor: pointer;
@@ -1496,7 +1522,7 @@
     }
     .lead-success-icon { font-size: 2.5rem; margin-bottom: 12px; }
     .lead-success h4 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       font-size: 1.1rem;
       color: var(--ink);
@@ -1530,7 +1556,7 @@
     }
     .footer-logo svg { width: 20px; height: 20px; }
     .footer-logo span {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 15px;
       letter-spacing: -.035em;
@@ -1569,9 +1595,9 @@
             לעסקים שמחפשים יותר שקט בתוך היום
           </div>
           <h1 class="hero-title reveal delay-1">
-            כולם מדברים על AI ואוטומציות.<br>
-            את סתם רוצה <span class="accent">לסיים את היום</span><br>
-            <span class="soft">בלי עומס.</span>
+            <span class="soft">כולם מדברים על AI ואוטומציות.</span><br>
+            את פשוט רוצה <span class="accent">לסיים את היום</span><br>
+            <span class="soft-orange">בלי עומס.</span>
           </h1>
           <p class="hero-sub reveal delay-2">
             אני עוזרת לעסקים לבנות תהליכים שעובדים בשקט ברקע,
@@ -1582,6 +1608,8 @@
               קבלי מפת עומסים אישית ב-3 דקות &larr;
             </a>
           </div>
+          <!-- תמונה למובייל בלבד -->
+          <img src="laptop.jpg" alt="סביבת עבודה עם לפטופ" class="hero-img-mobile" loading="lazy">
         </div>
 
         <!-- תמונת הלפטופ -->
@@ -1647,9 +1675,11 @@
       </h2>
       <p class="qm-body reveal delay-2">
         כשכל הפניות, לוחות הזמנים, המשימות החוזרות והמידע על לקוחות
-        נמצאים בראש שלך - זה לא נקרא ארגון. זה נקרא עומס.<br><br>
-        <strong>Quiet Mind</strong> זה מה שנבנה: מערכת שמחזיקה את הכל,
-        כדי שאת תחשבי רק על מה שבאמת דורש אותך.
+        נמצאים בראש שלך - זה לא נקרא ארגון. זה נקרא עומס.
+      </p>
+      <p class="qm-body reveal delay-3" style="margin-top:28px;">
+        <strong>Quiet Mind</strong><br>
+        פחות דברים לזכור. יותר מקום לחשוב.
       </p>
 
     </div>
@@ -1659,27 +1689,27 @@
   <section id="problem">
     <div class="container">
       <div class="section-label reveal">הבעיה האמיתית</div>
-      <h2 class="reveal delay-1">הכסף יוצא בקטנות</h2>
+      <h2 class="reveal delay-1">השקט נעלם בדברים הקטנים</h2>
       <p class="section-sub reveal delay-2">
-        לא בגלל שאין לקוחות - בגלל שהתהליכים לא מחזיקים אותם. כל "אני אחזור אליך אחר כך" עולה כסף.
+        לא באירועים גדולים. במשימות שחוזרות על עצמן, במידע שמפוזר בין כמה מקומות, ובדברים שפשוט דורשים ממך לזכור יותר מדי.
       </p>
       <div class="moment-grid">
         <div class="moment-card reveal delay-1">
-          <div class="moment-num">4h</div>
+          <div class="moment-num" dir="ltr">-4h</div>
           <div class="moment-scenario">פנייה נכנסת בצהריים. ענית בערב. הלקוחה כבר בחרה מישהו אחר.</div>
-          <div class="moment-arrow">מה קורה במקום זה</div>
+          <div class="moment-arrow">במקום זה</div>
           <div class="moment-result">תגובה אוטומטית יוצאת תוך דקה - אוספת פרטים, מאשרת שיחה, ושומרת הכל. הלקוחה מרגישה שרואים אותה.</div>
         </div>
         <div class="moment-card reveal delay-2">
-          <div class="moment-num">1.5h</div>
+          <div class="moment-num" dir="ltr">-1.5h</div>
           <div class="moment-scenario">כל בוקר מתחיל בלהזכיר לעצמך מה היה עם כל אחד. תזכורות, לוחות, מייל.</div>
-          <div class="moment-arrow">מה קורה במקום זה</div>
+          <div class="moment-arrow">במקום זה</div>
           <div class="moment-result">המערכת עוקבת לבד. שולחת תזכורות, מסמנת סטטוסים, מדווחת. את מתחילה את היום עם ראש פנוי.</div>
         </div>
         <div class="moment-card reveal delay-3">
-          <div class="moment-num">3×</div>
+          <div class="moment-num" dir="ltr">×3</div>
           <div class="moment-scenario">לקוח שואל שאלה ששאל לפני שלושה שבועות. פתחת WhatsApp, מייל, אקסל - עדיין לא מצאת.</div>
-          <div class="moment-arrow">מה קורה במקום זה</div>
+          <div class="moment-arrow">במקום זה</div>
           <div class="moment-result">כל שיחה, כל פנייה, כל מה שהוסכם - במקום אחד. שתי שניות וזה שם.</div>
         </div>
       </div>
@@ -1703,7 +1733,7 @@
           </div>
           <h3>CRM - כל לקוח, כל פנייה, במקום אחד</h3>
           <p>מסלול ברור מהפנייה הראשונה ועד הסגירה. את רואה הכל במבט אחד, בלי לחפש, בלי לזכור, בלי גיליונות.</p>
-          <span class="service-tag">מסד לקוחות מרכזי</span>
+          <span class="service-tag">במקום אחד</span>
         </div>
         <div class="service-card reveal delay-2">
           <div class="service-icon">
