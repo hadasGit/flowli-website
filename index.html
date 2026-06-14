@@ -95,11 +95,11 @@
       gap: 7px;
       text-decoration: none;
     }
-    .nav-logo svg { width: 32px; height: 32px; }
+    .nav-logo svg { width: 40px; height: 40px; }
     .nav-logo-text {
       font-family: 'Inter', sans-serif;
       font-weight: 800;
-      font-size: 24px;
+      font-size: clamp(26px, 3.5vw, 36px);
       letter-spacing: -.035em;
     }
     .nav-logo .fl  { color: var(--ink); }
@@ -355,6 +355,12 @@
     /* ─── TICKER ─── */
     .ticker-wrap {
       overflow: hidden;
+      width: 100vw;
+      position: relative;
+      right: 50%;
+      left: 50%;
+      margin-right: -50vw;
+      margin-left: -50vw;
       background: var(--ink);
       padding: 13px 0;
     }
@@ -1990,7 +1996,7 @@
       <div class="cta-label reveal">מוכנה?</div>
       <h2 class="reveal delay-1">
         בואי נבין יחד<br>
-        <span class="accent">מה הכי כדאי לאוטומט.</span>
+        <span class="accent">מה ייצור הכי הרבה שקט בעסק שלך.</span>
       </h2>
       <p class="reveal delay-2">שאלון קצר של 3 דקות - ותקבלי מפת עומסים אישית ללא עלות.</p>
       <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" class="btn-cta-final reveal delay-3" target="_blank">
@@ -2014,7 +2020,7 @@
         <p>אחזור אליך תוך יום עסקים.</p>
         <input type="text" class="lead-field" id="leadName" placeholder="שם מלא *" required>
         <input type="tel" class="lead-field" id="leadPhone" placeholder="טלפון *" required>
-        <input type="email" class="lead-field" id="leadEmail" placeholder="מייל (אופציונלי)">
+        <input type="email" class="lead-field" id="leadEmail" placeholder="מייל *" required>
         <button class="lead-submit" id="leadSubmit" onclick="submitLead()">שלחי &larr;</button>
       </div>
       <div class="lead-success" id="leadSuccess">
@@ -2108,7 +2114,7 @@
       const name  = document.getElementById('leadName').value.trim();
       const phone = document.getElementById('leadPhone').value.trim();
       const email = document.getElementById('leadEmail').value.trim();
-      if (!name || !phone) { alert('שם וטלפון הם שדות חובה'); return; }
+      if (!name || !phone || !email) { alert('שם, טלפון ומייל הם שדות חובה'); return; }
       const btn = document.getElementById('leadSubmit');
       btn.disabled = true; btn.textContent = 'שולחת...';
       try {
