@@ -1880,7 +1880,7 @@
     /* ─── 2. FLOATING WHATSAPP ─── */
     .float-wa {
       position: fixed;
-      bottom: 24px;
+      bottom: 104px;
       right: 24px;
       width: 56px; height: 56px;
       background: #25D366;
@@ -1946,7 +1946,7 @@
     }
     @media (max-width: 768px) {
       .sticky-cta { display: block; }
-      .float-wa { bottom: 84px; right: 16px; left: auto; width: 48px; height: 48px; }
+      .float-wa { bottom: 104px; right: 16px; left: auto; width: 48px; height: 48px; }
       .float-wa svg { width: 24px; height: 24px; }
     }
 
@@ -2623,6 +2623,7 @@
           <div class="lead-success-icon">&#x2705;</div>
           <h4>קיבלתי!</h4>
           <p>אחזור אלייך בהקדם.</p>
+          <button onclick="closeLeadPopupDirect()" style="margin-top:20px;background:var(--orange);color:#fff;border:none;border-radius:100px;padding:10px 28px;font-family:'Assistant',sans-serif;font-weight:700;font-size:15px;cursor:pointer;">סגור</button>
         </div>
       </div>
     </div>
@@ -2703,7 +2704,27 @@
     })();
 
     // ─── LEAD POPUP ───
+    // קריאת URL params לפרה-פיל
+    const _urlParams = new URLSearchParams(window.location.search);
+    const _prefillName  = _urlParams.get('name')  || '';
+    const _prefillEmail = _urlParams.get('email') || '';
+    const _prefillSource = _urlParams.get('source') || 'website_flowli';
+
+    // פתיחה אוטומטית אם יש פרמטרים מהמייל
+    if (_prefillName || _prefillEmail) {
+      window.addEventListener('DOMContentLoaded', () => openLeadPopup());
+    }
+
     function openLeadPopup() {
+      // reset + prefill
+      document.getElementById('leadForm').style.display = 'block';
+      document.getElementById('leadSuccess').style.display = 'none';
+      document.getElementById('leadName').value  = _prefillName;
+      document.getElementById('leadPhone').value = '';
+      document.getElementById('leadEmail').value = _prefillEmail;
+      document.getElementById('leadConsent').checked = false;
+      document.getElementById('leadSubmit').disabled = true;
+      document.getElementById('leadSubmit').textContent = 'שלחי פרטים ←';
       document.getElementById('leadOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -2722,19 +2743,26 @@
       const btn = document.getElementById('leadSubmit');
       btn.disabled = true; btn.textContent = 'שולחת...';
       try {
-        await fetch('https://whuuevjoqitwslnykvgd.supabase.co/rest/v1/leads_website', {
+        const res = await fetch('https://whuuevjoqitwslnykvgd.supabase.co/rest/v1/leads_website', {
           method: 'POST',
           headers: {
             'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndodXVldmpvcWl0d3NsbnlrdmdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMTk3NDQsImV4cCI6MjA5NDY5NTc0NH0.r_lxvPFY275H7ODxYGHs0-NvqfQd8_e3fKHYy4sgq34',
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndodXVldmpvcWl0d3NsbnlrdmdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMTk3NDQsImV4cCI6MjA5NDY5NTc0NH0.r_lxvPFY275H7ODxYGHs0-NvqfQd8_e3fKHYy4sgq34',
             'Content-Type': 'application/json',
             'Prefer': 'return=minimal'
           },
-          body: JSON.stringify({ name, phone, email: email || null, consent: true, source: 'website_flowli' })
+          body: JSON.stringify({ name, phone, email: email || null, consent: true, source: _prefillSource })
         });
-      } catch(e) { console.warn('supabase error', e); }
+        if (!res.ok) {
+          const err = await res.text();
+          console.error('Supabase error:', res.status, err);
+          alert('שגיאה בשמירה: ' + res.status + ' - ' + err);
+          btn.disabled = false; btn.textContent = 'שלחי פרטים ←';
+          return;
+        }
+      } catch(e) { console.error('fetch error', e); alert('שגיאת רשת: ' + e.message); return; }
       document.getElementById('leadForm').style.display = 'none';
       document.getElementById('leadSuccess').style.display = 'block';
-      setTimeout(closeLeadPopupDirect, 2800);
     }
 
     // ─── 1. SCROLL PROGRESS BAR ───
