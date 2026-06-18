@@ -14,7 +14,8 @@
       {"@type":"Question","name":"כמה זה עולה בערך?","acceptedAnswer":{"@type":"Answer","text":"פתרון ממוקד אחד מתחיל בכמה אלפי שקלים. אחרי האבחון נשלחת הצעה מפורטת עם מחיר קבוע."}},
       {"@type":"Question","name":"נמאס לי מגיליונות אקסל. מה האלטרנטיבה?","acceptedAnswer":{"@type":"Answer","text":"CRM - מסד לקוחות מרכזי שמחזיק את כל הפניות, ההיסטוריה, והמעקב במקום אחד. כל פנייה חדשה נכנסת אוטומטית."}},
       {"@type":"Question","name":"כמה זמן לוקח לראות תוצאות?","acceptedAnswer":{"@type":"Answer","text":"פרויקט ממוקד לוקח 1-3 שבועות. ביום שהמערכת עולה כבר רואים שינוי."}},
-      {"@type":"Question","name":"מה ההבדל בינך לבין עוד מישהי שעושה אוטומציות?","acceptedAnswer":{"@type":"Answer","text":"לא בונה לפי תבנית. מתחילה מהעסק שלך ומסיימת עם תיעוד שמישהו אחר יכול להמשיך."}}
+      {"@type":"Question","name":"מה ההבדל בינך לבין עוד מישהי שעושה אוטומציות?","acceptedAnswer":{"@type":"Answer","text":"לא בונה לפי תבנית. מתחילה מהעסק שלך ומסיימת עם תיעוד שמישהו אחר יכול להמשיך."}},
+      {"@type":"Question","name":"זה נועד להחליף עובדים?","acceptedAnswer":{"@type":"Answer","text":"לא. זה נועד להחליף משימות, לא אנשים. אוטומציה מטפלת בתיאומים, מעקבים, תזכורות והעברת מידע. האנשים בעסק נשארים פנויים לעבודה מקצועית, לקבלת החלטות ולמתן שירות טוב יותר ללקוחות."}}
     ]
   }
   </script>
@@ -30,7 +31,7 @@
       --cream:       #FAFAF7;
       --ink:         #1A1A1A;
       --text:        #2A2A2A;
-      --muted:       #7A7570;
+      --muted:       #5C5751;
       --orange:      #F26B1F;
       --orange-deep: #D45A12;
       --orange-pale: #FEF0E7;
@@ -105,21 +106,22 @@
     .nav-logo .fl  { color: var(--ink); }
     .nav-logo .li  { color: var(--orange); }
     .nav-cta {
-      background: var(--orange);
-      color: #fff;
-      padding: 9px 20px;
+      background: transparent;
+      color: var(--orange);
+      padding: 8px 20px;
       border-radius: 100px;
+      border: 1.5px solid var(--orange);
       font-family: 'Rubik', sans-serif;
       font-weight: 700;
       font-size: 13px;
       text-decoration: none;
-      transition: background .2s, transform .15s, box-shadow .2s;
+      transition: background .2s, color .2s, transform .15s;
       white-space: nowrap;
     }
     .nav-cta:hover {
-      background: var(--orange-deep);
+      background: var(--orange);
+      color: #fff;
       transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(242,107,31,.3);
     }
 
     /* ─── CONTAINER ─── */
@@ -152,9 +154,9 @@
         radial-gradient(at 95% 90%, rgba(212,90,18,0.05) 0px, transparent 50%);
     }
     .hero-content {
-      max-width: 1140px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 120px 28px 80px;
+      padding: 120px 28px 90px;
       position: relative;
       z-index: 2;
     }
@@ -171,7 +173,7 @@
       letter-spacing: .06em;
       padding: 6px 14px;
       border-radius: 100px;
-      margin-bottom: 32px;
+      margin-bottom: 26px;
     }
     .hero-tag .dot {
       width: 6px; height: 6px;
@@ -183,46 +185,61 @@
       0%, 100% { opacity: 1; transform: scale(1); }
       50%       { opacity: .5; transform: scale(.7); }
     }
-    h1.hero-title {
-      font-family: 'Rubik', sans-serif;
-      font-weight: 800;
-      font-size: clamp(1.45rem, 3.6vw, 3.2rem);
-      line-height: 1.3;
-      letter-spacing: -.03em;
-      color: var(--ink);
-      margin-bottom: 22px;
-    }
-    h1.hero-title .line { white-space: nowrap; display: inline; }
-    @media (max-width: 640px) {
-      h1.hero-title { font-size: 1.45rem; line-height: 1.3; }
-      h1.hero-title .line { white-space: normal; }
-    }
-    h1.hero-title .accent { color: var(--orange); }
-    h1.hero-title .soft {
-      font-family: 'Rubik', sans-serif;
-      font-style: italic;
-      font-weight: 400;
+    .hero-eyebrow {
+      font-size: clamp(1.15rem, 2.1vw, 1.55rem);
       color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 20px;
+      line-height: 1.35;
+      letter-spacing: -.01em;
     }
-    h1.hero-title .soft-orange {
+    .hero-title {
       font-family: 'Rubik', sans-serif;
-      font-style: italic;
-      font-weight: 400;
+      font-weight: 700;
+      font-size: clamp(2.2rem, 4.6vw, 3.8rem);
+      line-height: 1.12;
+      letter-spacing: -.035em;
+      color: #3A3530;
+      margin-bottom: 28px;
+    }
+    .hero-title .line {
+      display: block;
+      white-space: nowrap;
+    }
+    @media (max-width: 520px) {
+      .hero-title .line { white-space: normal; }
+    }
+    .hero-title .accent {
       color: var(--orange);
+      position: relative;
+      display: inline-block;
     }
+    .hero-title .accent svg {
+      position: absolute;
+      bottom: -8px; right: -4px; left: -4px;
+      width: calc(100% + 8px); height: 14px;
+      pointer-events: none;
+    }
+    .hero-title .accent svg path {
+      stroke: var(--orange);
+      stroke-width: 3; fill: none; stroke-linecap: round;
+      stroke-dasharray: 340;
+      stroke-dashoffset: 340;
+      animation: draw-underline 1.4s cubic-bezier(.65,0,.35,1) 1.3s forwards;
+    }
+    @keyframes draw-underline { to { stroke-dashoffset: 0; } }
     .hero-sub {
-      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
       color: var(--muted);
-      max-width: 520px;
+      max-width: 480px;
       line-height: 1.75;
-      margin-bottom: 44px;
+      margin-bottom: 36px;
     }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
-      margin-bottom: 52px;
     }
     .btn-primary {
       background: var(--orange);
@@ -313,15 +330,15 @@
     @media (max-width: 900px) { .hero-diagram { display: none; } }
     .hero-content-split {
       display: grid;
-      grid-template-columns: 1fr min(300px, 28vw);
+      grid-template-columns: 1.15fr 1fr;
       gap: 48px;
       align-items: center;
     }
-    @media (max-width: 900px) { .hero-content-split { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .hero-content-split { grid-template-columns: 1fr; gap: 36px; } }
     .hero-laptop-wrap {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
     }
     @media (max-width: 900px) { .hero-laptop-wrap { display: none; } }
     .hero-img-mobile {
@@ -338,16 +355,15 @@
     .hero-img-frame {
       position: relative;
       width: 100%;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: 0;
+      max-width: 520px;
+      margin-inline-start: auto;
     }
     /* עיגול blur כתום ברקע - אפקט organic מהדיזיין */
     .hero-img-glow {
       position: absolute;
-      inset: -40px -30px;
+      inset: -50px -40px;
       border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-      background: radial-gradient(ellipse at center, rgba(242,107,31,0.18) 0%, rgba(253,221,189,0.10) 50%, transparent 75%);
+      background: radial-gradient(ellipse at center, rgba(242,107,31,0.28) 0%, rgba(253,221,189,0.15) 50%, transparent 75%);
       animation: wave-morph 9s ease-in-out infinite;
       z-index: 0;
       pointer-events: none;
@@ -357,6 +373,19 @@
       50%  { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
       100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
     }
+    /* dots pattern decoration */
+    .dots-pattern {
+      position: absolute;
+      width: 140px; height: 140px;
+      background-image: radial-gradient(circle, rgba(242,107,31,.4) 1.5px, transparent 1.5px);
+      background-size: 14px 14px;
+      opacity: .5;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .dots-tr { top: 60px; right: -20px; }
+    .dots-bl { bottom: 80px; left: -20px; width: 100px; height: 100px; }
+    @media (max-width: 900px) { .dots-pattern { display: none; } }
     .hero-img {
       position: relative;
       z-index: 1;
@@ -411,12 +440,25 @@
     #quiet-mind {
       background: var(--ink);
       padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #quiet-mind::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      width: 500px; height: 500px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(242,107,31,.10) 0%, transparent 60%);
+      pointer-events: none;
     }
     .qm-inner {
       max-width: 720px;
       margin: 0 auto;
       padding: 0 28px;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
     .qm-waves { margin-bottom: 28px; display: flex; justify-content: center; }
     .qm-label {
@@ -430,23 +472,32 @@
     .qm-title {
       font-family: 'Rubik', sans-serif;
       font-weight: 700;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.25;
+      font-size: clamp(2rem, 4.2vw, 3.1rem);
+      line-height: 1.22;
+      letter-spacing: -.025em;
       color: #fff;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
     .qm-title em {
+      font-family: 'Frank Ruhl Libre', serif;
       font-style: italic;
+      font-weight: 500;
       color: var(--orange-soft);
     }
     .qm-body {
-      font-size: 1.08rem;
-      color: rgba(255,255,255,.55);
-      line-height: 1.8;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.6);
+      line-height: 1.85;
       max-width: 580px;
       margin: 0 auto;
     }
-    .qm-body strong { color: rgba(255,255,255,.85); }
+    .qm-body strong { color: rgba(255,255,255,.92); font-weight: 600; }
+    .qm-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(242,107,31,.4);
+      margin: 36px auto 28px;
+    }
 
     /* ─── PROBLEM ─── */
     #problem { background: var(--cream); }
@@ -473,11 +524,13 @@
     .moment-card {
       background: var(--bg);
       border-radius: var(--radius-xl);
-      padding: 36px 28px 28px;
+      padding: 38px 28px 28px;
       position: relative;
       overflow: hidden;
       border: 1px solid var(--bg-warm);
       transition: transform .25s, box-shadow .25s;
+      display: flex;
+      flex-direction: column;
     }
     .moment-card:hover {
       transform: translateY(-5px);
@@ -490,30 +543,65 @@
       height: 3px;
       background: linear-gradient(to left, var(--orange), var(--orange-soft));
     }
-    .moment-num {
-      font-family: 'Rubik', sans-serif;
-      font-weight: 700;
-      font-size: 4.8rem;
-      line-height: 1;
-      letter-spacing: -.04em;
-      color: var(--orange);
-      margin-bottom: 18px;
-      text-shadow: 0 2px 16px rgba(242,107,31,.18);
+    .moment-quote {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-style: italic;
+      font-size: 1.18rem;
+      color: var(--orange-deep);
+      line-height: 1.45;
+      position: relative;
       text-align: center;
+      background: linear-gradient(180deg, var(--orange-pale) 0%, #FFF8F1 100%);
+      border: 1px solid var(--orange-mid);
+      border-radius: 14px;
+      padding: 30px 40px 32px;
+      margin-bottom: 24px;
     }
-    .moment-num-label {
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0;
-      color: var(--muted);
-      font-family: 'Assistant', sans-serif;
+    .moment-quote::before {
+      content: '”';
+      font-size: 3.4rem;
+      color: var(--orange);
+      opacity: .3;
+      line-height: 1;
+      position: absolute;
+      top: 4px;
+      right: 14px;
+      font-family: Georgia, serif;
+    }
+    .moment-quote::after {
+      content: '“';
+      font-size: 3.4rem;
+      color: var(--orange);
+      opacity: .3;
+      line-height: 0;
+      position: absolute;
+      bottom: 2px;
+      left: 16px;
+      font-family: Georgia, serif;
+    }
+    .moment-num {
+      position: absolute;
+      top: 18px;
+      left: 22px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .12em;
+      color: var(--orange);
+      opacity: .6;
+      font-weight: 600;
+    }
+    .moment-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
     }
     .moment-scenario {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.55;
-      margin-bottom: 16px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex: 1;
     }
     .moment-arrow {
       display: flex;
@@ -532,87 +620,15 @@
       background: var(--orange);
     }
     .moment-result {
-      font-size: 14.5px;
+      font-size: 14px;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.75;
+    }
+    .moment-result strong {
+      color: var(--ink);
+      font-weight: 600;
     }
 
-    /* ─── SERVICES ─── */
-    #services { background: var(--bg); }
-    #services h2 {
-      font-family: 'Rubik', sans-serif;
-      font-weight: 800;
-      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-      letter-spacing: -.025em;
-      margin-bottom: 12px;
-    }
-    #services .section-sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 520px;
-      line-height: 1.75;
-      margin-bottom: 52px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    @media (max-width: 820px) { .services-grid { grid-template-columns: 1fr; } }
-    .service-card {
-      background: var(--cream);
-      border-radius: var(--radius-xl);
-      padding: 36px 28px 28px;
-      border: 1px solid var(--bg-warm);
-      transition: transform .3s, box-shadow .3s, background .3s, border-color .3s;
-      cursor: default;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-      background: #FFFDF9;
-      border-color: rgba(242,107,31,.2);
-      box-shadow: 0 16px 40px rgba(242,107,31,.08), 0 4px 12px rgba(0,0,0,.05);
-    }
-    .service-card:hover .service-icon {
-      background: var(--orange-pale);
-    }
-    .service-card:hover .service-icon svg {
-      stroke: var(--orange);
-    }
-    .service-icon {
-      width: 48px; height: 48px;
-      background: var(--orange-pale);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .service-icon svg { width: 22px; height: 22px; }
-    .service-card h3 {
-      font-family: 'Rubik', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      color: var(--ink);
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
-    .service-card p {
-      font-size: 14.5px;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-    .service-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--orange);
-      background: var(--orange-pale);
-      padding: 4px 10px;
-      border-radius: 100px;
-    }
 
     /* ─── CASE STUDY ─── */
     #case-study { background: var(--ink); padding: 108px 0; }
@@ -738,11 +754,31 @@
 
     /* ─── DREAM SECTION ─── */
     #dream {
-      padding: 120px 28px;
-      background: var(--ink);
+      padding: 140px 28px 120px;
+      background:
+        radial-gradient(120% 80% at 50% 0%, rgba(242,107,31,.07) 0%, transparent 45%),
+        linear-gradient(180deg, #0E0A07 0%, #120D09 100%);
       position: relative;
       overflow: hidden;
       text-align: center;
+    }
+    #dream::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 96px;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+      box-shadow: 0 0 18px rgba(242,107,31,.5);
+    }
+    #dream::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: rgba(255,255,255,.07);
     }
 
     /* פתקים נעים */
@@ -844,7 +880,7 @@
       opacity: 1;
       transform: translateY(0);
     }
-    .thought-bubble {
+    .dream-bubble {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -859,7 +895,7 @@
       -webkit-backdrop-filter: blur(6px);
       transition: background .2s, border-color .2s;
     }
-    .thought-bubble:hover {
+    .dream-bubble:hover {
       background: rgba(242,107,31,.12);
       border-color: rgba(242,107,31,.25);
       color: rgba(255,255,255,.92);
@@ -1223,14 +1259,53 @@
       margin-bottom: 24px;
     }
     .about-quote {
-      font-family: 'Rubik', sans-serif;
+      font-family: 'Frank Ruhl Libre', serif;
       font-style: italic;
-      font-size: 1.15rem;
-      line-height: 1.7;
+      font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+      line-height: 1.55;
       color: var(--ink);
-      border-right: 3px solid var(--orange);
-      padding-right: 18px;
-      margin-bottom: 24px;
+      position: relative;
+      padding: 28px 28px 34px 28px;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--orange-pale) 100%);
+      border-radius: 16px;
+      border-right: 4px solid var(--orange);
+      margin-bottom: 28px;
+      box-shadow: 0 6px 24px rgba(242,107,31,.08);
+    }
+    .about-quote::before {
+      content: '”';
+      position: absolute;
+      top: -10px;
+      right: 18px;
+      font-family: Georgia, serif;
+      font-size: 5.5rem;
+      line-height: 1;
+      color: var(--orange);
+      opacity: .25;
+      font-style: normal;
+    }
+    .about-quote::after {
+      content: '“';
+      position: absolute;
+      bottom: -8px;
+      left: 20px;
+      font-family: Georgia, serif;
+      font-size: 5.5rem;
+      line-height: 1;
+      color: var(--orange);
+      opacity: .25;
+      font-style: normal;
+    }
+    .about-quote-author {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--orange-deep);
+      margin-top: 14px;
+      opacity: .85;
     }
     .about-body {
       font-size: 15.5px;
@@ -1422,6 +1497,39 @@
       font-size: 18px;
     }
 
+    /* ─── CTA FINAL TWO-BUTTON ROW ─── */
+    .cta-final-actions {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .cta-final-actions .btn-cta-final { margin: 0; }
+    .btn-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255,255,255,.05);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,.32);
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s, border-color .2s, transform .15s;
+    }
+    .btn-cta-secondary:hover {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.6);
+      transform: translateY(-2px);
+    }
+
     /* ─── LEAD POPUP ─── */
     .lead-overlay {
       display: none;
@@ -1439,15 +1547,33 @@
     .lead-popup {
       background: var(--cream);
       border-radius: 24px;
-      padding: 40px 36px;
-      max-width: 420px;
+      padding: 0 0 36px;
+      max-width: 430px;
       width: 100%;
       position: relative;
+      overflow: hidden;
       box-shadow: 0 32px 80px rgba(0,0,0,.25);
       text-align: right;
       direction: rtl;
       animation: popup-in .3s cubic-bezier(.22,1,.36,1);
     }
+    .lead-popup-head {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-deep) 100%);
+      padding: 30px 36px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+    .lead-popup-head::after {
+      content: '';
+      position: absolute;
+      right: -40px; bottom: -60px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(255,255,255,.16) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .lead-popup-wave { display: flex; margin-bottom: 14px; }
+    .lead-popup-wave svg { width: 46px; height: 26px; }
+    .lead-popup-body { padding: 26px 36px 0; }
     @keyframes popup-in {
       from { opacity: 0; transform: scale(.94) translateY(16px); }
       to   { opacity: 1; transform: scale(1) translateY(0); }
@@ -1459,30 +1585,81 @@
       width: 32px; height: 32px;
       border-radius: 50%;
       border: none;
-      background: var(--bg-warm);
+      background: rgba(255,255,255,.22);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--muted);
+      color: #fff;
       font-size: 18px;
       line-height: 1;
+      z-index: 2;
       transition: background .15s;
     }
-    .lead-popup-close:hover { background: var(--bg); }
+    .lead-popup-close:hover { background: rgba(255,255,255,.38); }
     .lead-popup h3 {
       font-family: 'Rubik', sans-serif;
       font-weight: 800;
-      font-size: 1.35rem;
-      color: var(--ink);
-      margin-bottom: 6px;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 4px;
       letter-spacing: -.02em;
+      position: relative;
+      z-index: 1;
     }
-    .lead-popup p {
+    .lead-popup-head p {
       font-size: 14px;
+      color: rgba(255,255,255,.9);
+      margin: 0;
+      line-height: 1.55;
+      position: relative;
+      z-index: 1;
+    }
+    .lead-label {
+      display: block;
+      font-family: 'Assistant', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .lead-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
       color: var(--muted);
-      margin-bottom: 24px;
-      line-height: 1.6;
+      margin: 14px 0 4px;
+      font-family: 'Assistant', sans-serif;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .lead-consent input[type="checkbox"] {
+      margin-top: 3px;
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      cursor: pointer;
+      accent-color: var(--orange);
+    }
+    .lead-consent-link {
+      color: var(--orange);
+      text-decoration: underline;
+    }
+    .lead-submit:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+    .lead-privacy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: var(--muted);
+      margin: 16px 0 0;
+      font-family: 'Assistant', sans-serif;
     }
     .lead-field {
       width: 100%;
@@ -1493,13 +1670,13 @@
       font-family: 'Assistant', sans-serif;
       font-size: 15px;
       color: var(--ink);
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       text-align: right;
       direction: rtl;
       transition: border-color .2s;
       outline: none;
     }
-    .lead-field:focus { border-color: var(--orange); }
+    .lead-field:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(242,107,31,.12); }
     .lead-field::placeholder { color: var(--muted); }
     .lead-submit {
       width: 100%;
@@ -1520,7 +1697,7 @@
     .lead-success {
       display: none;
       text-align: center;
-      padding: 16px 0;
+      padding: 40px 36px;
     }
     .lead-success-icon { font-size: 2.5rem; margin-bottom: 12px; }
     .lead-success h4 {
@@ -1565,9 +1742,404 @@
     }
     .footer-logo .fl { color: rgba(255,255,255,.5); }
     .footer-logo .li { color: var(--orange); }
+
+    /* ─── COOKIE BANNER ─── */
+    #flowli-cookie-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 8900;
+      background: #1A1A1A;
+      color: #fff;
+      padding: 16px 24px;
+      display: flex; align-items: center; gap: 16px;
+      flex-wrap: wrap;
+      font-family: 'Assistant', system-ui, sans-serif;
+      direction: rtl;
+      transform: translateY(100%);
+      transition: transform .4s cubic-bezier(.4,0,.2,1);
+    }
+    #flowli-cookie-bar.show { transform: translateY(0); }
+    #flowli-cookie-bar p {
+      flex: 1; font-size: 14px; line-height: 1.55; color: #ccc;
+      margin: 0;
+    }
+    #flowli-cookie-bar a {
+      color: #F26B1F; text-decoration: underline; cursor: pointer;
+    }
+    #flowli-cookie-bar .cookie-btns {
+      display: flex; gap: 10px; flex-shrink: 0;
+    }
+    #flowli-cookie-bar .btn-accept {
+      background: #F26B1F; color: #fff; border: none;
+      border-radius: 8px; padding: 10px 20px;
+      font-family: 'Assistant', sans-serif; font-weight: 700;
+      font-size: 14px; cursor: pointer; transition: background .2s;
+    }
+    #flowli-cookie-bar .btn-accept:hover { background: #D45A12; }
+    #flowli-cookie-bar .btn-decline {
+      background: transparent; color: #888;
+      border: 1.5px solid #444; border-radius: 8px;
+      padding: 9px 16px; font-family: 'Assistant', sans-serif;
+      font-weight: 600; font-size: 13px; cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+    #flowli-cookie-bar .btn-decline:hover { border-color: #888; color: #ccc; }
+
+    
+
+    /* ─── ACCESSIBILITY MODAL ─── */
+    .a11y-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(0,0,0,.55);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .a11y-overlay.open { display: flex; }
+    .a11y-modal {
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px 36px;
+      max-width: 560px;
+      width: 100%;
+      direction: rtl;
+      position: relative;
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+    #privacyOverlay, #tosOverlay {
+      z-index: 1100;
+    }
+    .a11y-modal h2 {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .a11y-modal p, .a11y-modal li {
+      font-size: 14.5px;
+      color: #3a3a3a;
+      line-height: 1.75;
+    }
+    .a11y-modal ul { padding-right: 20px; margin: 12px 0 20px; }
+    .a11y-modal .a11y-contact {
+      background: var(--orange-pale);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--ink);
+      line-height: 1.8;
+    }
+    .a11y-modal .a11y-contact a { color: var(--orange-deep); }
+    .a11y-close {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: var(--muted);
+      line-height: 1;
+      padding: 4px 8px;
+    }
+    .a11y-link {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,.3);
+      font-size: 13px;
+      text-decoration: underline;
+      font-family: inherit;
+      padding: 0;
+    }
+    .a11y-link:hover { color: rgba(255,255,255,.6); }
+
+    /* ─── 1. SCROLL PROGRESS BAR ─── */
+    .scroll-progress {
+      position: fixed;
+      top: 0; right: 0; left: 0;
+      height: 3px;
+      background: transparent;
+      z-index: 300;
+      pointer-events: none;
+    }
+    .scroll-progress__fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--orange-deep), var(--orange));
+      transition: width .08s linear;
+      box-shadow: 0 0 8px rgba(242,107,31,.5);
+    }
+
+    /* ─── 2. FLOATING WHATSAPP ─── */
+    .float-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(37,211,102,.4), 0 2px 6px rgba(0,0,0,.1);
+      text-decoration: none;
+      z-index: 250;
+      opacity: 0;
+      transform: scale(.5) translateY(20px);
+      transition: opacity .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;
+      pointer-events: none;
+    }
+    .float-wa.visible {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+    .float-wa:hover {
+      box-shadow: 0 10px 28px rgba(37,211,102,.55), 0 2px 6px rgba(0,0,0,.12);
+      transform: scale(1.05) translateY(-2px);
+    }
+    .float-wa svg { width: 28px; height: 28px; fill: #fff; }
+    .float-wa::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: #25D366;
+      opacity: .4;
+      animation: wa-pulse 2s ease-out infinite;
+      z-index: -1;
+    }
+    @keyframes wa-pulse {
+      0% { transform: scale(1); opacity: .5; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    /* ─── 3. STICKY MOBILE CTA ─── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; right: 0; left: 0;
+      background: var(--ink);
+      padding: 14px 16px env(safe-area-inset-bottom, 14px);
+      z-index: 240;
+      box-shadow: 0 -8px 24px rgba(0,0,0,.18);
+      transform: translateY(100%);
+      transition: transform .35s cubic-bezier(.22,1,.36,1);
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta a {
+      display: block;
+      background: var(--orange);
+      color: #fff;
+      padding: 14px;
+      border-radius: 100px;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      text-align: center;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta { display: block; }
+      .float-wa { bottom: 84px; right: 16px; left: auto; width: 48px; height: 48px; }
+      .float-wa svg { width: 24px; height: 24px; }
+    }
+
+    /* ─── MOBILE POLISH ─── */
+    @media (max-width: 640px) {
+      /* Hero */
+      .hero-content { padding: 92px 22px 64px; }
+      .hero-eyebrow { font-size: 1.05rem; margin-bottom: 14px; }
+      .hero-title { font-size: clamp(1.95rem, 8vw, 2.4rem); margin-bottom: 22px; }
+      .hero-sub { font-size: .98rem; margin-bottom: 28px; }
+      .hero-tag { margin-bottom: 18px; font-size: 10.5px; padding: 5px 12px; }
+      .btn-primary { padding: 13px 22px; font-size: 14px; }
+      .hero-blob-1 { width: 280px; height: 280px; top: -60px; left: -100px; }
+      .hero-blob-2 { width: 220px; height: 220px; }
+      .hero-img-mobile { max-width: 100%; margin-top: 36px; }
+
+      /* Quiet Mind */
+      #quiet-mind { padding: 80px 0; }
+      .qm-title { font-size: 1.65rem; line-height: 1.3; margin-bottom: 24px; }
+      .qm-body { font-size: 1rem; line-height: 1.8; }
+      .qm-divider { margin: 28px auto 22px; }
+
+      /* Problem */
+      #problem h2, #how h2, #faq h2, .cs-title {
+        font-size: 1.55rem;
+      }
+      #problem .section-sub, #how .section-sub, #faq .section-sub, .cs-sub {
+        font-size: .98rem;
+        margin-bottom: 36px;
+      }
+      .moment-card { padding: 36px 22px 24px; }
+      .moment-quote { font-size: 1.05rem; padding: 26px 30px 28px; }
+      .moment-quote::before { font-size: 2.8rem; right: 10px; top: 4px; }
+      .moment-quote::after { font-size: 2.8rem; left: 12px; bottom: 2px; }
+      .moment-num { top: 14px; left: 16px; font-size: 9.5px; }
+
+      /* Case study */
+      #case-study { padding: 80px 0; }
+      .cs-card-top { padding: 28px 22px 22px; }
+      .cs-story { font-size: 1.02rem; padding-right: 14px; }
+      .cs-built { font-size: 14px; line-height: 1.7; }
+      .cs-num-val { font-size: 1.7rem; }
+      .cs-num-label { font-size: 12px; }
+      .cs-num-item { padding: 22px 18px; }
+      .cs-disclaimer { padding: 14px 22px; font-size: 11px; }
+      .cs-airtable-wrap { padding: 22px 18px 26px; }
+
+      /* Dream */
+      #dream { padding: 80px 22px; }
+      .dream-headline { font-size: 1.7rem; margin-bottom: 36px; }
+      .dream-eyebrow { margin-bottom: 20px; }
+      .bubbles-wrap { gap: 8px; margin-bottom: 40px; }
+      .dream-bubble { font-size: 12.5px; padding: 8px 14px; }
+      .dream-closing { font-size: .98rem; }
+      .dream-brand-line { font-size: 1.7rem; padding: 10px 24px; }
+      .sticky-note { font-size: 11px; padding: 6px 10px; }
+
+      /* How */
+      .steps-row { gap: 28px; }
+      .step-num { width: 48px; height: 48px; font-size: 17px; }
+      .step h3 { font-size: 14.5px; }
+      .strategy-strip { padding: 18px 22px; font-size: 13.5px; }
+
+      /* About */
+      .about-inner { gap: 32px; }
+      #about h2 { font-size: 1.8rem; }
+      .about-quote { font-size: 1.1rem; padding: 24px 22px; }
+      .about-quote::before { font-size: 4.5rem; right: 14px; }
+      .about-body, .about-body-2 { font-size: 14.5px; }
+      .about-how-wrap { padding: 28px 24px; }
+
+      /* CTA */
+      .cta-inner { padding: 72px 22px; }
+      #cta-final h2 { font-size: 1.55rem; }
+      #cta-final p { font-size: .98rem; }
+
+      /* Leave space for sticky CTA */
+      footer { padding-bottom: 92px; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- 1. SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__fill" id="scrollProgressFill"></div>
+  </div>
+
+  <!-- COOKIE BANNER -->
+  <div id="flowli-cookie-bar" role="region" aria-label="הסכמה לעוגיות">
+    <p>אנחנו משתמשים בעוגיות לצורך שיפור חוויית המשתמש וניתוח שימוש אנונימי. <a onclick="document.getElementById('privacyOverlay').classList.add('open')" tabindex="0">מדיניות פרטיות</a></p>
+    <div class="cookie-btns">
+      <button class="btn-accept" onclick="flowliAcceptCookies()">מסכימ.ה ✓</button>
+      <button class="btn-decline" onclick="flowliDeclineCookies()">לא תודה</button>
+    </div>
+  </div>
+
+  <!-- TERMS OF SERVICE MODAL -->
+  <div class="a11y-overlay" id="tosOverlay" onclick="if(event.target===this){this.classList.remove('open')}">
+    <div class="a11y-modal">
+      <button class="a11y-close" onclick="document.getElementById('tosOverlay').classList.remove('open')" aria-label="סגור">✕</button>
+      <h2>תנאי שימוש</h2>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:16px">עודכן לאחרונה: יוני 2026</p>
+      <p>השימוש באתר Flowli ובכל התכנים המופיעים בו כפוף לתנאי שימוש אלו.</p>
+      <ol style="padding-right:20px;line-height:1.8;margin:12px 0">
+        <li>האתר נועד לספק מידע כללי על שירותי Flowli וכלים לאבחון תהליכים עסקיים.</li>
+        <li>תוצאות האבחון, ההמלצות והתכנים באתר נועדו למטרות מידע בלבד ואינם מהווים ייעוץ עסקי, משפטי, פיננסי או מקצועי מכל סוג.</li>
+        <li>השימוש באתר ובאבחון הינו באחריות המשתמש בלבד.</li>
+        <li>Flowli אינה מתחייבת לתוצאות עסקיות, לחיסכון כספי או לשיפור ביצועים כתוצאה משימוש באתר, באבחון או בשירותים המוצגים בו.</li>
+        <li>כל התכנים באתר, לרבות טקסטים, עיצובים, תמונות, מסמכים ותהליכים, מוגנים בזכויות יוצרים ואין להעתיקם או לעשות בהם שימוש ללא אישור מראש.</li>
+        <li>Flowli רשאית לעדכן את תנאי השימוש מעת לעת. המשך השימוש באתר מהווה הסכמה לגרסה המעודכנת.</li>
+      </ol>
+      <div class="a11y-contact">
+        <strong>לשאלות ניתן לפנות:</strong><br>
+        הדס גרינברג<br>
+        <a href="mailto:hadas@flowli.co.il">hadas@flowli.co.il</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACY MODAL -->
+  <div class="a11y-overlay" id="privacyOverlay" onclick="closePrivacy(event)">
+    <div class="a11y-modal">
+      <button class="a11y-close" onclick="document.getElementById('privacyOverlay').classList.remove('open')" aria-label="סגור">✕</button>
+      <h2>מדיניות פרטיות – Flowli</h2>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:16px">עודכן לאחרונה: מאי 2026</p>
+
+      <p><strong>1. כללי</strong><br>ברוכים הבאים ל-Flowli. מדיניות פרטיות זו מסבירה כיצד נאסף, נשמר, מעובד ומשמש מידע אישי של משתמשים. השימוש בשירות מהווה הסכמה למדיניות זו במלואה.</p>
+
+      <p><strong>2. איזה מידע אנו אוספים</strong><br>מידע שנמסר על-ידך: שם מלא, כתובת דוא"ל ומספר טלפון; תשובות שאלון האבחון — נשמרות בשרתי Flowli לצורך מתן שירות מותאם אישית; תכנים שנכתבים בשדות הטקסט החופשי.<br>מידע טכני: כתובת IP, סוג דפדפן, מערכת הפעלה, נתוני אנליטיקה אנונימיים, עוגיות.</p>
+
+      <p><strong>3. שימוש במידע</strong><br>יצירת קשר לצורך תיאום שיחת ייעוץ; שליחת תכנים מקצועיים ועדכונים (בהתאם להסכמתך); שיפור השירות על בסיס נתונים מצטברים ואנונימיים; עמידה בדרישות חוקיות.</p>
+
+      <p><strong>4. שימוש בטכנולוגיות AI</strong><br>השירות עושה שימוש בטכנולוגיות בינה מלאכותית לניתוח תשובות האבחון והתאמת ההמלצות. המידע אינו משמש לאימון ציבורי של מודלים. אין לראות בתוצאות האבחון ייעוץ מקצועי, משפטי, פיננסי או רפואי.</p>
+
+      <p><strong>5. Cookies ועוגיות</strong><br>חיוניות — להפעלת האתר; פונקציונליות — לשיפור חוויית שימוש; אנליטיות — ניתוח תנועה אנונימי. ניתן לחסום עוגיות דרך הגדרות הדפדפן.</p>
+
+      <p><strong>6. שיתוף מידע</strong><br>המידע עשוי להיות משותף עם ספקי שירות חיוניים (מערכות דיוור, אנליטיקה, ספקי AI). המידע לא נמכר לצדדים שלישיים.</p>
+
+      <p><strong>7. זכויותיך</strong><br>לעיין במידע האישי שלך; לבקש תיקון מידע שגוי; לבקש מחיקת מידע; לבטל הסכמה לדיוור; לבקש העברת מידע.</p>
+
+      <p><strong>8. אבטחת מידע</strong><br>אנו נוקטים באמצעים טכנולוגיים ואורגניזציוניים סבירים לאבטחת המידע. אין אבטחה מוחלטת.</p>
+
+      <p><strong>9. קטינים</strong><br>השירות מיועד לגיל 18 ומעלה. לא נאסף ביודעין מידע מקטינים.</p>
+
+      <p><strong>10. שינויים במדיניות</strong><br>החברה רשאית לעדכן מדיניות זו מעת לעת. הגרסה המעודכנת תפורסם באתר ותחייב מרגע פרסומה.</p>
+
+      <div class="a11y-contact">
+        <strong>פנייה בנושא פרטיות:</strong><br>
+        הדס גרינברג · Flowli<br>
+        <a href="mailto:hadas@flowli.co.il">hadas@flowli.co.il</a><br>
+        מענה עד 5 ימי עסקים
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCESSIBILITY MODAL -->
+  <div class="a11y-overlay" id="a11yOverlay" onclick="closeA11y(event)">
+    <div class="a11y-modal">
+      <button class="a11y-close" onclick="document.getElementById('a11yOverlay').classList.remove('open')" aria-label="סגור">✕</button>
+      <h2>הצהרת נגישות</h2>
+      <p>Flowli מחויבת להנגשת האתר והשירותים הדיגיטליים שלה לכלל המשתמשים, מתוך אמונה כי לכל אדם מגיעה האפשרות לגלוש באתר בצורה שוויונית, מכבדת ונוחה.</p>
+      <p>האתר שואף לעמוד בדרישות התקן הישראלי ת"י 5568 וברמת AA של הנחיות הנגישות WCAG 2.1.</p>
+      <p><strong>במסגרת מאמצי ההנגשה:</strong></p>
+      <ul>
+        <li>האתר תומך בניווט באמצעות מקלדת.</li>
+        <li>האתר תומך בקוראי מסך.</li>
+        <li>ניתן להגדיל טקסט ולשנות ניגודיות באמצעות תפריט הנגישות.</li>
+        <li>האתר מותאם לשפה העברית ולקריאה מימין לשמאל (RTL).</li>
+        <li>נעשה מאמץ לשמור על מבנה תוכן ברור ונגיש בכל עמודי האתר.</li>
+      </ul>
+      <p>למרות מאמצינו להנגיש את כלל חלקי האתר, ייתכן שיתגלו רכיבים שטרם הונגשו באופן מלא. אם נתקלתם בבעיה או בקושי כלשהו, נשמח לקבל משוב ולטפל בכך בהקדם.</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px">הצהרה זו עודכנה לאחרונה: יוני 2026.</p>
+      <div class="a11y-contact">
+        <strong>פרטי רכזת הנגישות:</strong><br>
+        הדס גרינברג<br>
+        <a href="mailto:hadas@flowli.co.il">hadas@flowli.co.il</a><br>
+        <a href="tel:0528966998">052-896-6998</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. FLOATING WHATSAPP -->
+  <a href="https://wa.me/972528966998?text=היי הדס, הגעתי מהאתר" target="_blank" class="float-wa" id="floatWa" aria-label="דברי איתי ב-WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.695.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+
+  <!-- 3. STICKY MOBILE CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" target="_blank">מפת עומסים חינם &larr;</a>
+  </div>
 
   <!-- NAV -->
   <nav>
@@ -1580,7 +2152,7 @@
         </svg>
         <span class="nav-logo-text"><span class="fl">flow</span><span class="li">li</span></span>
       </a>
-      <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" class="nav-cta" target="_blank">מפת עומסים חינם &larr;</a>
+      <a href="#case-study" class="nav-cta">ראי איך זה עובד</a>
     </div>
   </nav>
 
@@ -1588,20 +2160,22 @@
   <section id="hero">
     <div class="hero-blob hero-blob-1"></div>
     <div class="hero-blob hero-blob-2"></div>
+    <div class="dots-pattern dots-tr" aria-hidden="true"></div>
+    <div class="dots-pattern dots-bl" aria-hidden="true"></div>
     <div class="hero-content">
       <div class="hero-content-split">
-        <!-- טקסט — לא נוגעים -->
-        <div>
+        <!-- טקסט -->
+        <div class="hero-text-col">
           <div class="hero-tag reveal">
             <span class="dot"></span>
             לעסקים שמחפשים יותר שקט בתוך היום
           </div>
-          <h1 class="hero-title reveal delay-1">
-            <span class="line soft">כולם מדברים על AI ואוטומציות.</span><br>
-            <span class="line">את פשוט רוצה <span class="accent">לסיים את היום</span></span><br>
-            <span class="line soft-orange">בלי עומס.</span>
+          <p class="hero-eyebrow reveal delay-1">כולם מדברים על AI ואוטומציות.</p>
+          <h1 class="hero-title reveal delay-2">
+            <span class="line">את פשוט רוצה לסיים</span>
+            <span class="line">את היום <span class="accent">בלי עומס.<svg viewBox="0 0 240 14" preserveAspectRatio="none"><path d="M4 9 Q 60 -2, 120 7 T 236 6"/></svg></span></span>
           </h1>
-          <p class="hero-sub reveal delay-2">
+          <p class="hero-sub reveal delay-3">
             אני עוזרת לעסקים לבנות תהליכים שעובדים בשקט ברקע,
             כדי שהעסק יהיה פחות תלוי בך.
           </p>
@@ -1615,7 +2189,7 @@
         </div>
 
         <!-- תמונת הלפטופ -->
-        <div class="hero-laptop-wrap reveal delay-3">
+        <div class="hero-laptop-wrap reveal-scale delay-2">
           <div class="hero-img-frame">
             <div class="hero-img-glow"></div>
             <img
@@ -1626,7 +2200,6 @@
             />
           </div>
         </div>
-
       </div>
     </div>
     <div class="hero-waves">
@@ -1677,9 +2250,10 @@
       </h2>
       <p class="qm-body reveal delay-2">
         כשכל הפניות, לוחות הזמנים, המשימות החוזרות והמידע על לקוחות
-        נמצאים בראש שלך - זה לא נקרא ארגון. זה נקרא עומס.
+        נמצאים בראש שלך זה לא נקרא ארגון. זה נקרא עומס.
       </p>
-      <p class="qm-body reveal delay-3" style="margin-top:28px;">
+      <div class="qm-divider reveal delay-2" aria-hidden="true"></div>
+      <p class="qm-body reveal delay-3">
         <strong>Quiet Mind</strong><br>
         פחות דברים לזכור. יותר מקום לחשוב.
       </p>
@@ -1693,69 +2267,32 @@
       <div class="section-label reveal">הבעיה האמיתית</div>
       <h2 class="reveal delay-1">השקט נעלם בדברים הקטנים</h2>
       <p class="section-sub reveal delay-2">
-        לא באירועים גדולים. במשימות שחוזרות על עצמן, במידע שמפוזר בין כמה מקומות, ובדברים שפשוט דורשים ממך לזכור יותר מדי.
+        לא באירועים גדולים. בדברים שאת מחזיקה בראש כל היום.
       </p>
       <div class="moment-grid">
         <div class="moment-card reveal delay-1">
-          <div class="moment-num" dir="ltr">-4h</div>
-          <div class="moment-scenario">פנייה נכנסת בצהריים. ענית בערב. הלקוחה כבר בחרה מישהו אחר.</div>
+          <span class="moment-num">01</span>
+          <div class="moment-quote">אני אחזור אליה אחר כך</div>
+          <div class="moment-title">ובינתיים היא המשיכה הלאה</div>
+          <div class="moment-scenario">פנייה נכנסת בצהריים. ענית בערב. בינתיים הלקוחה כבר דיברה עם מישהו אחר.</div>
           <div class="moment-arrow">במקום זה</div>
-          <div class="moment-result">תגובה אוטומטית יוצאת תוך דקה - אוספת פרטים, מאשרת שיחה, ושומרת הכל. הלקוחה מרגישה שרואים אותה.</div>
+          <div class="moment-result">תגובה יוצאת תוך דקה, אוספת פרטים ושומרת הכול. <strong>הלקוחה מרגישה שרואים אותה.</strong></div>
         </div>
         <div class="moment-card reveal delay-2">
-          <div class="moment-num" dir="ltr">-1.5h</div>
-          <div class="moment-scenario">כל בוקר מתחיל בלהזכיר לעצמך מה היה עם כל אחד. תזכורות, לוחות, מייל.</div>
+          <span class="moment-num">02</span>
+          <div class="moment-quote">למי הייתי צריכה לחזור?</div>
+          <div class="moment-title">הראש כבר עמוס</div>
+          <div class="moment-scenario">לזכור למי לחזור. לבדוק מי שלח מסמכים. להבין איפה כל לקוח עומד.</div>
           <div class="moment-arrow">במקום זה</div>
-          <div class="moment-result">המערכת עוקבת לבד. שולחת תזכורות, מסמנת סטטוסים, מדווחת. את מתחילה את היום עם ראש פנוי.</div>
+          <div class="moment-result">המערכת עוקבת לבד ומזכירה מה דורש תשומת לב. <strong>את מתחילה את היום עם ראש פנוי.</strong></div>
         </div>
         <div class="moment-card reveal delay-3">
-          <div class="moment-num" dir="ltr">×3</div>
-          <div class="moment-scenario">לקוח שואל שאלה ששאל לפני שלושה שבועות. פתחת WhatsApp, מייל, אקסל - עדיין לא מצאת.</div>
+          <span class="moment-num">03</span>
+          <div class="moment-quote">רגע, איפה שמרתי את זה?</div>
+          <div class="moment-title">עוד פעם לחפש</div>
+          <div class="moment-scenario">את יודעת שזה קיים. רק לא זוכרת איפה.</div>
           <div class="moment-arrow">במקום זה</div>
-          <div class="moment-result">כל שיחה, כל פנייה, כל מה שהוסכם - במקום אחד. שתי שניות וזה שם.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="section-label reveal">מאחורי הקלעים</div>
-      <h2 class="reveal delay-1">איפה בדרך כלל נוצר השקט</h2>
-      <p class="section-sub reveal delay-2">
-        כל עסק מגיע עם אתגרים אחרים. אלו התחומים שבהם אנחנו בדרך כלל יוצרים הכי הרבה שקט.
-      </p>
-      <div class="services-grid">
-        <div class="service-card reveal delay-1">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#F26B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
-            </svg>
-          </div>
-          <h3>CRM - כל לקוח, כל פנייה, במקום אחד</h3>
-          <p>מסלול ברור מהפנייה הראשונה ועד הסגירה. את רואה הכל במבט אחד, בלי לחפש, בלי לזכור, בלי גיליונות.</p>
-          <span class="service-tag">במקום אחד</span>
-        </div>
-        <div class="service-card reveal delay-2">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#F26B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-            </svg>
-          </div>
-          <h3>תגובה מהירה בלי להיות זמינה תמיד</h3>
-          <p>פניות חדשות מטופלות מיד - אוסף פרטים, מאשר, שולח. הלקוח מרגיש שראו אותו. את לא חייבת להיות ליד הטלפון.</p>
-          <span class="service-tag">תגובה אוטומטית</span>
-        </div>
-        <div class="service-card reveal delay-3">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#F26B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/>
-            </svg>
-          </div>
-          <h3>משימות חוזרות שרצות לבד</h3>
-          <p>תיאום לוחות זמנים, תזכורות, דוחות שבועיים, מסמכים שנשלחים - כל מה שאת עושה שוב ושוב, קורה לבד.</p>
-          <span class="service-tag">תהליכים אוטומטיים</span>
+          <div class="moment-result">כל פנייה, מסמך ושיחה במקום אחד. <strong>שניות בודדות ואת בפנים.</strong></div>
         </div>
       </div>
     </div>
@@ -1773,21 +2310,21 @@
           <div class="cs-who">ספק ציוד B2B · עסק קטן בצמיחה</div>
           <p class="cs-story">
             "המלאי מנוהל באקסל. כשלקוח רוצה מוצר שאזל - מגלים את זה רק בזמן האספקה.
-            וfollow-up ללקוחות שלא קנו? זה לגמרי תלוי בזיכרון."
+            ומעקב על לקוחות שלא קנו? זה לגמרי תלוי בזיכרון."
           </p>
           <p class="cs-built">
             <strong>מה נבנה:</strong> טופס קליטת הזמנה מהיר בנייד (10 שניות) שמוריד מהמלאי ב-Airtable ושולח אישור אוטומטי ללקוח -
-            התראה לפני שמוצר נגמר - הצעת מחיר אוטומטית לפנייה חדשה - ו-follow-up אוטומטי לכל לקוח שלא רכש 30 יום.
+            התראה לפני שמוצר נגמר - הצעת מחיר אוטומטית לפנייה חדשה - ומעקב על לקוחות שלא קנו.
             הכל עובד מאחורי הקלעים, בלי צורך במערכת מורכבת או פיתוח יקר.
           </p>
         </div>
         <div class="cs-numbers">
           <div class="cs-num-item">
-            <div class="cs-num-val">10 שנ'</div>
+            <div class="cs-num-val" data-count="10" data-suffix=" שנ'">10 שנ'</div>
             <div class="cs-num-label">קליטת הזמנה מהיד לניד - במקום 5 דקות ידניות</div>
           </div>
           <div class="cs-num-item">
-            <div class="cs-num-val">15-20 דק'</div>
+            <div class="cs-num-val" data-count="20" data-prefix="15-" data-suffix=" דק'">15-20 דק'</div>
             <div class="cs-num-label">חסכון על כל פנייה חדשה - הצעת מחיר יוצאת לבד</div>
           </div>
           <div class="cs-num-item">
@@ -1874,13 +2411,13 @@
 
       <!-- בועות מחשבה -->
       <div class="bubbles-wrap" id="dreamBubbles">
-        <span class="thought-bubble"><span class="bubble-icon">💭</span>לצאת בזמן מהעבודה</span>
-        <span class="thought-bubble"><span class="bubble-icon">💭</span>להיות יותר עם המשפחה</span>
-        <span class="thought-bubble"><span class="bubble-icon">💭</span>לסגור מחשב בלי רגשות אשמה</span>
-        <span class="thought-bubble"><span class="bubble-icon">💭</span>לזכור פחות דברים בראש</span>
-        <span class="thought-bubble"><span class="bubble-icon">💭</span>לקחת יום חופש בלי לחץ</span>
-        <span class="thought-bubble"><span class="bubble-icon">💭</span>לילה בלי "רגע, שכחתי משהו"</span>
-        <span class="thought-bubble"><span class="bubble-icon">💭</span>להתמקד בלקוחות במקום במעקב</span>
+        <span class="dream-bubble"><span class="bubble-icon">💭</span>לצאת בזמן מהעבודה</span>
+        <span class="dream-bubble"><span class="bubble-icon">💭</span>להיות יותר עם המשפחה</span>
+        <span class="dream-bubble"><span class="bubble-icon">💭</span>לסגור מחשב בלי רגשות אשמה</span>
+        <span class="dream-bubble"><span class="bubble-icon">💭</span>לזכור פחות דברים בראש</span>
+        <span class="dream-bubble"><span class="bubble-icon">💭</span>לקחת יום חופש בלי לחץ</span>
+        <span class="dream-bubble"><span class="bubble-icon">💭</span>לילה בלי "רגע, שכחתי משהו"</span>
+        <span class="dream-bubble"><span class="bubble-icon">💭</span>להתמקד בלקוחות במקום במעקב</span>
       </div>
 
       <p class="dream-closing reveal">
@@ -1888,7 +2425,7 @@
         הם מחפשים יותר מקום לדברים שחשובים להם באמת.
       </p>
       <div class="dream-brand-line reveal delay-1">
-        זה <span class="fl">flow</span><span class="li">li</span>.
+        <span class="fl">flow</span><span class="li">li</span>
       </div>
     </div>
   </section>
@@ -1931,7 +2468,9 @@
           <div class="section-label">מי מאחורי flowli</div>
           <h2>היי, אני הדס.</h2>
           <p class="about-quote">
-            "אוטומציה טובה לא נמדדת בכמות הטכנולוגיה שיש בה. היא נמדדת בכמה שקט היא יוצרת."
+            אוטומציה טובה לא נמדדת בכמות הטכנולוגיה שיש בה.<br>
+            היא נמדדת בכמה שקט היא יוצרת.
+            <span class="about-quote-author">— הדס, מייסדת flowli</span>
           </p>
           <p class="about-body">
             אחרי שנים בעולם הטכנולוגיה והתפעול, הבנתי שהבעיה ברוב העסקים היא לא חוסר בכלים.
@@ -2017,6 +2556,13 @@
           </button>
           <div class="faq-a">לא בונה לפי תבנית. מתחילה מהעסק שלך ומסיימת עם תיעוד שמישהו אחר יכול להמשיך.</div>
         </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>זה נועד להחליף עובדים?</span>
+            <span class="faq-arrow"><svg viewBox="0 0 12 12" width="12" fill="none" stroke="#F26B1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6,8 10,4"/></svg></span>
+          </button>
+          <div class="faq-a">לא. זה נועד להחליף משימות, לא אנשים. אוטומציה מטפלת בתיאומים, מעקבים, תזכורות והעברת מידע. האנשים בעסק נשארים פנויים לעבודה מקצועית, לקבלת החלטות ולמתן שירות טוב יותר ללקוחות.</div>
+        </div>
 
       </div>
     </div>
@@ -2031,15 +2577,15 @@
         <span class="accent">מה ייצור הכי הרבה שקט בעסק שלך.</span>
       </h2>
       <p class="reveal delay-2">שאלון קצר של 3 דקות - ותקבלי מפת עומסים אישית ללא עלות.</p>
-      <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" class="btn-cta-final reveal delay-3" target="_blank">
-        קבלי מפת עומסים אישית ב-3 דקות &larr;
-      </a>
-      <div class="cta-alts reveal delay-4">
-        <a href="mailto:hadas@flowli.co.il" class="cta-alt-link">לקבוע שיחה קצרה</a>
-        <span class="cta-alt-sep">·</span>
-        <button class="cta-alt-link" onclick="openLeadPopup()">להשאיר פרטים</button>
+      <div class="cta-final-actions reveal delay-3">
+        <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" class="btn-cta-final" target="_blank">
+          קבלי מפת עומסים אישית ב-3 דקות &larr;
+        </a>
+        <button type="button" class="btn-cta-secondary" onclick="openLeadPopup()">
+          רוצה לדבר? השאירי פרטים
+        </button>
       </div>
-      <p class="cta-note reveal delay-4">בלי התחייבות. בלי שיחת מכירה. רק מפת עומסים אמיתית.</p>
+      <p class="cta-note reveal delay-4">בלי התחייבות. רק צעד ראשון לכיוון פחות עומס ויותר שקט.</p>
     </div>
   </section>
 
@@ -2047,18 +2593,37 @@
   <div class="lead-overlay" id="leadOverlay" onclick="closeLeadPopup(event)">
     <div class="lead-popup">
       <button class="lead-popup-close" onclick="closeLeadPopupDirect()">&#x2715;</button>
-      <div id="leadForm">
-        <h3>נשאיר פרטים?</h3>
-        <p>אחזור אליך תוך יום עסקים.</p>
-        <input type="text" class="lead-field" id="leadName" placeholder="שם מלא *" required>
-        <input type="tel" class="lead-field" id="leadPhone" placeholder="טלפון *" required>
-        <input type="email" class="lead-field" id="leadEmail" placeholder="מייל *" required>
-        <button class="lead-submit" id="leadSubmit" onclick="submitLead()">שלחי &larr;</button>
+      <div class="lead-popup-head">
+        <div class="lead-popup-wave" aria-hidden="true">
+          <svg viewBox="0 0 80 44" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9 Q23 0 40 9 Q57 18 74 9" stroke="rgba(255,255,255,.45)" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M6 22 Q23 13 40 22 Q57 31 74 22" stroke="rgba(255,255,255,.7)" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M6 35 Q23 26 40 35 Q57 44 74 35" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>רוצה לדבר? השאירי פרטים</h3>
+        <p>אחזור אלייך תוך יום עסקים אחד - בלי שיחת מכירה, רק להבין איך אפשר לעזור.</p>
       </div>
-      <div class="lead-success" id="leadSuccess">
-        <div class="lead-success-icon">&#x2705;</div>
-        <h4>קיבלתי!</h4>
-        <p>אחזור אליך בהקדם.</p>
+      <div class="lead-popup-body">
+        <div id="leadForm">
+          <label class="lead-label" for="leadName">שם מלא</label>
+          <input type="text" class="lead-field" id="leadName" placeholder="איך לקרוא לך?" required>
+          <label class="lead-label" for="leadPhone">טלפון</label>
+          <input type="tel" class="lead-field" id="leadPhone" placeholder="050-0000000" required>
+          <label class="lead-label" for="leadEmail">מייל</label>
+          <input type="email" class="lead-field" id="leadEmail" placeholder="name@email.com" required>
+          <label class="lead-consent">
+            <input type="checkbox" id="leadConsent" onchange="document.getElementById('leadSubmit').disabled=!this.checked">
+            <span>אני מאשר.ת קבלת תכנים מקצועיים ועדכונים מ-Flowli במייל ומסכימ.ה ל<a href="#" onclick="event.preventDefault();openPrivacyModal()" class="lead-consent-link">מדיניות הפרטיות</a></span>
+          </label>
+          <button class="lead-submit" id="leadSubmit" onclick="submitLead()" disabled>שלחי פרטים &larr;</button>
+          <p class="lead-privacy">&#128274; הפרטים שלך נשמרים בצורה מאובטחת. ניתן להסיר את עצמך מהדיוור בכל עת.</p>
+        </div>
+        <div class="lead-success" id="leadSuccess">
+          <div class="lead-success-icon">&#x2705;</div>
+          <h4>קיבלתי!</h4>
+          <p>אחזור אלייך בהקדם.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -2076,10 +2641,17 @@
       </a>
       <span>&#169; 2026 flowli &middot; כל הזכויות שמורות</span>
       <a href="mailto:hadas@flowli.co.il" style="color:rgba(255,255,255,.3);text-decoration:none;">hadas@flowli.co.il</a>
+      <div style="display:flex;align-items:center;gap:6px">
+        <button class="a11y-link" onclick="document.getElementById('privacyOverlay').classList.add('open')">מדיניות פרטיות</button>
+        <span style="color:rgba(255,255,255,.2)">|</span>
+        <button class="a11y-link" onclick="document.getElementById('a11yOverlay').classList.add('open')">הצהרת נגישות</button>
+        <span style="color:rgba(255,255,255,.2)">|</span>
+        <button class="a11y-link" onclick="document.getElementById('tosOverlay').classList.add('open')">תנאי שימוש</button>
+      </div>
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ─── REVEAL ON SCROLL ───
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -2150,19 +2722,103 @@
       const btn = document.getElementById('leadSubmit');
       btn.disabled = true; btn.textContent = 'שולחת...';
       try {
-        await fetch('https://whuuevjoqitwslnykvgd.supabase.co/rest/v1/leads', {
+        await fetch('https://whuuevjoqitwslnykvgd.supabase.co/rest/v1/leads_website', {
           method: 'POST',
           headers: {
             'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndodXVldmpvcWl0d3NsbnlrdmdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMTk3NDQsImV4cCI6MjA5NDY5NTc0NH0.r_lxvPFY275H7ODxYGHs0-NvqfQd8_e3fKHYy4sgq34',
             'Content-Type': 'application/json',
             'Prefer': 'return=minimal'
           },
-          body: JSON.stringify({ name, phone, email: email || null, consent: true, source: 'website' })
+          body: JSON.stringify({ name, phone, email: email || null, consent: true, source: 'website_flowli' })
         });
       } catch(e) { console.warn('supabase error', e); }
       document.getElementById('leadForm').style.display = 'none';
       document.getElementById('leadSuccess').style.display = 'block';
       setTimeout(closeLeadPopupDirect, 2800);
+    }
+
+    // ─── 1. SCROLL PROGRESS BAR ───
+    const progressFill = document.getElementById('scrollProgressFill');
+    function updateScrollProgress() {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      progressFill.style.width = scrolled + '%';
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    updateScrollProgress();
+
+    // ─── 2 + 3. FLOATING WHATSAPP + STICKY CTA ───
+    const floatWa = document.getElementById('floatWa');
+    const stickyCta = document.getElementById('stickyCta');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      const heroH = window.innerHeight * 0.7;
+      const showThreshold = h.scrollTop > heroH;
+      if (showThreshold) {
+        floatWa.classList.add('visible');
+        stickyCta.classList.add('visible');
+      } else {
+        floatWa.classList.remove('visible');
+        stickyCta.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    // ─── 4. ANIMATED COUNTERS ───
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.count, 10);
+      if (isNaN(target)) return;
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const val = Math.round(target * eased);
+        el.textContent = prefix + val + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          counterObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+  </script>
+  <script src="https://negishot.co.il/cdn/widget.php?code=NGS_BB3A4C90A679"></script>
+  <script>
+    // Cookie banner
+    if (!localStorage.getItem('flowli_cookies')) {
+      setTimeout(() => document.getElementById('flowli-cookie-bar').classList.add('show'), 1200);
+    }
+    window.flowliAcceptCookies = function() {
+      localStorage.setItem('flowli_cookies', 'accepted');
+      document.getElementById('flowli-cookie-bar').classList.remove('show');
+    };
+    window.flowliDeclineCookies = function() {
+      localStorage.setItem('flowli_cookies', 'declined');
+      document.getElementById('flowli-cookie-bar').classList.remove('show');
+    };
+    // Accessibility modal close on overlay click
+    function closeA11y(e) {
+      if (e.target === document.getElementById('a11yOverlay')) {
+        document.getElementById('a11yOverlay').classList.remove('open');
+      }
+    }
+    // Privacy modal
+    function openPrivacyModal() {
+      document.getElementById('privacyOverlay').classList.add('open');
+    }
+    function closePrivacy(e) {
+      if (e.target === document.getElementById('privacyOverlay')) {
+        document.getElementById('privacyOverlay').classList.remove('open');
+      }
     }
   </script>
 </body>
