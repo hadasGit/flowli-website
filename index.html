@@ -1889,7 +1889,8 @@
     .float-wa {
       position: fixed;
       bottom: 104px;
-      right: 24px;
+      left: 24px;
+      right: auto;
       width: 56px; height: 56px;
       background: #25D366;
       border-radius: 50%;
@@ -1912,16 +1913,6 @@
       transform: scale(1.05) translateY(-2px);
     }
     .float-wa svg { width: 28px; height: 28px; fill: #fff; }
-    .float-wa::before {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      background: #25D366;
-      opacity: .4;
-      animation: wa-pulse 2s ease-out infinite;
-      z-index: -1;
-    }
     @keyframes wa-pulse {
       0% { transform: scale(1); opacity: .5; }
       100% { transform: scale(1.6); opacity: 0; }
@@ -1954,7 +1945,7 @@
     }
     @media (max-width: 768px) {
       .sticky-cta { display: none; }
-      .float-wa { bottom: 104px; right: 16px; left: auto; width: 48px; height: 48px; }
+      .float-wa { bottom: 104px; left: 16px; right: auto; width: 48px; height: 48px; }
       .float-wa svg { width: 24px; height: 24px; }
     }
 
