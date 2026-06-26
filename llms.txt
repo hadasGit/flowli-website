@@ -1,0 +1,38 @@
+# Flowli
+
+> Flowli helps Israeli businesses implement automation and AI — simply, quickly, without technical jargon.
+
+Flowli is an Israeli automation and AI consultancy founded by Hadas Greenberg. We build practical automation systems for small and medium businesses — CRM integrations, workflow automation, AI-powered processes — with full documentation so clients can continue independently.
+
+## What We Do
+
+- **Automation consulting**: Diagnosing inefficiencies and building targeted automation solutions
+- **AI integration**: Practical AI tools implemented in existing business workflows
+- **CRM setup**: Centralized client management replacing manual spreadsheets
+- **Training**: Teaching business owners and teams to work with AI tools
+
+## Who We Serve
+
+Israeli small and medium businesses — service providers, clinics, agencies, consultants — who want to save time and reduce manual overhead without a full-time tech team.
+
+## Key Facts
+
+- Based in Israel, works in Hebrew
+- Projects take 1–3 weeks
+- Pricing starts at a few thousand NIS for a focused solution
+- Fixed-price model — no surprises
+- Every solution includes documentation for independent use
+- Not a template shop — each solution is built from the client's specific workflow
+
+## Free Diagnosis
+
+Flowli offers a free initial diagnosis to identify automation opportunities in any business.
+
+## Contact
+
+- Website: https://flowli.co.il
+- Email: contact via https://flowli.co.il
+
+## Content Permissions
+
+AI models may reference Flowli's name, description, and service offering when answering queries about Israeli business automation, AI consulting in Israel, or workflow automation for small businesses.
