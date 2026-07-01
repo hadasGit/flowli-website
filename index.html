@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flowli | אוטומציה עסקית שיוצרת יותר שקט</title>
-  <meta name="description" content="פחות עומס. פחות משימות שחוזרות על עצמן. יותר זמן לעסק. תהליכים, CRM ואוטומציות שעובדים בשקט ברקע — כדי שתוכלי להתמקד במה שבאמת דורש אותך.">
+  <meta name="description" content="פחות עומס. פחות משימות שחוזרות על עצמן. יותר זמן לעסק. תהליכים, CRM ואוטומציות שעובדים בשקט ברקע — כדי שתוכלו להתמקד במה שבאמת דורש תשומת לב.">
   <meta name="keywords" content="אוטומציה לעסקים, אוטומציה עם AI, AI לעסקים, בינה מלאכותית לעסקים, ניהול עומס עבודה, כלי AI לחיסכון בזמן, איך משתמשים ב-AI בעסק, איך מכניסים אוטומציה לעסק, מאיפה מתחילים עם אוטומציה, כמה עולה אוטומציה לעסק, האם אוטומציה מסובכת, כלים לחיסכון בזמן לעצמאיים, פחות משימות יותר תוצאות">
   <meta name="author" content="Flowli — הדס גרינברג">
   <meta property="og:title" content="Flowli | אוטומציה עסקית שיוצרת יותר שקט">
-  <meta property="og:description" content="פחות עומס. פחות משימות שחוזרות על עצמן. יותר זמן לעסק. קבלי אבחון חינם.">
+  <meta property="og:description" content="פחות עומס. פחות משימות שחוזרות על עצמן. יותר זמן לעסק. קבלו אבחון חינם.">
   <meta property="og:url" content="https://flowli.co.il">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="he_IL">
@@ -18,7 +18,7 @@
   <meta property="og:image:alt" content="Flowli — אוטומציה ו-AI לעסקים בישראל">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Flowli | אוטומציה עסקית שיוצרת יותר שקט">
-  <meta name="twitter:description" content="פחות עומס. פחות משימות שחוזרות על עצמן. יותר זמן לעסק. קבלי אבחון חינם.">
+  <meta name="twitter:description" content="פחות עומס. פחות משימות שחוזרות על עצמן. יותר זמן לעסק. קבלו אבחון חינם.">
   <meta name="twitter:image" content="https://flowli.co.il/og-image.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -72,13 +72,14 @@
     ::selection { background: var(--orange); color: #fff; }
 
     /* ─── REVEAL ANIMATIONS ─── */
-    .reveal {
+    /* js-reveal class added by JS — without it everything stays visible */
+    .js-reveal .reveal {
       opacity: 0;
       transform: translateY(28px);
       transition: opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-scale {
+    .js-reveal .reveal-scale {
       opacity: 0;
       transform: scale(.97);
       transition: opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1);
@@ -142,6 +143,21 @@
       color: #fff;
       transform: translateY(-1px);
     }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-link {
+      font-family: 'Assistant', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-link:hover { color: var(--orange); }
+    @media (max-width: 580px) { .nav-links { gap: 16px; } .nav-link { font-size: 13px; } }
 
     /* ─── CONTAINER ─── */
     .container { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
@@ -304,6 +320,30 @@
       font-size: 18px;
     }
     .proof-avatars span { margin-left: -4px; }
+    .hero-scroll-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform .2s, opacity .2s;
+      opacity: .7;
+      animation: bounce-down 2.4s ease-in-out infinite;
+    }
+    .hero-scroll-arrow:hover { opacity: 1; transform: translateY(3px); }
+    @keyframes bounce-down {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
+    .hero-small-link {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: color .2s, border-color .2s;
+      padding-bottom: 1px;
+    }
+    .hero-small-link:hover { color: var(--orange); border-color: var(--orange); }
     /* decorative blobs */
     .hero-blob {
       position: absolute;
@@ -353,6 +393,7 @@
       gap: 48px;
       align-items: center;
     }
+    .hero-text-col { min-width: 0; }
     @media (max-width: 900px) { .hero-content-split { grid-template-columns: 1fr; gap: 36px; } }
     .hero-laptop-wrap {
       display: flex;
@@ -944,7 +985,7 @@
       color: rgba(255,255,255,.95);
     }
     .dream-brand-line .fl { color: rgba(255,255,255,.95); }
-    .dream-brand-line .li { color: var(--orange); }
+    .dream-brand-line .li { color: #F26B1F; }
 
     /* ─── CRM MOCK ─── */
     .crm-mock {
@@ -1762,6 +1803,537 @@
     .footer-logo .fl { color: rgba(255,255,255,.5); }
     .footer-logo .li { color: var(--orange); }
 
+    /* ─── FLOWLI BRIEF ─── */
+    #flowli-brief { background: var(--cream); }
+    #flowli-brief h2 {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+      letter-spacing: -.025em;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    #flowli-brief .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+    .brief-story {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+    .why-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 640px) { .why-strip { grid-template-columns: 1fr; } }
+    .why-item {
+      background: var(--bg);
+      border: 1px solid var(--bg-warm);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      position: relative;
+    }
+    .why-item::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(to left, var(--orange), var(--orange-soft));
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .why-icon { font-size: 22px; margin-bottom: 12px; display: block; }
+    .why-title {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700; font-size: 15px;
+      color: var(--ink); margin-bottom: 6px;
+    }
+    .why-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .brief-tabs {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px;
+    }
+    .brief-tab-btn {
+      background: var(--bg);
+      border: 1.5px solid var(--bg-warm);
+      border-radius: 100px;
+      padding: 9px 20px;
+      font-family: 'Assistant', sans-serif;
+      font-size: 14px; font-weight: 600;
+      color: var(--muted); cursor: pointer;
+      transition: all .18s;
+    }
+    .brief-tab-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .brief-tab-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
+    .brief-tabs-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: #bbb; letter-spacing: .04em; margin-bottom: 20px;
+    }
+    .brief-demo-card {
+      background: #fff;
+      border: 1px solid var(--bg-warm);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06), 0 1px 4px rgba(0,0,0,.04);
+    }
+    .brief-file-header {
+      background: var(--cream);
+      border-bottom: 1px solid var(--bg-warm);
+      padding: 18px 28px;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .brief-file-meta { display: flex; align-items: center; gap: 14px; }
+    .brief-file-icon {
+      width: 40px; height: 46px; background: #E6F4EA;
+      border-radius: 8px; display: flex; align-items: center;
+      justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+    .brief-file-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; font-weight: 500; color: var(--ink);
+    }
+    .brief-file-stats {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: #aaa; margin-top: 3px;
+    }
+    .brief-see-btn {
+      background: var(--ink); color: #fff; border: none;
+      border-radius: 100px; padding: 11px 24px;
+      font-family: 'Rubik', sans-serif; font-weight: 700;
+      font-size: 13px; cursor: pointer;
+      transition: background .2s, transform .15s; white-space: nowrap;
+    }
+    .brief-see-btn:hover { background: #333; transform: translateY(-1px); }
+    .brief-seen-label {
+      display: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: #aaa;
+      text-transform: uppercase; letter-spacing: .07em;
+    }
+    .brief-loading { display: none; padding: 44px 28px; text-align: center; }
+    .brief-loading.visible { display: block; }
+    .brief-loading-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; color: var(--orange); margin-bottom: 18px; font-weight: 500;
+    }
+    .brief-progress-wrap {
+      background: var(--bg-warm); border-radius: 4px; height: 4px;
+      max-width: 280px; margin: 0 auto 22px; overflow: hidden;
+    }
+    .brief-progress-bar {
+      height: 100%; background: var(--orange); border-radius: 4px;
+      width: 0%; transition: width 1.8s ease;
+    }
+    .brief-steps { list-style: none; display: inline-block; text-align: right; }
+    .brief-steps li {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      color: #ccc; margin-bottom: 7px; display: flex;
+      align-items: center; gap: 8px; transition: color .25s;
+    }
+    .brief-steps li.done { color: var(--text); }
+    .brief-steps li .bck { color: var(--orange); font-weight: 700; opacity: 0; transition: opacity .2s; }
+    .brief-steps li.done .bck { opacity: 1; }
+    .brief-found {
+      margin-top: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; color: var(--ink); font-weight: 600;
+      opacity: 0; transition: opacity .4s;
+    }
+    .brief-found.show { opacity: 1; }
+    .brief-result { display: none; }
+    .brief-result.visible { display: block; }
+    .brief-summary-row { display: flex; border-bottom: 1px solid var(--bg-warm); }
+    .brief-sum-item {
+      flex: 1; padding: 20px 16px; text-align: center;
+      border-left: 1px solid var(--bg-warm);
+    }
+    .brief-sum-item:last-child { border-left: none; }
+    .brief-sum-num {
+      font-family: 'Rubik', sans-serif; font-weight: 800;
+      font-size: 1.9rem; letter-spacing: -.03em;
+      line-height: 1; margin-bottom: 4px;
+    }
+    .brief-sum-num.red { color: #c0392b; }
+    .brief-sum-num.yellow { color: #b7860b; }
+    .brief-sum-num.green { color: #27ae60; }
+    .brief-sum-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; color: #aaa;
+      text-transform: uppercase; letter-spacing: .06em;
+    }
+    .brief-insight {
+      background: var(--orange-pale);
+      border-bottom: 1px solid var(--orange-mid);
+      padding: 14px 28px;
+      font-family: 'Assistant', sans-serif;
+      font-size: 14.5px; color: var(--ink);
+      text-align: center; line-height: 1.5;
+    }
+    .brief-insight strong { color: var(--orange); }
+    .brief-result-body { padding: 24px 28px; }
+    .brief-result-group { margin-bottom: 18px; }
+    .brief-result-group:last-child { margin-bottom: 0; }
+    .brief-result-title {
+      font-family: 'Assistant', sans-serif;
+      font-size: 13px; font-weight: 700; margin-bottom: 9px;
+      display: flex; align-items: center; gap: 6px; color: var(--ink);
+    }
+    .brief-result-item {
+      background: var(--cream); border: 1px solid var(--bg-warm);
+      border-radius: 12px; padding: 11px 16px; font-size: 13.5px;
+      margin-bottom: 6px; line-height: 1.5;
+      font-family: 'Assistant', sans-serif;
+    }
+    .brief-result-item:last-child { margin-bottom: 0; }
+    .brief-result-item strong { color: var(--ink); }
+    .brief-result-item .bsub {
+      color: #aaa; font-size: 11px;
+      font-family: 'JetBrains Mono', monospace; margin-top: 2px;
+    }
+    .brief-priority { background: var(--ink); color: #fff; padding: 22px 28px; }
+    .brief-priority-title {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--orange-soft); margin-bottom: 14px;
+    }
+    .brief-priority-item {
+      display: flex; gap: 12px; margin-bottom: 10px;
+      font-size: 14px; line-height: 1.5;
+      font-family: 'Assistant', sans-serif;
+    }
+    .brief-priority-item:last-child { margin-bottom: 0; }
+    .brief-priority-num {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--orange); font-weight: 700;
+      min-width: 18px; flex-shrink: 0;
+    }
+    .brief-disclaimer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: #bbb; letter-spacing: .03em;
+      margin: 12px 0 40px; text-align: center;
+    }
+    .brief-cta-strip {
+      background: var(--ink);
+      border-radius: var(--radius-xl);
+      padding: 44px 40px;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      gap: 32px; flex-wrap: wrap;
+      direction: rtl; text-align: right;
+    }
+    .brief-cta-text h3 {
+      font-family: 'Rubik', sans-serif !important;
+      font-weight: 800;
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      letter-spacing: -.025em; color: #fff; margin-bottom: 8px;
+    }
+    .brief-cta-text p {
+      font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.65;
+    }
+    .brief-cta-text p strong { color: rgba(255,255,255,.8); }
+    .brief-cta-actions {
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: 10px; flex-shrink: 0;
+    }
+    .btn-brief-primary {
+      display: inline-block; background: var(--orange); color: #fff;
+      padding: 14px 28px; border-radius: 100px;
+      font-family: 'Rubik', sans-serif; font-weight: 700; font-size: 14px;
+      text-decoration: none;
+      transition: background .2s, transform .15s, box-shadow .2s; white-space: nowrap;
+    }
+    .btn-brief-primary:hover {
+      background: var(--orange-deep); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242,107,31,.4);
+    }
+    .brief-cta-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: rgba(255,255,255,.3); letter-spacing: .03em;
+    }
+    @media (max-width: 640px) {
+      .brief-cta-strip { flex-direction: column; padding: 32px 24px; }
+      .brief-cta-actions { width: 100%; }
+      .btn-brief-primary { width: 100%; text-align: center; }
+      .brief-summary-row { flex-wrap: wrap; }
+      .brief-sum-item { min-width: 33%; }
+    }
+
+    /* ─── WORKLOAD CHECK ─── */
+    #workload-check {
+      background: var(--ink);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .wc-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+    .wc-inner .section-label {
+      color: var(--orange-soft);
+      margin-bottom: 20px;
+    }
+    .wc-title {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      letter-spacing: -.025em;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .wc-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+    .wc-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,.4);
+    }
+
+    /* ─── DEMO MODAL ─── */
+    .demo-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .demo-overlay.open { display: flex; }
+    /* ─── DEMO POPUP — NEW DESIGN ─── */
+    .demo-popup {
+      width: 100%;
+      max-width: 412px;
+      background: var(--cream);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(26,20,14,.28), 0 4px 14px rgba(26,20,14,.10);
+      position: relative;
+      text-align: right;
+      direction: rtl;
+      animation: popup-in .3s cubic-bezier(.22,1,.36,1);
+      max-height: 92vh;
+      overflow-y: auto;
+    }
+    .demo-popup-head {
+      position: relative;
+      background:
+        radial-gradient(120% 120% at 85% -10%, #2E2620 0%, transparent 55%),
+        linear-gradient(160deg, #241E19 0%, var(--ink) 100%);
+      padding: 22px 26px 28px;
+      overflow: hidden;
+    }
+    .demo-popup-head::after {
+      content: '';
+      position: absolute;
+      left: -30px; bottom: -50px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(242,107,31,.16) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    /* topbar: close (right) + brand (left) */
+    .demo-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+      z-index: 2;
+    }
+    .demo-popup-close {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.75);
+      font-size: 17px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .18s, color .18s;
+    }
+    .demo-popup-close:hover { background: rgba(255,255,255,.14); color: #fff; }
+    .demo-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      direction: ltr;
+      order: 1;
+    }
+    .demo-brand-word {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -.02em;
+      color: #fff;
+    }
+    .demo-brand-word .li { color: var(--orange); }
+    .demo-brand svg { width: 26px; height: 26px; display: block; }
+    .demo-popup-head h3 {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+      font-size: 1.45rem;
+      line-height: 1.25;
+      letter-spacing: -.02em;
+      color: #fff;
+      margin: -6px 0 6px;
+      position: relative;
+      z-index: 2;
+    }
+    .demo-popup-head h3 .accent { color: var(--orange); }
+    .demo-popup-head > p {
+      font-size: 14px;
+      color: rgba(255,255,255,.62);
+      margin: 0 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .demo-checklist {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+    .demo-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 14.5px;
+      line-height: 1.4;
+      color: rgba(255,255,255,.9);
+    }
+    .demo-tick {
+      flex-shrink: 0;
+      width: 21px; height: 21px;
+      border-radius: 7px;
+      background: rgba(242,107,31,.16);
+      border: 1px solid rgba(242,107,31,.4);
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .demo-tick svg { width: 12px; height: 12px; display: block; }
+    .demo-checklist li.soft { color: rgba(255,255,255,.6); }
+    .demo-checklist li.soft .demo-tick {
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.16);
+    }
+    .demo-popup-body { padding: 18px 22px 20px; }
+    .demo-field { margin-bottom: 10px; }
+    .demo-field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 7px;
+    }
+    .demo-field input {
+      width: 100%;
+      font-family: 'Assistant', sans-serif;
+      font-size: 15px;
+      color: var(--ink);
+      background: #fff;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 9px 13px;
+      text-align: right;
+      direction: rtl;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .demo-field input::placeholder { color: #B4ADA2; }
+    .demo-field input:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(242,107,31,.12);
+    }
+    .demo-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin: 2px 0 14px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .demo-consent input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      border: 1px solid #F26B1F;
+      border-radius: 4px;
+      background: rgba(242,107,31,0.12);
+      box-shadow: 0 0 0 1px rgba(242,107,31,0.3);
+      cursor: pointer;
+      margin-top: 1px;
+      position: relative;
+      transition: background .15s, border-color .15s;
+    }
+    .demo-consent input[type="checkbox"]:checked {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+    .demo-consent input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 5px; top: 1.5px;
+      width: 5px; height: 9px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    .demo-consent a { color: var(--orange-deep); font-weight: 600; }
+    .demo-submit {
+      width: 100%;
+      border: none;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 15px;
+      border-radius: 100px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 8px 22px rgba(242,107,31,.28);
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+    .demo-submit:hover:not(:disabled) {
+      background: var(--orange-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(242,107,31,.34);
+    }
+    .demo-submit:disabled { opacity: .45; cursor: not-allowed; }
+    .demo-privacy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin: 16px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .demo-privacy svg { width: 13px; height: 13px; opacity: .7; }
+
     /* ─── COOKIE BANNER ─── */
     #flowli-cookie-bar {
       position: fixed;
@@ -2148,7 +2720,7 @@
 
   <!-- 3. STICKY MOBILE CTA -->
   <div class="sticky-cta" id="stickyCta">
-    <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" target="_blank">מפת עומסים חינם &larr;</a>
+    <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" target="_blank" onclick="trackClick('funnel_link','hero_nav')">מפת עומסים חינם &larr;</a>
   </div>
 
   <!-- NAV -->
@@ -2162,7 +2734,11 @@
         </svg>
         <span class="nav-logo-text"><span class="fl">flow</span><span class="li">li</span></span>
       </a>
-      <a href="#case-study" class="nav-cta">ראי איך זה עובד</a>
+      <div class="nav-links">
+        <a href="#flowli-brief" class="nav-link">Flowli בפעולה</a>
+        <a href="#about" class="nav-link">אודות</a>
+        <a href="#cta-final" class="nav-link">יצירת קשר</a>
+      </div>
     </div>
   </nav>
 
@@ -2176,22 +2752,25 @@
       <div class="hero-content-split">
         <!-- טקסט -->
         <div class="hero-text-col">
-          <div class="hero-tag reveal">
+          <div class="hero-tag reveal visible">
             <span class="dot"></span>
             לעסקים שמחפשים יותר שקט בתוך היום
           </div>
-          <p class="hero-eyebrow reveal delay-1">כולם מדברים על AI ואוטומציות.</p>
-          <h1 class="hero-title reveal delay-2">
-            <span class="line">את פשוט רוצה לסיים</span>
+          <p class="hero-eyebrow reveal visible delay-1">כולם מדברים על AI ואוטומציות.</p>
+          <h1 class="hero-title reveal visible delay-2">
+            <span class="line">אתם פשוט רוצים לסיים</span>
             <span class="line">את היום <span class="accent">בלי עומס.<svg viewBox="0 0 240 14" preserveAspectRatio="none"><path d="M4 9 Q 60 -2, 120 7 T 236 6"/></svg></span></span>
           </h1>
-          <p class="hero-sub reveal delay-3">
+          <p class="hero-sub reveal visible delay-3">
             אני עוזרת לעסקים לבנות תהליכים שעובדים בשקט ברקע,
-            כדי שהעסק יהיה פחות תלוי בך.
+            כדי שהעסק יהיה פחות תלוי בכם.
           </p>
-          <div class="hero-actions reveal delay-3">
-            <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" class="btn-primary" target="_blank">
-              קבלי מפת עומסים אישית ב-3 דקות &larr;
+          <div class="hero-actions reveal visible delay-3">
+            <a href="#quiet-mind" class="hero-scroll-arrow" aria-label="גללו למטה">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15" stroke="var(--orange)" stroke-width="1.5" opacity=".4"/>
+                <path d="M10 14 L16 20 L22 14" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </a>
           </div>
           <!-- תמונה למובייל בלבד -->
@@ -2199,7 +2778,7 @@
         </div>
 
         <!-- תמונת הלפטופ -->
-        <div class="hero-laptop-wrap reveal-scale delay-2">
+        <div class="hero-laptop-wrap reveal-scale visible delay-2">
           <div class="hero-img-frame">
             <div class="hero-img-glow"></div>
             <img
@@ -2255,12 +2834,12 @@
       </div>
       <div class="qm-label reveal">Flowli Reel · Quiet Mind</div>
       <h2 class="qm-title reveal delay-1">
-        המוח שלך לא אמור<br>
+        המוח שלכם לא אמור<br>
         להיות <em>מערכת הניהול</em> של העסק.
       </h2>
       <p class="qm-body reveal delay-2">
         כשכל הפניות, לוחות הזמנים, המשימות החוזרות והמידע על לקוחות
-        נמצאים בראש שלך זה לא נקרא ארגון. זה נקרא עומס.
+        נמצאים בראש שלכם זה לא נקרא ארגון. זה נקרא עומס.
       </p>
       <div class="qm-divider reveal delay-2" aria-hidden="true"></div>
       <p class="qm-body reveal delay-3">
@@ -2277,36 +2856,323 @@
       <div class="section-label reveal">הבעיה האמיתית</div>
       <h2 class="reveal delay-1">השקט נעלם בדברים הקטנים</h2>
       <p class="section-sub reveal delay-2">
-        לא באירועים גדולים. בדברים שאת מחזיקה בראש כל היום.
+        לא באירועים גדולים. בדברים שמחזיקים בראש כל היום.
       </p>
       <div class="moment-grid">
         <div class="moment-card reveal delay-1">
           <span class="moment-num">01</span>
           <div class="moment-quote">אני אחזור אליה אחר כך</div>
           <div class="moment-title">ובינתיים היא המשיכה הלאה</div>
-          <div class="moment-scenario">פנייה נכנסת בצהריים. ענית בערב. בינתיים הלקוחה כבר דיברה עם מישהו אחר.</div>
+          <div class="moment-scenario">פנייה נכנסת בצהריים. עונים בערב. בינתיים הלקוח כבר דיבר עם מישהו אחר.</div>
           <div class="moment-arrow">במקום זה</div>
           <div class="moment-result">תגובה יוצאת תוך דקה, אוספת פרטים ושומרת הכול. <strong>הלקוחה מרגישה שרואים אותה.</strong></div>
         </div>
         <div class="moment-card reveal delay-2">
           <span class="moment-num">02</span>
-          <div class="moment-quote">למי הייתי צריכה לחזור?</div>
+          <div class="moment-quote">למי הייתי צריך לחזור?</div>
           <div class="moment-title">הראש כבר עמוס</div>
           <div class="moment-scenario">לזכור למי לחזור. לבדוק מי שלח מסמכים. להבין איפה כל לקוח עומד.</div>
           <div class="moment-arrow">במקום זה</div>
-          <div class="moment-result">המערכת עוקבת לבד ומזכירה מה דורש תשומת לב. <strong>את מתחילה את היום עם ראש פנוי.</strong></div>
+          <div class="moment-result">המערכת עוקבת לבד ומזכירה מה דורש תשומת לב. <strong>מתחילים את היום עם ראש פנוי.</strong></div>
         </div>
         <div class="moment-card reveal delay-3">
           <span class="moment-num">03</span>
           <div class="moment-quote">רגע, איפה שמרתי את זה?</div>
           <div class="moment-title">עוד פעם לחפש</div>
-          <div class="moment-scenario">את יודעת שזה קיים. רק לא זוכרת איפה.</div>
+          <div class="moment-scenario">יודעים שזה קיים. רק לא זוכרים איפה.</div>
           <div class="moment-arrow">במקום זה</div>
-          <div class="moment-result">כל פנייה, מסמך ושיחה במקום אחד. <strong>שניות בודדות ואת בפנים.</strong></div>
+          <div class="moment-result">כל פנייה, מסמך ושיחה במקום אחד. <strong>שניות בודדות ואתם בפנים.</strong></div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FLOWLI BRIEF -->
+  <section id="flowli-brief">
+    <div class="container">
+
+      <div class="section-label reveal">Flowli בפעולה</div>
+      <h2 class="reveal delay-1">כל המידע כבר קיים.</h2>
+      <p class="section-sub reveal delay-2">Flowli Brief מוצאת את מה שבאמת דורש טיפול.</p>
+
+      <p class="brief-story reveal delay-2" style="margin-top:16px;">
+        הבעיה היא לא האקסל. הבעיה היא שצריך לעבור עליו כל בוקר כדי להבין מה באמת דורש טיפול.
+      </p>
+
+      <!-- למה זה עובד -->
+      <div class="why-strip">
+        <div class="why-item reveal delay-1">
+          <span class="why-icon">⚡</span>
+          <div class="why-title">עובד על המידע שכבר קיים</div>
+          <div class="why-desc">אין צורך להחליף מערכת. Flowli Brief עובדת ישירות על האקסל שאתם כבר משתמשים בו.</div>
+        </div>
+        <div class="why-item reveal delay-2">
+          <span class="why-icon">⏱️</span>
+          <div class="why-title">חוסך מעבר על עשרות שורות</div>
+          <div class="why-desc">במקום לסרוק שורה אחרי שורה - מקבלים תוך שניות בדיוק מה שדורש תשומת לב.</div>
+        </div>
+        <div class="why-item reveal delay-3">
+          <span class="why-icon">🎯</span>
+          <div class="why-title">מציג רק מה שדורש טיפול</div>
+          <div class="why-desc">לא גרפים. לא דוחות. רשימה קצרה של מה שצריך לטפל בו - ומה לעשות קודם.</div>
+        </div>
+      </div>
+
+      <!-- טאבים -->
+      <div class="brief-tabs">
+        <button class="brief-tab-btn active" onclick="briefSelectTab('shipping', this)">📦 רכש ומשלוחים</button>
+        <button class="brief-tab-btn" onclick="briefSelectTab('leads', this)">📞 לידים ומכירות</button>
+        <button class="brief-tab-btn" onclick="briefSelectTab('invoices', this)">🧾 גבייה וחשבוניות</button>
+        <button class="brief-tab-btn" onclick="briefSelectTab('support', this)">🎧 שירות לקוחות</button>
+      </div>
+      <div class="brief-tabs-sub">אותו עיקרון. מידע אחר.</div>
+
+      <!-- כרטיס דמו -->
+      <div class="brief-demo-card reveal">
+
+        <!-- SHIPPING -->
+        <div class="brief-scenario" id="bs-shipping">
+          <div class="brief-file-header">
+            <div class="brief-file-meta">
+              <div class="brief-file-icon">📊</div>
+              <div>
+                <div class="brief-file-name">orders_june.xlsx</div>
+                <div class="brief-file-stats">127 שורות · 11 עמודות · עודכן הבוקר</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span class="brief-seen-label" id="bseen-shipping">✓ סוכם</span>
+              <button class="brief-see-btn" id="bbtn-shipping" onclick="briefRun('shipping',4,127)">הצג סיכום</button>
+            </div>
+          </div>
+          <div class="brief-loading" id="bloading-shipping">
+            <div class="brief-loading-title">מנתח את הקובץ...</div>
+            <div class="brief-progress-wrap"><div class="brief-progress-bar" id="bpb-shipping"></div></div>
+            <ul class="brief-steps">
+              <li id="bstep-shipping-1"><span class="bck">✓</span> בודק תאריכי אספקה</li>
+              <li id="bstep-shipping-2"><span class="bck">✓</span> מחפש ספקים ללא עדכון</li>
+              <li id="bstep-shipping-3"><span class="bck">✓</span> מזהה חוסרי מידע</li>
+              <li id="bstep-shipping-4"><span class="bck">✓</span> מדרג לפי דחיפות</li>
+            </ul>
+            <div class="brief-found" id="bfound-shipping">✓ נמצאו 4 דברים שדורשים טיפול - מציג סיכום...</div>
+          </div>
+          <div class="brief-result" id="bresult-shipping">
+            <div class="brief-summary-row">
+              <div class="brief-sum-item"><div class="brief-sum-num red">4</div><div class="brief-sum-label">דחופים</div></div>
+              <div class="brief-sum-item"><div class="brief-sum-num yellow">3</div><div class="brief-sum-label">ממתינים</div></div>
+              <div class="brief-sum-item"><div class="brief-sum-num green">120</div><div class="brief-sum-label">תקינים</div></div>
+            </div>
+            <div class="brief-insight">רק <strong>4 מתוך 127 פריטים</strong> באמת צריכים את תשומת הלב שלכם היום.</div>
+            <div class="brief-result-body">
+              <div class="brief-result-group">
+                <div class="brief-result-title">🔴 דחוף - הזמנות באיחור</div>
+                <div class="brief-result-item"><strong>א.ב.ג ספקות</strong> - הזמנה HZ-1041<div class="bsub">איחור 6 ימים · ניסיון קשר נכשל</div></div>
+                <div class="brief-result-item"><strong>מטכל תעשיות</strong> - הזמנה HZ-1042<div class="bsub">איחור 3 ימים · אין עדכון</div></div>
+              </div>
+              <div class="brief-result-group">
+                <div class="brief-result-title">🟡 כדאי לבדוק</div>
+                <div class="brief-result-item"><strong>א.ב.ג ספקות</strong> - הזמנה HZ-1045<div class="bsub">5 ימים ללא עדכון</div></div>
+                <div class="brief-result-item"><strong>ירדן ציוד</strong> - הזמנה HZ-1047<div class="bsub">חסר תאריך אספקה</div></div>
+              </div>
+            </div>
+            <div class="brief-priority">
+              <div class="brief-priority-title">מה כדאי לעשות עכשיו</div>
+              <div class="brief-priority-item"><span class="brief-priority-num">1.</span><span>להתקשר לא.ב.ג ספקות - 6 ימים איחור, לא ענו</span></div>
+              <div class="brief-priority-item"><span class="brief-priority-num">2.</span><span>לבקש עדכון ממטכל תעשיות על HZ-1042</span></div>
+              <div class="brief-priority-item"><span class="brief-priority-num">3.</span><span>להשלים תאריך אספקה עם ירדן ציוד על HZ-1047</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LEADS -->
+        <div class="brief-scenario" id="bs-leads" style="display:none">
+          <div class="brief-file-header">
+            <div class="brief-file-meta">
+              <div class="brief-file-icon">📊</div>
+              <div>
+                <div class="brief-file-name">leads_june.xlsx</div>
+                <div class="brief-file-stats">84 לידים · 9 עמודות · עודכן אתמול</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span class="brief-seen-label" id="bseen-leads">✓ סוכם</span>
+              <button class="brief-see-btn" id="bbtn-leads" onclick="briefRun('leads',5,84)">הצג סיכום</button>
+            </div>
+          </div>
+          <div class="brief-loading" id="bloading-leads">
+            <div class="brief-loading-title">מנתח את הקובץ...</div>
+            <div class="brief-progress-wrap"><div class="brief-progress-bar" id="bpb-leads"></div></div>
+            <ul class="brief-steps">
+              <li id="bstep-leads-1"><span class="bck">✓</span> בודק תאריכי מגע אחרון</li>
+              <li id="bstep-leads-2"><span class="bck">✓</span> מזהה הצעות ללא מענה</li>
+              <li id="bstep-leads-3"><span class="bck">✓</span> מחפש לידים קפואים</li>
+              <li id="bstep-leads-4"><span class="bck">✓</span> מדרג לפי פוטנציאל</li>
+            </ul>
+            <div class="brief-found" id="bfound-leads">✓ נמצאו 5 דברים שדורשים טיפול - מציג סיכום...</div>
+          </div>
+          <div class="brief-result" id="bresult-leads">
+            <div class="brief-summary-row">
+              <div class="brief-sum-item"><div class="brief-sum-num red">5</div><div class="brief-sum-label">דחופים</div></div>
+              <div class="brief-sum-item"><div class="brief-sum-num yellow">8</div><div class="brief-sum-label">ממתינים</div></div>
+              <div class="brief-sum-item"><div class="brief-sum-num green">71</div><div class="brief-sum-label">תקינים</div></div>
+            </div>
+            <div class="brief-insight">רק <strong>5 מתוך 84 לידים</strong> באמת צריכים את תשומת הלב שלכם היום.</div>
+            <div class="brief-result-body">
+              <div class="brief-result-group">
+                <div class="brief-result-title">🔴 דחוף - לא ענו מעל 14 יום</div>
+                <div class="brief-result-item"><strong>גל טכנולוגיות</strong><div class="bsub">הצעה 08/06 · 20 יום ללא מענה · ₪28,000</div></div>
+                <div class="brief-result-item"><strong>כהן ובניו</strong><div class="bsub">הצעה 12/06 · 16 יום ללא מענה · ₪14,000</div></div>
+              </div>
+              <div class="brief-result-group">
+                <div class="brief-result-title">🟡 פגישות ללא מעקב</div>
+                <div class="brief-result-item"><strong>מנשה דוד</strong><div class="bsub">פגישה 15/06 · אין עדכון מאז</div></div>
+                <div class="brief-result-item"><strong>ליאור כץ</strong><div class="bsub">הצעה 01/06 · 27 יום ללא פעילות</div></div>
+              </div>
+            </div>
+            <div class="brief-priority">
+              <div class="brief-priority-title">מה כדאי לעשות עכשיו</div>
+              <div class="brief-priority-item"><span class="brief-priority-num">1.</span><span>follow-up לגל טכנולוגיות - 20 יום, הצעה של ₪28,000</span></div>
+              <div class="brief-priority-item"><span class="brief-priority-num">2.</span><span>לבדוק מה קרה עם מנשה דוד אחרי הפגישה</span></div>
+              <div class="brief-priority-item"><span class="brief-priority-num">3.</span><span>לכהן ובניו - breakup email או לסגור</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INVOICES -->
+        <div class="brief-scenario" id="bs-invoices" style="display:none">
+          <div class="brief-file-header">
+            <div class="brief-file-meta">
+              <div class="brief-file-icon">📊</div>
+              <div>
+                <div class="brief-file-name">invoices_q2.xlsx</div>
+                <div class="brief-file-stats">63 חשבוניות · 8 עמודות · רבעון שני</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span class="brief-seen-label" id="bseen-invoices">✓ סוכם</span>
+              <button class="brief-see-btn" id="bbtn-invoices" onclick="briefRun('invoices',3,63)">הצג סיכום</button>
+            </div>
+          </div>
+          <div class="brief-loading" id="bloading-invoices">
+            <div class="brief-loading-title">מנתח את הקובץ...</div>
+            <div class="brief-progress-wrap"><div class="brief-progress-bar" id="bpb-invoices"></div></div>
+            <ul class="brief-steps">
+              <li id="bstep-invoices-1"><span class="bck">✓</span> בודק תאריכי פירעון</li>
+              <li id="bstep-invoices-2"><span class="bck">✓</span> מזהה חשבוניות באיחור</li>
+              <li id="bstep-invoices-3"><span class="bck">✓</span> מחשב חוב פעיל</li>
+              <li id="bstep-invoices-4"><span class="bck">✓</span> מסדר לפי ותק החוב</li>
+            </ul>
+            <div class="brief-found" id="bfound-invoices">✓ נמצאו 3 דברים שדורשים טיפול - מציג סיכום...</div>
+          </div>
+          <div class="brief-result" id="bresult-invoices">
+            <div class="brief-summary-row">
+              <div class="brief-sum-item"><div class="brief-sum-num red">3</div><div class="brief-sum-label">באיחור</div></div>
+              <div class="brief-sum-item"><div class="brief-sum-num yellow">₪16K</div><div class="brief-sum-label">חוב פעיל</div></div>
+              <div class="brief-sum-item"><div class="brief-sum-num green">58</div><div class="brief-sum-label">תקינות</div></div>
+            </div>
+            <div class="brief-insight">רק <strong>3 מתוך 63 חשבוניות</strong> באמת צריכות את תשומת הלב שלכם היום.</div>
+            <div class="brief-result-body">
+              <div class="brief-result-group">
+                <div class="brief-result-title">🔴 חשבוניות באיחור</div>
+                <div class="brief-result-item"><strong>דינמיקה בע"מ</strong> - #1095 - ₪9,500<div class="bsub">איחור 18 יום · לא פנו בכלל</div></div>
+                <div class="brief-result-item"><strong>שלמה בע"מ</strong> - #1082 - ₪4,200<div class="bsub">איחור 27 יום · תזכורת אחת נשלחה</div></div>
+              </div>
+              <div class="brief-result-group">
+                <div class="brief-result-title">🟡 ממתין לאחר תזכורת</div>
+                <div class="brief-result-item"><strong>טל לוגיסטיקה</strong> - #1098 - ₪2,300<div class="bsub">תזכורת נשלחה 20/06 · לא שולם</div></div>
+              </div>
+            </div>
+            <div class="brief-priority">
+              <div class="brief-priority-title">מה כדאי לעשות עכשיו</div>
+              <div class="brief-priority-item"><span class="brief-priority-num">1.</span><span>להתקשר לדינמיקה בע"מ - ₪9,500, 18 יום, לא פנו אליהם</span></div>
+              <div class="brief-priority-item"><span class="brief-priority-num">2.</span><span>תזכורת שנייה לשלמה בע"מ - 27 יום ללא תשלום</span></div>
+              <div class="brief-priority-item"><span class="brief-priority-num">3.</span><span>לבדוק עם טל לוגיסטיקה מה קורה עם #1098</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="brief-scenario" id="bs-support" style="display:none">
+          <div class="brief-file-header">
+            <div class="brief-file-meta">
+              <div class="brief-file-icon">📊</div>
+              <div>
+                <div class="brief-file-name">support_tickets.xlsx</div>
+                <div class="brief-file-stats">91 פניות · 7 עמודות · חודש אחרון</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span class="brief-seen-label" id="bseen-support">✓ סוכם</span>
+              <button class="brief-see-btn" id="bbtn-support" onclick="briefRun('support',4,91)">הצג סיכום</button>
+            </div>
+          </div>
+          <div class="brief-loading" id="bloading-support">
+            <div class="brief-loading-title">מנתח את הקובץ...</div>
+            <div class="brief-progress-wrap"><div class="brief-progress-bar" id="bpb-support"></div></div>
+            <ul class="brief-steps">
+              <li id="bstep-support-1"><span class="bck">✓</span> בודק פניות פתוחות</li>
+              <li id="bstep-support-2"><span class="bck">✓</span> מזהה תקלות חוזרות</li>
+              <li id="bstep-support-3"><span class="bck">✓</span> בודק זמני המתנה</li>
+              <li id="bstep-support-4"><span class="bck">✓</span> מדרג לפי דחיפות</li>
+            </ul>
+            <div class="brief-found" id="bfound-support">✓ נמצאו 4 דברים שדורשים טיפול - מציג סיכום...</div>
+          </div>
+          <div class="brief-result" id="bresult-support">
+            <div class="brief-summary-row">
+              <div class="brief-sum-item"><div class="brief-sum-num red">4</div><div class="brief-sum-label">דחופים</div></div>
+              <div class="brief-sum-item"><div class="brief-sum-num yellow">7</div><div class="brief-sum-label">ממתינים</div></div>
+              <div class="brief-sum-item"><div class="brief-sum-num green">80</div><div class="brief-sum-label">טופלו</div></div>
+            </div>
+            <div class="brief-insight">רק <strong>4 מתוך 91 פניות</strong> באמת צריכות את תשומת הלב שלכם היום.</div>
+            <div class="brief-result-body">
+              <div class="brief-result-group">
+                <div class="brief-result-title">🔴 פניות פתוחות מעל 7 ימים</div>
+                <div class="brief-result-item"><strong>יוסי ר.</strong> - #516 - תקלה חוזרת<div class="bsub">13 יום פתוח · הכי ותיק</div></div>
+                <div class="brief-result-item"><strong>רחל ג.</strong> - #507 - בעיה בכניסה<div class="bsub">10 ימים פתוח</div></div>
+              </div>
+              <div class="brief-result-group">
+                <div class="brief-result-title">🟡 ממתינים לתגובה</div>
+                <div class="brief-result-item"><strong>אורית מ.</strong> - #501 - שגיאה במערכת<div class="bsub">8 ימים · נשלחה תשובה, לא אישרו</div></div>
+                <div class="brief-result-item"><strong>דוד ט.</strong> - #511 - בקשת זיכוי<div class="bsub">6 ימים ללא עדכון</div></div>
+              </div>
+            </div>
+            <div class="brief-priority">
+              <div class="brief-priority-title">מה כדאי לעשות עכשיו</div>
+              <div class="brief-priority-item"><span class="brief-priority-num">1.</span><span>לטפל ביוסי ר. - תקלה חוזרת, 13 יום, עלולה לקפוץ לרשת</span></div>
+              <div class="brief-priority-item"><span class="brief-priority-num">2.</span><span>לחזור לרחל ג. - 10 ימים ללא פתרון לבעיית כניסה</span></div>
+              <div class="brief-priority-item"><span class="brief-priority-num">3.</span><span>לעדכן דוד ט. לגבי בקשת הזיכוי - 6 ימים ללא מענה</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /brief-demo-card -->
+
+      <p class="brief-disclaimer">כל השמות, החברות והנתונים בדוגמה הינם להמחשה בלבד.</p>
+
+      <!-- CTA -->
+      <div class="brief-cta-strip">
+        <div class="brief-cta-text">
+          <h3>רוצים לראות איך זה ייראה אצלכם?</h3>
+          <p>
+            בשיחה קצרה של כ-20 דקות:<br>
+            ✅ נבין איך אתם עובדים היום.<br>
+            ✅ נזהה איפה המידע מתפזר.<br>
+            ✅ נראה איך יכול להיראות סיכום הבוקר של העסק שלכם.
+          </p>
+          <p style="margin-top:10px;color:rgba(255,255,255,.75);font-size:14px;">🔒 אפשר גם על נתונים אנונימיים או על קובץ לדוגמה.</p>
+        </div>
+        <div class="brief-cta-actions">
+          <button type="button" class="btn-brief-primary" onclick="openDemoModal('brief_section')">
+            קבלו הדגמה מותאמת לעסק שלכם &larr;
+          </button>
+          <span class="brief-cta-note">בלי להתחייב לכלום</span>
+        </div>
+      </div>
+
+    </div><!-- /container -->
+  </section>
+
+
 
   <!-- CASE STUDY -->
   <section id="case-study">
@@ -2519,6 +3385,21 @@
     </div>
   </section>
 
+  <!-- WORKLOAD CHECK -->
+  <section id="workload-check">
+    <div class="container">
+      <div class="wc-inner reveal">
+        <div class="section-label">בדיקת עומסים</div>
+        <h2 class="wc-title">כל עסק מבזבז זמן במקום אחר.</h2>
+        <p class="wc-sub">בדיקת העומסים של Flowli תראה לכם איפה.</p>
+        <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" class="btn-primary" target="_blank" onclick="trackClick('funnel_link','workload_section')">
+          קבלו מפת עומסים אישית &larr;
+        </a>
+        <p class="wc-note">3 דקות. בלי להתחייב לכלום.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section id="faq">
     <div class="container">
@@ -2581,21 +3462,21 @@
   <!-- CTA FINAL -->
   <section id="cta-final">
     <div class="cta-inner">
-      <div class="cta-label reveal">מוכנה?</div>
+      <div class="cta-label reveal">מוכנים?</div>
       <h2 class="reveal delay-1">
-        בואי נבין יחד<br>
-        <span class="accent">מה ייצור הכי הרבה שקט בעסק שלך.</span>
+        בואו נבין יחד<br>
+        <span class="accent">מה ייצור הכי הרבה שקט בעסק שלכם.</span>
       </h2>
-      <p class="reveal delay-2">שאלון קצר של 3 דקות - ותקבלי מפת עומסים אישית ללא עלות.</p>
+      <p class="reveal delay-2" style="font-size:15px;color:var(--muted);margin-bottom:24px;">יש יותר מדרך אחת להתחיל. בחרו את זו שמתאימה לכם.</p>
       <div class="cta-final-actions reveal delay-3">
-        <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" class="btn-cta-final" target="_blank">
-          קבלי מפת עומסים אישית ב-3 דקות &larr;
-        </a>
-        <button type="button" class="btn-cta-secondary" onclick="openLeadPopup()">
-          רוצה לדבר? השאירי פרטים
+        <button type="button" class="btn-cta-final" onclick="openDemoModal('cta_final')">
+          רוצים לראות איך Flowli יעבוד אצלכם?
         </button>
+        <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" class="btn-cta-secondary" target="_blank" onclick="trackClick('funnel_link','cta_final')">
+          קבלו מפת עומסים אישית
+        </a>
       </div>
-      <p class="cta-note reveal delay-4">בלי התחייבות. רק צעד ראשון לכיוון פחות עומס ויותר שקט.</p>
+      <p class="cta-note reveal delay-4">שתי האפשרויות ללא עלות וללא התחייבות.</p>
     </div>
   </section>
 
@@ -2611,7 +3492,7 @@
             <path d="M6 35 Q23 26 40 35 Q57 44 74 35" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>רוצה לדבר? השאירי פרטים</h3>
+        <h3>רוצים לדבר? השאירו פרטים</h3>
         <p>אחזור אלייך תוך יום עסקים אחד - בלי שיחת מכירה, רק להבין איך אפשר לעזור.</p>
       </div>
       <div class="lead-popup-body">
@@ -2626,7 +3507,7 @@
             <input type="checkbox" id="leadConsent" onchange="document.getElementById('leadSubmit').disabled=!this.checked">
             <span>אני מאשר.ת קבלת תכנים מקצועיים ועדכונים מ-Flowli במייל ומסכימ.ה ל<a href="#" onclick="event.preventDefault();openPrivacyModal()" class="lead-consent-link">מדיניות הפרטיות</a></span>
           </label>
-          <button class="lead-submit" id="leadSubmit" onclick="submitLead()" disabled>שלחי פרטים &larr;</button>
+          <button class="lead-submit" id="leadSubmit" onclick="submitLead()" disabled>שלחו פרטים &larr;</button>
           <p class="lead-privacy">&#128274; הפרטים שלך נשמרים בצורה מאובטחת. ניתן להסיר את עצמך מהדיוור בכל עת.</p>
         </div>
         <div class="lead-success" id="leadSuccess">
@@ -2651,7 +3532,6 @@
         <span><span class="fl">flow</span><span class="li">li</span></span>
       </a>
       <span>&#169; 2026 flowli &middot; כל הזכויות שמורות</span>
-      <span style="color:rgba(255,255,255,.25);font-size:12px">האתר כתוב בלשון נקבה לשם נוחות הקריאה ומתייחס לכל המינים</span>
       <a href="mailto:hadas@flowli.co.il" style="color:rgba(255,255,255,.3);text-decoration:none;">hadas@flowli.co.il</a>
       <div style="display:flex;align-items:center;gap:6px">
         <button class="a11y-link" onclick="document.getElementById('privacyOverlay').classList.add('open')">מדיניות פרטיות</button>
@@ -2663,17 +3543,123 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ─── REVEAL ON SCROLL ───
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
+  <script>
+    // ─── FLOWLI BRIEF ───
+    const briefAnalyzed = {};
+    function briefSelectTab(id, btn) {
+      document.querySelectorAll('.brief-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.brief-scenario').forEach(s => s.style.display = 'none');
+      document.getElementById('bs-' + id).style.display = 'block';
+    }
+    function briefRun(id, found, total) {
+      if (briefAnalyzed[id]) return;
+      briefAnalyzed[id] = true;
+      document.getElementById('bbtn-' + id).style.display = 'none';
+      document.getElementById('bseen-' + id).style.display = 'inline';
+      const loading = document.getElementById('bloading-' + id);
+      const result  = document.getElementById('bresult-' + id);
+      const pb      = document.getElementById('bpb-' + id);
+      const foundEl = document.getElementById('bfound-' + id);
+      loading.classList.add('visible');
+      setTimeout(() => { pb.style.width = '35%'; }, 50);
+      setTimeout(() => { pb.style.width = '70%'; }, 700);
+      setTimeout(() => { pb.style.width = '92%'; }, 1300);
+      [1,2,3,4].forEach((n, i) => {
+        setTimeout(() => {
+          const el = document.getElementById('bstep-' + id + '-' + n);
+          if (el) el.classList.add('done');
+        }, [250, 650, 1050, 1400][i]);
       });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.observe(el));
+      setTimeout(() => { pb.style.width = '100%'; foundEl.classList.add('show'); }, 1750);
+      setTimeout(() => { loading.classList.remove('visible'); result.classList.add('visible'); }, 2300);
+    }
+
+    // ─── CLICK TRACKING ───
+    const SUPA_URL = 'https://whuuevjoqitwslnykvgd.supabase.co/rest/v1/button_clicks';
+    const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndodXVldmpvcWl0d3NsbnlrdmdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMTk3NDQsImV4cCI6MjA5NDY5NTc0NH0.r_lxvPFY275H7ODxYGHs0-NvqfQd8_e3fKHYy4sgq34';
+    function trackClick(button, section) {
+      try {
+        fetch(SUPA_URL, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPA_KEY,
+            'Authorization': 'Bearer ' + SUPA_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ button, section, url: location.href, ts: new Date().toISOString() })
+        });
+      } catch(e) {}
+    }
+
+    // ─── DEMO MODAL ───
+    function openDemoModal(source) {
+      trackClick('demo_modal', source || 'unknown');
+      document.getElementById('demoForm').style.display = '';
+      document.getElementById('demoSuccess').style.display = 'none';
+      document.getElementById('demoName').value = '';
+      document.getElementById('demoPhone').value = '';
+      document.getElementById('demoEmail').value = '';
+      document.getElementById('demoConsent').checked = false;
+      const btn = document.getElementById('demoSubmit');
+      btn.disabled = true;
+      btn.textContent = 'קובעים שיחה ←';
+      document.getElementById('demoOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDemoModal(e) {
+      if (e.target === document.getElementById('demoOverlay')) closeDemoModalDirect();
+    }
+    function closeDemoModalDirect() {
+      document.getElementById('demoOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    async function submitDemo() {
+      const name  = document.getElementById('demoName').value.trim();
+      const phone = document.getElementById('demoPhone').value.trim();
+      const email = document.getElementById('demoEmail').value.trim();
+      if (!name || !phone || !email) { alert('שם, טלפון ומייל הם שדות חובה'); return; }
+      const btn = document.getElementById('demoSubmit');
+      btn.disabled = true;
+      btn.textContent = 'שולח...';
+      await new Promise(r => setTimeout(r, 600));
+      try {
+        const res = await fetch('https://whuuevjoqitwslnykvgd.supabase.co/rest/v1/leads_website', {
+          method: 'POST',
+          headers: {
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndodXVldmpvcWl0d3NsbnlrdmdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMTk3NDQsImV4cCI6MjA5NDY5NTc0NH0.r_lxvPFY275H7ODxYGHs0-NvqfQd8_e3fKHYy4sgq34',
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndodXVldmpvcWl0d3NsbnlrdmdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMTk3NDQsImV4cCI6MjA5NDY5NTc0NH0.r_lxvPFY275H7ODxYGHs0-NvqfQd8_e3fKHYy4sgq34',
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ name, phone, email, consent: true, source: 'demo_modal' })
+        });
+        if (!res.ok) { throw new Error(res.status); }
+      } catch(e) { console.error(e); }
+      document.getElementById('demoForm').style.display = 'none';
+      document.getElementById('demoSuccess').style.display = 'block';
+    }
+    function updateDemoSubmit() {
+      const n  = document.getElementById('demoName')?.value.trim();
+      const p  = document.getElementById('demoPhone')?.value.trim();
+      const em = document.getElementById('demoEmail')?.value.trim();
+      const c  = document.getElementById('demoConsent')?.checked;
+      document.getElementById('demoSubmit').disabled = !(n && p && em && c);
+    }
+    ['demoName','demoPhone','demoEmail'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', updateDemoSubmit);
+    });
+
+    // ─── SCROLL PROGRESS BAR ───
+    const progressFill = document.getElementById('scrollProgressFill');
+    function updateScrollProgress() {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      if (progressFill) progressFill.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
     // ─── FAQ ───
     function toggleFaq(btn) {
@@ -2681,61 +3667,18 @@
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item.open').forEach(i => {
         i.classList.remove('open');
-        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
       });
       if (!isOpen) {
         item.classList.add('open');
-        btn.setAttribute('aria-expanded','true');
+        btn.setAttribute('aria-expanded', 'true');
       }
     }
 
-    // ─── DREAM ANIMATION ───
-    (function() {
-      const section = document.getElementById('dream');
-      const notes = document.querySelectorAll('.sticky-note');
-      const wave  = document.getElementById('dreamWave');
-      const bubbles = document.getElementById('dreamBubbles');
-      let played = false;
-      const dreamObs = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !played) {
-          played = true;
-          notes.forEach((n, i) => {
-            setTimeout(() => n.classList.add('note-visible'), i * 220);
-          });
-          setTimeout(() => {
-            notes.forEach(n => { n.classList.remove('note-visible'); n.classList.add('note-vanish'); });
-            wave.classList.add('wave-rise');
-          }, 2400);
-          setTimeout(() => {
-            bubbles.classList.add('bubbles-show');
-          }, 3300);
-        }
-      }, { threshold: 0.3 });
-      dreamObs.observe(section);
-    })();
-
     // ─── LEAD POPUP ───
-    // קריאת URL params לפרה-פיל
-    const _urlParams = new URLSearchParams(window.location.search);
-    const _prefillName  = _urlParams.get('name')  || '';
-    const _prefillEmail = _urlParams.get('email') || '';
-    const _prefillSource = _urlParams.get('source') || 'website_flowli';
-
-    // פתיחה אוטומטית אם יש פרמטרים מהמייל
-    if (_prefillName || _prefillEmail) {
-      window.addEventListener('DOMContentLoaded', () => openLeadPopup());
-    }
-
-    function openLeadPopup() {
-      // reset + prefill
-      document.getElementById('leadForm').style.display = 'block';
-      document.getElementById('leadSuccess').style.display = 'none';
-      document.getElementById('leadName').value  = _prefillName;
-      document.getElementById('leadPhone').value = '';
-      document.getElementById('leadEmail').value = _prefillEmail;
-      document.getElementById('leadConsent').checked = false;
-      document.getElementById('leadSubmit').disabled = true;
-      document.getElementById('leadSubmit').textContent = 'שלחי פרטים ←';
+    let _prefillSource = 'website';
+    function openLeadPopup(source) {
+      if (source) _prefillSource = source;
       document.getElementById('leadOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -2768,7 +3711,7 @@
           const err = await res.text();
           console.error('Supabase error:', res.status, err);
           alert('שגיאה בשמירה: ' + res.status + ' - ' + err);
-          btn.disabled = false; btn.textContent = 'שלחי פרטים ←';
+          btn.disabled = false; btn.textContent = 'שלחו פרטים ←';
           return;
         }
       } catch(e) { console.error('fetch error', e); alert('שגיאת רשת: ' + e.message); return; }
@@ -2776,89 +3719,145 @@
       document.getElementById('leadSuccess').style.display = 'block';
     }
 
-    // ─── 1. SCROLL PROGRESS BAR ───
-    const progressFill = document.getElementById('scrollProgressFill');
-    function updateScrollProgress() {
-      const h = document.documentElement;
-      const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-      progressFill.style.width = scrolled + '%';
-    }
-    window.addEventListener('scroll', updateScrollProgress, { passive: true });
-    updateScrollProgress();
+    // ─── LEAD FORM VALIDATION ───
+    ['leadName','leadPhone','leadEmail'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', () => {
+        const n = document.getElementById('leadName').value.trim();
+        const p = document.getElementById('leadPhone').value.trim();
+        const em = document.getElementById('leadEmail').value.trim();
+        document.getElementById('leadSubmit').disabled = !(n && p && em);
+      });
+    });
 
-    // ─── 2 + 3. FLOATING WHATSAPP + STICKY CTA ───
-    const floatWa = document.getElementById('floatWa');
-    const stickyCta = document.getElementById('stickyCta');
-    window.addEventListener('scroll', () => {
-      const h = document.documentElement;
-      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-      const heroH = window.innerHeight * 0.7;
-      const showThreshold = h.scrollTop > heroH;
-      if (showThreshold) {
-        floatWa.classList.add('visible');
-        stickyCta.classList.add('visible');
-      } else {
-        floatWa.classList.remove('visible');
-        stickyCta.classList.remove('visible');
-      }
-    }, { passive: true });
-
-    // ─── 4. ANIMATED COUNTERS ───
-    function animateCounter(el) {
-      const target = parseInt(el.dataset.count, 10);
-      if (isNaN(target)) return;
-      const prefix = el.dataset.prefix || '';
-      const suffix = el.dataset.suffix || '';
-      const duration = 1400;
-      const start = performance.now();
-      function tick(now) {
-        const t = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - t, 3);
-        const val = Math.round(target * eased);
-        el.textContent = prefix + val + suffix;
-        if (t < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    }
-    const counterObs = new IntersectionObserver((entries) => {
+    // ─── REVEAL ON SCROLL ───
+    document.body.classList.add('js-reveal');
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          animateCounter(e.target);
-          counterObs.unobserve(e.target);
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.observe(el));
+
+    // fallback: אם viewport=0 או file:// — הפעל את חשיפת ה-reveal בלבד
+    // (לא לגעת ב-.sticky-note / dreamWave / dreamBubbles — שהאנימציה של סקשן dream תרוץ דרך ה-IntersectionObserver שלה)
+    if (!window.innerHeight || location.protocol === 'file:') {
+      document.querySelectorAll('.reveal, .reveal-scale').forEach(el => el.classList.add('visible'));
+    }
+
+    // ─── DREAM ANIMATION ───
+    (function() {
+      const section = document.getElementById('dream');
+      const notes = document.querySelectorAll('.sticky-note');
+      const wave  = document.getElementById('dreamWave');
+      const bubbles = document.getElementById('dreamBubbles');
+      let played = false;
+      const dreamObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !played) {
+          played = true;
+          notes.forEach((n, i) => {
+            setTimeout(() => n.classList.add('note-visible'), i * 220);
+          });
+          setTimeout(() => {
+            notes.forEach(n => { n.classList.remove('note-visible'); n.classList.add('note-vanish'); });
+            wave.classList.add('wave-rise');
+          }, 2400);
+          setTimeout(() => {
+            bubbles.classList.add('bubbles-show');
+          }, 3300);
+        }
+      }, { threshold: 0.3 });
+      if (section) dreamObs.observe(section);
+    })();
+
+    // ─── NAV SCROLL ───
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav')?.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ─── STICKY CTA ───
+    const stickyCta = document.getElementById('stickyCta');
+    const floatWa = document.getElementById('floatWa');
+    window.addEventListener('scroll', () => {
+      const show = window.scrollY > 500;
+      if (stickyCta) stickyCta.classList.toggle('visible', show);
+      if (floatWa) floatWa.classList.toggle('visible', show);
+    }, { passive: true });
+
   </script>
-  <script src="https://negishot.co.il/cdn/widget.php?code=NGS_449491D6F4A6"></script>
-  <script>
-    // Cookie banner
-    if (!localStorage.getItem('flowli_cookies')) {
-      setTimeout(() => document.getElementById('flowli-cookie-bar').classList.add('show'), 1200);
-    }
-    window.flowliAcceptCookies = function() {
-      localStorage.setItem('flowli_cookies', 'accepted');
-      document.getElementById('flowli-cookie-bar').classList.remove('show');
-    };
-    window.flowliDeclineCookies = function() {
-      localStorage.setItem('flowli_cookies', 'declined');
-      document.getElementById('flowli-cookie-bar').classList.remove('show');
-    };
-    // Accessibility modal close on overlay click
-    function closeA11y(e) {
-      if (e.target === document.getElementById('a11yOverlay')) {
-        document.getElementById('a11yOverlay').classList.remove('open');
-      }
-    }
-    // Privacy modal
-    function openPrivacyModal() {
-      document.getElementById('privacyOverlay').classList.add('open');
-    }
-    function closePrivacy(e) {
-      if (e.target === document.getElementById('privacyOverlay')) {
-        document.getElementById('privacyOverlay').classList.remove('open');
-      }
-    }
-  </script>
+
+  <!-- DEMO MODAL -->
+  <div class="demo-overlay" id="demoOverlay" onclick="closeDemoModal(event)">
+    <div class="demo-popup">
+      <div class="demo-popup-head">
+        <div class="demo-topbar">
+          <button class="demo-popup-close" onclick="closeDemoModalDirect()" aria-label="סגור">&#x2715;</button>
+        </div>
+        <h3>רוצים לראות איך <span style="direction:ltr;display:inline-block">Flow<span class="accent">li</span></span> יעבוד <span class="accent">אצלכם</span>?</h3>
+        <p>בשיחה קצרה של כ-20 דקות:</p>
+        <ul class="demo-checklist">
+          <li>
+            <span class="demo-tick"><svg viewBox="0 0 24 24" fill="none" stroke="#F26B1F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span>נבין איך אתם עובדים היום.</span>
+          </li>
+          <li>
+            <span class="demo-tick"><svg viewBox="0 0 24 24" fill="none" stroke="#F26B1F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span>נזהה איפה המידע מתפזר.</span>
+          </li>
+          <li>
+            <span class="demo-tick"><svg viewBox="0 0 24 24" fill="none" stroke="#F26B1F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span>נראה מה באמת ידרוש את תשומת הלב שלכם בכל בוקר.</span>
+          </li>
+          <li class="soft">
+            <span class="demo-tick"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+            <span>אפשר גם על נתונים אנונימיים או על קובץ לדוגמה.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="demo-popup-body">
+        <div id="demoForm">
+          <div class="demo-field">
+            <label for="demoName">שם</label>
+            <input type="text" id="demoName" placeholder="השם שלכם" autocomplete="name">
+          </div>
+          <div class="demo-field">
+            <label for="demoPhone">טלפון</label>
+            <input type="tel" id="demoPhone" placeholder="05X-XXXXXXX" autocomplete="tel">
+          </div>
+          <div class="demo-field">
+            <label for="demoEmail">אימייל</label>
+            <input type="email" id="demoEmail" placeholder="your@email.com" autocomplete="email">
+          </div>
+          <label class="demo-consent">
+            <input type="checkbox" id="demoConsent" onchange="updateDemoSubmit()">
+            <span>אני מאשר.ת קבלת תכנים מ-Flowli ומסכימ.ה ל<a href="#" onclick="event.preventDefault();openPrivacyModal()">מדיניות הפרטיות</a></span>
+          </label>
+          <button class="demo-submit" id="demoSubmit" onclick="submitDemo()" disabled>
+            קובעים שיחה
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          </button>
+          <p class="demo-privacy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            הפרטים שלכם נשמרים בצורה מאובטחת.
+          </p>
+        </div>
+        <div id="demoSuccess" style="display:none;text-align:center;padding:48px 30px 52px;">
+          <div style="width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:var(--orange-pale);display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F26B1F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h4 style="font-family:'Rubik',sans-serif;font-weight:700;font-size:22px;color:var(--ink);margin:0 0 8px;">קיבלנו! נדבר בקרוב</h4>
+          <p style="font-size:15px;color:var(--muted);margin:0;line-height:1.6;">נחזור אליכם תוך יום עסקים אחד לתיאום השיחה.</p>
+          <button onclick="closeDemoModalDirect()" style="margin-top:24px;background:none;border:none;color:var(--orange);font-family:'Assistant',sans-serif;font-size:15px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 0;border-bottom:1px solid rgba(242,107,31,.4);">
+            בינתיים, המשיכו להכיר את Flowli &#x2193;
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
+                                                                    
