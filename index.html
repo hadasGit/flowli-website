@@ -3589,8 +3589,9 @@
             'Prefer': 'return=minimal'
           },
           body: JSON.stringify({ button, section, url: location.href, ts: new Date().toISOString() })
-        });
-      } catch(e) {}
+        }).then(r => console.log('track:', button, section, r.status))
+          .catch(e => console.error('track error:', e));
+      } catch(e) { console.error('track catch:', e); }
     }
 
     // ─── DEMO MODAL ───
