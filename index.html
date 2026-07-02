@@ -31,10 +31,44 @@
     "mainEntity": [
       {"@type":"Question","name":"אני לא טכנית בכלל. האם זה בשבילי?","acceptedAnswer":{"@type":"Answer","text":"כן. בדיוק בשבילך. כל מה שנבנה מגיע עם הסבר בשפה פשוטה ותיעוד שאת יכולה לעבוד לפיו לבד."}},
       {"@type":"Question","name":"כמה זה עולה בערך?","acceptedAnswer":{"@type":"Answer","text":"פתרון ממוקד אחד מתחיל בכמה אלפי שקלים. אחרי האבחון נשלחת הצעה מפורטת עם מחיר קבוע."}},
-      {"@type":"Question","name":"נמאס לי מגיליונות אקסל. מה האלטרנטיבה?","acceptedAnswer":{"@type":"Answer","text":"CRM - מסד לקוחות מרכזי שמחזיק את כל הפניות, ההיסטוריה, והמעקב במקום אחד. כל פנייה חדשה נכנסת אוטומטית."}},
       {"@type":"Question","name":"כמה זמן לוקח לראות תוצאות?","acceptedAnswer":{"@type":"Answer","text":"פרויקט ממוקד לוקח 1-3 שבועות. ביום שהמערכת עולה כבר רואים שינוי."}},
       {"@type":"Question","name":"מה ההבדל בינך לבין עוד מישהי שעושה אוטומציות?","acceptedAnswer":{"@type":"Answer","text":"לא בונה לפי תבנית. מתחילה מהעסק שלך ומסיימת עם תיעוד שמישהו אחר יכול להמשיך."}},
       {"@type":"Question","name":"זה נועד להחליף עובדים?","acceptedAnswer":{"@type":"Answer","text":"לא. זה נועד להחליף משימות, לא אנשים. אוטומציה מטפלת בתיאומים, מעקבים, תזכורות והעברת מידע. האנשים בעסק נשארים פנויים לעבודה מקצועית, לקבלת החלטות ולמתן שירות טוב יותר ללקוחות."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://flowli.co.il/#org",
+        "name": "Flowli",
+        "url": "https://flowli.co.il",
+        "logo": "https://flowli.co.il/og-image.png",
+        "email": "hadas@flowli.co.il",
+        "telephone": "+972-52-896-6998",
+        "description": "אוטומציה עסקית ו-AI לעסקים קטנים ובינוניים בישראל. תהליכים, CRM ואוטומציות שעובדים בשקט ברקע.",
+        "areaServed": {"@type": "Country", "name": "Israel"},
+        "founder": {"@id": "https://flowli.co.il/#hadas"}
+      },
+      {
+        "@type": "Person",
+        "@id": "https://flowli.co.il/#hadas",
+        "name": "הדס גרינברג",
+        "jobTitle": "מייסדת",
+        "worksFor": {"@id": "https://flowli.co.il/#org"},
+        "email": "hadas@flowli.co.il"
+      },
+      {
+        "@type": "Service",
+        "serviceType": "אוטומציה עסקית, הטמעת AI ו-CRM לעסקים",
+        "provider": {"@id": "https://flowli.co.il/#org"},
+        "areaServed": {"@type": "Country", "name": "Israel"},
+        "availableLanguage": "he",
+        "description": "אבחון תהליכים, בניית אוטומציות ומערכות CRM לעסקים קטנים ובינוניים - כולל תיעוד מלא ומסירה מסודרת."
+      }
     ]
   }
   </script>
@@ -2838,8 +2872,7 @@
         להיות <em>מערכת הניהול</em> של העסק.
       </h2>
       <p class="qm-body reveal delay-2">
-        כשכל הפניות, לוחות הזמנים, המשימות החוזרות והמידע על לקוחות
-        נמצאים בראש שלכם זה לא נקרא ארגון. זה נקרא עומס.
+        כשהפניות, המשימות והמעקבים נמצאים בראש שלכם - זה לא ארגון. זה עומס.
       </p>
       <div class="qm-divider reveal delay-2" aria-hidden="true"></div>
       <p class="qm-body reveal delay-3">
@@ -2902,17 +2935,17 @@
       <!-- למה זה עובד -->
       <div class="why-strip">
         <div class="why-item reveal delay-1">
-          <span class="why-icon">⚡</span>
+          <span class="why-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#F26B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
           <div class="why-title">עובד על המידע שכבר קיים</div>
           <div class="why-desc">אין צורך להחליף מערכת. Flowli Brief עובדת ישירות על האקסל שאתם כבר משתמשים בו.</div>
         </div>
         <div class="why-item reveal delay-2">
-          <span class="why-icon">⏱️</span>
+          <span class="why-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#F26B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><polyline points="12 9 12 13 15 15"/><line x1="9" y1="2" x2="15" y2="2"/></svg></span>
           <div class="why-title">חוסך מעבר על עשרות שורות</div>
           <div class="why-desc">במקום לסרוק שורה אחרי שורה - מקבלים תוך שניות בדיוק מה שדורש תשומת לב.</div>
         </div>
         <div class="why-item reveal delay-3">
-          <span class="why-icon">🎯</span>
+          <span class="why-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#F26B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="#F26B1F"/></svg></span>
           <div class="why-title">מציג רק מה שדורש טיפול</div>
           <div class="why-desc">לא גרפים. לא דוחות. רשימה קצרה של מה שצריך לטפל בו - ומה לעשות קודם.</div>
         </div>
@@ -3197,7 +3230,7 @@
         <div class="cs-numbers">
           <div class="cs-num-item">
             <div class="cs-num-val" data-count="10" data-suffix=" שנ'">10 שנ'</div>
-            <div class="cs-num-label">קליטת הזמנה מהיד לניד - במקום 5 דקות ידניות</div>
+            <div class="cs-num-label">קליטת הזמנה מהנייד - במקום 5 דקות ידניות</div>
           </div>
           <div class="cs-num-item">
             <div class="cs-num-val" data-count="20" data-prefix="15-" data-suffix=" דק'">15-20 דק'</div>
@@ -3290,15 +3323,14 @@
         <span class="dream-bubble"><span class="bubble-icon">💭</span>לצאת בזמן מהעבודה</span>
         <span class="dream-bubble"><span class="bubble-icon">💭</span>להיות יותר עם המשפחה</span>
         <span class="dream-bubble"><span class="bubble-icon">💭</span>לסגור מחשב בלי רגשות אשמה</span>
-        <span class="dream-bubble"><span class="bubble-icon">💭</span>לזכור פחות דברים בראש</span>
         <span class="dream-bubble"><span class="bubble-icon">💭</span>לקחת יום חופש בלי לחץ</span>
         <span class="dream-bubble"><span class="bubble-icon">💭</span>לילה בלי "רגע, שכחתי משהו"</span>
         <span class="dream-bubble"><span class="bubble-icon">💭</span>להתמקד בלקוחות במקום במעקב</span>
       </div>
 
       <p class="dream-closing reveal">
-        רוב בעלי העסקים לא מחפשים עוד מערכת.<br>
-        הם מחפשים יותר מקום לדברים שחשובים להם באמת.
+        רוב בעלי העסקים לא מחפשים אוטומציה.<br>
+        הם מחפשים שקט.
       </p>
       <div class="dream-brand-line reveal delay-1">
         <span class="fl">flow</span><span class="li">li</span>
@@ -3311,12 +3343,12 @@
     <div class="container">
       <div class="section-label reveal">התהליך</div>
       <h2 class="reveal delay-1">איך זה עובד</h2>
-      <p class="section-sub reveal delay-2">בלי ניחושים, בלי הפתעות, ועם תיעוד שנשאר גם אחרי שהפרויקט מסתיים.</p>
+      <p class="section-sub reveal delay-2">בלי ניחושים, בלי הפתעות. עם תיעוד שנשאר.</p>
       <div class="steps-row">
         <div class="step reveal delay-1">
           <div class="step-num">1</div>
           <h3>אבחון</h3>
-          <p>שאלון קצר שמזהה איפה הזמן, הכסף והאנרגיה הולכים לאיבוד. לא שיחת מכירה - אבחון אמיתי של התהליך.</p>
+          <p>שאלון קצר שמזהה איפה הזמן, הכסף והאנרגיה הולכים לאיבוד. לא שיחת מכירה.</p>
         </div>
         <div class="step reveal delay-2">
           <div class="step-num">2</div>
@@ -3385,21 +3417,6 @@
     </div>
   </section>
 
-  <!-- WORKLOAD CHECK -->
-  <section id="workload-check">
-    <div class="container">
-      <div class="wc-inner reveal">
-        <div class="section-label">בדיקת עומסים</div>
-        <h2 class="wc-title">כל עסק מבזבז זמן במקום אחר.</h2>
-        <p class="wc-sub">בדיקת העומסים של Flowli תראה לכם איפה.</p>
-        <a href="https://flowli-funnel.vercel.app/flowli-diagnose-intro.html" class="btn-primary" target="_blank" onclick="trackClick('funnel_link','workload_section')">
-          קבלו מפת עומסים אישית &larr;
-        </a>
-        <p class="wc-note">3 דקות. בלי להתחייב לכלום.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section id="faq">
     <div class="container">
@@ -3422,14 +3439,6 @@
             <span class="faq-arrow"><svg viewBox="0 0 12 12" width="12" fill="none" stroke="#F26B1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6,8 10,4"/></svg></span>
           </button>
           <div class="faq-a">פתרון ממוקד אחד מתחיל בכמה אלפי שקלים. אחרי האבחון נשלחת הצעה מפורטת עם מחיר קבוע.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-            <span>נמאס לי מגיליונות אקסל. מה האלטרנטיבה?</span>
-            <span class="faq-arrow"><svg viewBox="0 0 12 12" width="12" fill="none" stroke="#F26B1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6,8 10,4"/></svg></span>
-          </button>
-          <div class="faq-a">CRM - מסד לקוחות מרכזי שמחזיק את כל הפניות, ההיסטוריה, והמעקב במקום אחד. כל פנייה חדשה נכנסת אוטומטית.</div>
         </div>
 
         <div class="faq-item">
@@ -3493,7 +3502,7 @@
           </svg>
         </div>
         <h3>רוצים לדבר? השאירו פרטים</h3>
-        <p>אחזור אלייך תוך יום עסקים אחד - בלי שיחת מכירה, רק להבין איך אפשר לעזור.</p>
+        <p>אחזור אליכם תוך יום עסקים אחד - בלי שיחת מכירה, רק להבין איך אפשר לעזור.</p>
       </div>
       <div class="lead-popup-body">
         <div id="leadForm">
@@ -3513,7 +3522,7 @@
         <div class="lead-success" id="leadSuccess">
           <div class="lead-success-icon">&#x2705;</div>
           <h4>קיבלתי!</h4>
-          <p>אחזור אלייך בהקדם.</p>
+          <p>אחזור אליכם בהקדם.</p>
           <button onclick="closeLeadPopupDirect()" style="margin-top:20px;background:var(--orange);color:#fff;border:none;border-radius:100px;padding:10px 28px;font-family:'Assistant',sans-serif;font-weight:700;font-size:15px;cursor:pointer;">סגור</button>
         </div>
       </div>
