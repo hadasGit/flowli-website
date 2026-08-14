@@ -3719,12 +3719,18 @@
       document.getElementById('leadOverlay').classList.remove('open');
       document.body.style.overflow = '';
     }
-    // "בדיקת התאמה" links from the blog arrive as flowli.co.il/#check
-    function openCheckFromHash() {
-      if (location.hash === '#check') openLeadPopup('fit_check');
+    // referenced by the consent links in both popups but never defined
+    function openPrivacyModal() {
+      var el = document.getElementById('privacyOverlay');
+      if (el) el.classList.add('open');
     }
-    window.addEventListener('hashchange', openCheckFromHash);
-    window.addEventListener('DOMContentLoaded', openCheckFromHash);
+    // links from the blog arrive as flowli.co.il/#check or /#privacy
+    function openFromHash() {
+      if (location.hash === '#check') openLeadPopup('fit_check');
+      if (location.hash === '#privacy' && typeof openPrivacyModal === 'function') openPrivacyModal();
+    }
+    window.addEventListener('hashchange', openFromHash);
+    window.addEventListener('DOMContentLoaded', openFromHash);
     async function submitLead() {
       const name  = document.getElementById('leadName').value.trim();
       const phone = document.getElementById('leadPhone').value.trim();
