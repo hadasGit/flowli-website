@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>בלוג | Flowli - אוטומציה עסקית לעסקים קטנים בישראל</title>
+<meta name="description" content="מדריכים מעשיים לאוטומציה עסקית לעסקים קטנים בישראל. בלי ז'רגון, עם דוגמאות אמיתיות מהשטח.">
+<link rel="canonical" href="https://flowli.co.il/blog/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Heebo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#EFEDE6;--bg-warm:#E8E4D6;--cream:#FAFAF7;--ink:#1A1A1A;--text:#2A2A2A;--muted:#5C5751;
+    --orange:#F26B1F;--orange-deep:#D45A12;--orange-pale:#FEF0E7;--orange-mid:#FDDDBD;
+  }
+  body{font-family:'Heebo',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--orange-deep)}
+  a:hover{color:var(--orange)}
+
+  nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--bg-warm)}
+  .nav-inner{max-width:960px;margin:0 auto;padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{direction:ltr;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+  .nav-logo svg{width:30px;height:30px}
+  .nav-logo-text{font-family:'Inter','Heebo',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.035em}
+  .nav-logo .fl{color:var(--ink)} .nav-logo .li{color:var(--orange)}
+  .nav-cta{background:transparent;color:var(--orange);padding:8px 18px;border-radius:8px;border:2px solid var(--orange);font-family:'Inter','Heebo',sans-serif;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap;transition:.2s}
+  .nav-cta:hover{background:var(--orange);color:#fff}
+
+  main{max-width:960px;margin:0 auto;padding:0 24px}
+  .hero{padding:56px 0 40px;border-bottom:1px solid var(--bg-warm)}
+  .breadcrumb{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:16px}
+  .breadcrumb a{color:var(--orange-deep);text-decoration:none}
+  h1{font-family:'Inter','Heebo',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,2.8rem);line-height:1.2;letter-spacing:-.025em;color:var(--ink);margin-bottom:16px}
+  .hero p{font-size:1.1rem;color:var(--muted);max-width:600px}
+
+  .filters{display:flex;gap:10px;flex-wrap:wrap;padding:28px 0 8px}
+  .filter-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;background:var(--cream);border:1px solid var(--bg-warm);color:var(--muted);padding:7px 14px;border-radius:100px;cursor:pointer;transition:.15s}
+  .filter-tag.active,.filter-tag:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding:32px 0 90px}
+  @media(max-width:700px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--cream);border:1px solid var(--bg-warm);border-radius:18px;padding:28px;display:flex;flex-direction:column;text-decoration:none;transition:.2s;height:100%}
+  .card:hover{transform:translateY(-3px);border-color:var(--orange-mid);box-shadow:0 12px 30px rgba(0,0,0,.06)}
+  .card-niche{font-family:'JetBrains Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--orange-deep);margin-bottom:12px}
+  .card h2{font-family:'Inter','Heebo',sans-serif;font-weight:700;font-size:1.18rem;color:var(--ink);line-height:1.35;margin-bottom:12px}
+  .card p{font-size:.94rem;color:var(--muted);flex:1;margin-bottom:16px}
+  .card-foot{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);border-top:1px solid var(--bg-warm);padding-top:14px}
+  .card-status{background:var(--orange-pale);color:var(--orange-deep);padding:3px 10px;border-radius:100px;font-weight:600}
+  .card-status.featured{background:var(--ink);color:#fff}
+  .card.is-featured{border-color:var(--orange-mid);background:linear-gradient(180deg,var(--orange-pale) 0%,var(--cream) 60%)}
+
+  footer{border-top:1px solid var(--bg-warm);padding:36px 0 60px;text-align:center}
+  .footer-logo{direction:ltr;display:inline-flex;align-items:center;gap:6px;text-decoration:none;margin-bottom:10px}
+  .footer-logo svg{width:24px;height:24px}
+  .footer-logo-text{font-family:'Inter','Heebo',sans-serif;font-weight:800;font-size:17px}
+  .footer-logo .fl{color:var(--ink)} .footer-logo .li{color:var(--orange)}
+  footer p{font-size:12.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://flowli.co.il">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 30 Q25 15 40 30 Q55 45 70 30" stroke="#2A2A2A" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M10 45 Q25 30 40 45 Q55 60 70 45" stroke="#2A2A2A" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M10 60 Q25 45 40 60 Q55 75 70 60" stroke="#F26B1F" stroke-width="6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-logo-text"><span class="fl">flow</span><span class="li">li</span></span>
+    </a>
+    <a class="nav-cta" href="https://map.flowli.co.il/flowli-diagnose-intro.html" target="_blank" rel="noopener">אבחון חינם</a>
+  </div>
+</nav>
+
+<main>
+  <div class="hero">
+    <div class="breadcrumb"><a href="https://flowli.co.il">flowli</a> / בלוג</div>
+    <h1>מדריכים מעשיים, בלי ז'רגון</h1>
+    <p>מה באמת עוזר לעסק קטן להפסיק לטבוע במשימות שחוזרות על עצמן - בלי הבטחות, עם דוגמאות מסומנות בבירור.</p>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="filter-tag active" data-filter="all">הכל</button>
+    <button class="filter-tag" data-filter="קליניקאיות">קליניקאיות ומטפלים</button>
+    <button class="filter-tag" data-filter="רכש">רכש / יבוא / שילוח</button>
+    <button class="filter-tag" data-filter="B2B">עסקים קטנים</button>
+    <button class="filter-tag" data-filter="טכנולוגיה">טכנולוגיה לעסקים</button>
+  </div>
+
+  <div class="grid" id="grid">
+    <a class="card is-featured" data-niche="B2B" href="dont-start-with-automation.html" style="grid-column:1/-1">
+      <div class="card-niche">עסקים קטנים · המאמר המרכזי</div>
+      <h2>לא מתחילים מאוטומציה: 4 שלבים לבחירת התהליך הראשון שכדאי לסדר בעסק</h2>
+      <p>לפני שבוחרים כלי, כדאי לדעת מה בכלל כדאי לתקן קודם. שיטת Flowli: ממפים, מתעדפים, מחברים, מודדים.</p>
+      <div class="card-foot"><span>8 דקות קריאה</span><span class="card-status featured">מאמר דגל</span></div>
+    </a>
+
+    <a class="card" data-niche="קליניקאיות" href="clinic-no-show-automation.html">
+      <div class="card-niche">קליניקאיות פרטיות</div>
+      <h2>תזכורות לתורים בקליניקה: איך לבנות תהליך נכון</h2>
+      <p>תזכורת יכולה לעזור למטופל לזכור את התור - היא לא מבטיחה הגעה. איך בונים סביב זה תהליך מלא: אישור, תזכורת, ביטול וטיפול בחריגים.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="קליניקאיות" href="clinic-crm-what-you-need.html">
+      <div class="card-niche">קליניקאיות פרטיות</div>
+      <h2>CRM לקליניקה פרטית: מה צריך לבדוק לפני שבוחרים</h2>
+      <p>קליניקה לא צריכה בהכרח מערכת גדולה - היא צריכה דרך ברורה לנהל תורים, תשלומים ומידע רגיש. איך מגדירים את הצורך לפני שבוחרים כלי.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="קליניקאיות" href="personal-trainer-whatsapp-automation.html">
+      <div class="card-niche">מאמנים אישיים / PT</div>
+      <h2>אוטומציית וואטסאפ למאמני כושר: מה מתאים ומה נשאר אישי</h2>
+      <p>לא כל הודעה בוואטסאפ דורשת תשובה אישית, ולא כל שיחה מתאימה לאוטומציה. ההבחנה בין תקשורת תפעולית לליווי אישי.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="רכש" href="procurement-mistakes-small-business.html">
+      <div class="card-niche">רכש / יבוא / שילוח</div>
+      <h2>5 נקודות כשל בתהליך הרכש ואיך לצמצם אותן</h2>
+      <p>הזמנה כפולה או אישור שנשכח אינם בהכרח טעות של אדם אחד. חמישה תרחישים אפשריים והבדיקות שכדאי לבצע לפני שקונים כלי חדש.</p>
+      <div class="card-foot"><span>7 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="רכש" href="import-shipment-tracking-automation.html">
+      <div class="card-niche">רכש / יבוא / שילוח</div>
+      <h2>מעקב משלוחים ליבואנים: ריכוז סטטוסים ועדכוני לקוחות</h2>
+      <p>מערכת מעקב טובה לא ממציאה ודאות - היא מרכזת מידע ממקורות שהוגדרו ומפרידה בין מידע שאפשר להעביר ללקוח לבין חריג שמחייב בדיקה.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="B2B" href="automation-cost-small-business-israel.html">
+      <div class="card-niche">עסקים קטנים</div>
+      <h2>כמה עולה אוטומציה לעסק קטן? כך קוראים הצעת מחיר</h2>
+      <p>בלי להכיר את התהליך אי אפשר לתת מחיר אחראי. מה אמור להיכלל בהצעה, ואילו שאלות עוזרות להשוות בין פתרונות.</p>
+      <div class="card-foot"><span>7 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="טכנולוגיה" href="business-dashboard-small-business.html">
+      <div class="card-niche">טכנולוגיה לעסקים</div>
+      <h2>דשבורד לעסק קטן: מה כדאי להציג ואיך מתחילים</h2>
+      <p>דשבורד טוב לא נמדד במספר הגרפים שבו - הוא עונה על שאלות עסקיות ברורות ומראה מאיפה הגיע המידע ומתי עודכן.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="טכנולוגיה" href="automation-vs-ai-agent-small-business.html">
+      <div class="card-niche">טכנולוגיה לעסקים</div>
+      <h2>אוטומציה רגילה או סוכן AI: מה ההבדל ומה מתאים לעסק?</h2>
+      <p>אוטומציה מבצעת כללים שהוגדרו מראש. סוכן AI מפרש מידע ובוחר צעד. הבחירה תלויה ביציבות התהליך וברמת הסיכון, לא ב"מה חדש יותר".</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="טכנולוגיה" href="ai-agent-daily-monitoring-small-business.html">
+      <div class="card-niche">טכנולוגיה לעסקים</div>
+      <h2>סוכן AI שבודק מידע מדי יום: איך זה עובד?</h2>
+      <p>סוכן כזה יכול לגשת למקור שהוגדר, לבדוק אם משהו השתנה ולהתריע כשנדרש טיפול - אבל הוא לא יודע מעצמו מה חשוב לעסק.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="רכש" href="service-call-machine-history-small-business.html">
+      <div class="card-niche">שירות ותחזוקה לציוד</div>
+      <h2>למה שיחת שירות קצרה הופכת לבירור ארוך?</h2>
+      <p>כשהלקוח מתקשר צריך לזהות את הציוד, לבדוק אחריות ולהבין מה כבר תוקן. איך כרטיס מכונה מרכז את המידע - ומה אפשר לסדר בלי להחליף מערכת.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="רכש" href="inventory-availability-whatsapp-small-business.html">
+      <div class="card-niche">יבואנים וסיטונאים</div>
+      <h2>"יש במלאי?" - איך עונים ללקוח בלי להטעות אותו</h2>
+      <p>מענה אוטומטי לא מתקן מלאי לא מעודכן. איך מגדירים זיהוי מוצר, מקור מלאי ורמת ודאות - ומתי נכון להעביר את הפנייה לאדם.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="טכנולוגיה" href="off-the-shelf-vs-custom-business-system.html">
+      <div class="card-niche">בחירת מערכת</div>
+      <h2>מערכת מוכנה או פיתוח מותאם - איך מחליטים באמת?</h2>
+      <p>הבחירה אינה רק בין לקנות ולבנות. חמש שאלות שמפרידות בין ייחוד אמיתי להרגל עבודה, ומה חייבים להשוות מעבר למחיר ההקמה.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="טכנולוגיה" href="automation-layer-over-existing-system.html">
+      <div class="card-niche">ERP ומערכות קיימות</div>
+      <h2>"יש לנו כבר מערכת" - מה אפשר לעשות מעליה?</h2>
+      <p>שכבת אוטומציה אינה בהכרח "לא נוגעת בדאטה". מה ההבדל בין קריאה, כתיבה וסנכרון, ומתי המגבלות מצדיקות החלפה.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="B2B" href="abandoned-cart-woocommerce-israel.html">
+      <div class="card-niche">חנויות אונליין</div>
+      <h2>עגלה נטושה ב-WooCommerce - מה באמת כדאי לבדוק?</h2>
+      <p>עגלה שלא הסתיימה ברכישה אינה בהכרח כסף שאפשר להחזיר. איך מגדירים נטישה, בוחרים ערוץ ומודדים בלי לייחס לפנייה רכישה שהייתה מתבצעת ממילא.</p>
+      <div class="card-foot"><span>6 דקות קריאה</span></div>
+    </a>
+
+    <a class="card" data-niche="טכנולוגיה" href="make-vs-zapier-vs-n8n-israel.html">
+      <div class="card-niche">כלי אוטומציה</div>
+      <h2>Make, Zapier או n8n - מה מתאים לעסק ישראלי קטן?</h2>
+      <p>שלושה כלים, שלושה מודלי שימוש ושאלה אחת חשובה: מה מתאים לתהליך ולמי שיתחזק אותו. השוואה שמפנה למקורות הרשמיים במקום למספר שמתיישן.</p>
+      <div class="card-foot"><span>7 דקות קריאה</span></div>
+    </a>
+  </div>
+
+<script>
+  document.getElementById('filters').addEventListener('click', function(e){
+    if(!e.target.classList.contains('filter-tag')) return;
+    document.querySelectorAll('.filter-tag').forEach(function(t){t.classList.remove('active')});
+    e.target.classList.add('active');
+    var f = e.target.dataset.filter;
+    document.querySelectorAll('#grid .card').forEach(function(card){
+      card.style.display = (f === 'all' || card.dataset.niche === f) ? 'flex' : 'none';
+    });
+  });
+</script>
+</main>
+
+<footer style="margin-top:60px">
+  <a class="footer-logo" href="https://flowli.co.il">
+    <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 30 Q25 15 40 30 Q55 45 70 30" stroke="#2A2A2A" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M10 45 Q25 30 40 45 Q55 60 70 45" stroke="#2A2A2A" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M10 60 Q25 45 40 60 Q55 75 70 60" stroke="#F26B1F" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="footer-logo-text"><span class="fl">flow</span><span class="li">li</span></span>
+  </a>
+  <p>Flowli - אוטומציה ו-AI לעסקים קטנים ובינוניים בישראל · <a href="https://flowli.co.il">flowli.co.il</a></p>
+</footer>
+
+</body>
+</html>

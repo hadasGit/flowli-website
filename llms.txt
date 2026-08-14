@@ -18,15 +18,27 @@ Israeli small and medium businesses — service providers, clinics, agencies, co
 ## Key Facts
 
 - Based in Israel, works in Hebrew
-- Projects take 1–3 weeks
-- Pricing starts at a few thousand NIS for a focused solution
-- Fixed-price model — no surprises
+- Scope, timeline and price depend on the process, the existing systems and the amount of work involved; they are defined in a written quote after a diagnosis
+- Fixed-price model — the quote is agreed before work starts
 - Every solution includes documentation for independent use
 - Not a template shop — each solution is built from the client's specific workflow
 
 ## Free Diagnosis
 
 Flowli offers a free initial diagnosis to identify automation opportunities in any business.
+
+## Blog
+
+Practical Hebrew guides on business automation, written to explain trade-offs rather than promise outcomes. Index: https://flowli.co.il/blog/
+
+- Choosing the first process to fix: https://flowli.co.il/blog/dont-start-with-automation.html
+- Automation vs. AI agents: https://flowli.co.il/blog/automation-vs-ai-agent-small-business.html
+- Comparing Make, Zapier and n8n: https://flowli.co.il/blog/make-vs-zapier-vs-n8n-israel.html
+- Off-the-shelf system vs. custom development: https://flowli.co.il/blog/off-the-shelf-vs-custom-business-system.html
+- Adding an automation layer over an existing ERP: https://flowli.co.il/blog/automation-layer-over-existing-system.html
+- What automation costs and how to read a quote: https://flowli.co.il/blog/automation-cost-small-business-israel.html
+- Appointment reminders and no-shows in private clinics: https://flowli.co.il/blog/clinic-no-show-automation.html
+- Answering stock availability questions on WhatsApp: https://flowli.co.il/blog/inventory-availability-whatsapp-small-business.html
 
 ## Contact
 
