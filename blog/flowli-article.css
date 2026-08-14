@@ -147,3 +147,12 @@
     .card-grid{grid-template-columns:1fr}
     .strategy-strip{padding:20px 22px}
   }
+
+  /* the TOC is a <nav>, so it inherited the sticky site-header rule above */
+  nav.toc{position:static;z-index:auto;backdrop-filter:none;border-bottom:none}
+  @media(max-width:640px){
+    .toc{padding:16px 18px;margin-top:28px}
+    .toc-label{font-size:10px;margin-bottom:10px}
+    .toc-chips{gap:6px}
+    .toc-chip{font-size:.8rem;padding:5px 11px}
+  }
