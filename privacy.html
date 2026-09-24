@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מדיניות פרטיות | Flowli</title>
+  <meta name="description" content="מדיניות הפרטיות של Flowli - כיצד נאסף, נשמר ומעובד מידע אישי של משתמשים באתר ובשירותים.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="מדיניות פרטיות | Flowli">
+  <meta property="og:description" content="מדיניות הפרטיות של Flowli - כיצד נאסף, נשמר ומעובד מידע אישי של משתמשים באתר ובשירותים.">
+  <meta property="og:url" content="https://flowli.co.il/privacy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://flowli.co.il/privacy.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Assistant:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #EFEDE6;
+      --bg-warm:     #E8E4D6;
+      --cream:       #FAFAF7;
+      --ink:         #1A1A1A;
+      --text:        #2A2A2A;
+      --muted:       #5C5751;
+      --orange:      #F26B1F;
+      --orange-deep: #D45A12;
+      --orange-pale: #FEF0E7;
+      --orange-mid:  #FDDDBD;
+      --radius-lg:   20px;
+      --radius-xl:   32px;
+    }
+
+    body {
+      font-family: 'Assistant', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(250,250,247,.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(232,228,214,.7);
+    }
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+    }
+    .nav-logo {
+      direction: ltr;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+    }
+    .nav-logo svg { width: 36px; height: 36px; }
+    .nav-logo-text {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: -.035em;
+    }
+    .nav-logo .fl { color: var(--ink); }
+    .nav-logo .li { color: var(--orange); }
+    .nav-back {
+      font-family: 'Assistant', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--orange); }
+
+    /* ─── CONTENT ─── */
+    .policy-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 28px 100px;
+    }
+    .policy-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+    .policy-title {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -.03em;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .policy-updated {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+    .policy-section {
+      margin-bottom: 34px;
+    }
+    .policy-section h2 {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .policy-section p, .policy-section li {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.85;
+    }
+    .policy-contact {
+      background: var(--orange-pale);
+      border: 1px solid var(--orange-mid);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin-top: 44px;
+      font-size: 14.5px;
+      color: var(--ink);
+      line-height: 1.9;
+    }
+    .policy-contact strong { color: var(--ink); }
+    .policy-contact a { color: var(--orange-deep); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 28px 28px;
+    }
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: rgba(255,255,255,.3);
+      font-size: 13px;
+    }
+    .footer-logo {
+      direction: ltr;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .footer-logo svg { width: 20px; height: 20px; }
+    .footer-logo span {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: -.035em;
+    }
+    .footer-logo .fl { color: rgba(255,255,255,.5); }
+    .footer-logo .li { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 30 Q25 15 40 30 Q55 45 70 30" stroke="#2A2A2A" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M10 45 Q25 30 40 45 Q55 60 70 45" stroke="#2A2A2A" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M10 60 Q25 45 40 60 Q55 75 70 60" stroke="#F26B1F" stroke-width="6" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="nav-logo-text"><span class="fl">flow</span><span class="li">li</span></span>
+      </a>
+      <a href="/" class="nav-back">&larr; חזרה לאתר</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="policy-wrap">
+    <div class="policy-label">Privacy Policy</div>
+    <h1 class="policy-title">מדיניות פרטיות - Flowli</h1>
+    <p class="policy-updated">עודכן לאחרונה: מאי 2026</p>
+
+    <div class="policy-section">
+      <h2>1. כללי</h2>
+      <p>ברוכים הבאים ל-Flowli. מדיניות פרטיות זו מסבירה כיצד נאסף, נשמר, מעובד ומשמש מידע אישי של משתמשים. השימוש בשירות מהווה הסכמה למדיניות זו במלואה.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>2. איזה מידע אנו אוספים</h2>
+      <p>מידע שנמסר על-ידך: שם מלא, כתובת דוא"ל ומספר טלפון; תשובות שאלון האבחון - נשמרות בשרתי Flowli לצורך מתן שירות מותאם אישית; תכנים שנכתבים בשדות הטקסט החופשי.<br>מידע טכני: כתובת IP, סוג דפדפן, מערכת הפעלה, נתוני אנליטיקה אנונימיים, עוגיות.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>3. שימוש במידע</h2>
+      <p>יצירת קשר לצורך תיאום שיחת ייעוץ; שליחת תכנים מקצועיים ועדכונים (בהתאם להסכמתך); שיפור השירות על בסיס נתונים מצטברים ואנונימיים; עמידה בדרישות חוקיות.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>4. שימוש בטכנולוגיות AI</h2>
+      <p>השירות עושה שימוש בטכנולוגיות בינה מלאכותית לניתוח תשובות האבחון והתאמת ההמלצות. המידע אינו משמש לאימון ציבורי של מודלים. אין לראות בתוצאות האבחון ייעוץ מקצועי, משפטי, פיננסי או רפואי.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>5. Cookies ועוגיות</h2>
+      <p>חיוניות - להפעלת האתר; פונקציונליות - לשיפור חוויית שימוש; אנליטיות - ניתוח תנועה אנונימי. ניתן לחסום עוגיות דרך הגדרות הדפדפן.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>6. שיתוף מידע</h2>
+      <p>המידע עשוי להיות משותף עם ספקי שירות חיוניים (מערכות דיוור, אנליטיקה, ספקי AI). המידע לא נמכר לצדדים שלישיים.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>7. זכויותיך</h2>
+      <p>לעיין במידע האישי שלך; לבקש תיקון מידע שגוי; לבקש מחיקת מידע; לבטל הסכמה לדיוור; לבקש העברת מידע.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>8. אבטחת מידע</h2>
+      <p>אנו נוקטים באמצעים טכנולוגיים ואורגניזציוניים סבירים לאבטחת המידע. אין אבטחה מוחלטת.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>9. קטינים</h2>
+      <p>השירות מיועד לגיל 18 ומעלה. לא נאסף ביודעין מידע מקטינים.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>10. שינויים במדיניות</h2>
+      <p>החברה רשאית לעדכן מדיניות זו מעת לעת. הגרסה המעודכנת תפורסם באתר ותחייב מרגע פרסומה.</p>
+    </div>
+
+    <div class="policy-contact">
+      <strong>פנייה בנושא פרטיות:</strong><br>
+      הדס גרינברג &middot; Flowli<br>
+      <a href="mailto:hadas@flowli.co.il">hadas@flowli.co.il</a><br>
+      מענה עד 5 ימי עסקים
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 30 Q25 15 40 30 Q55 45 70 30" stroke="rgba(255,255,255,.5)" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M10 45 Q25 30 40 45 Q55 60 70 45" stroke="rgba(255,255,255,.5)" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M10 60 Q25 45 40 60 Q55 75 70 60" stroke="#F26B1F" stroke-width="6" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span><span class="fl">flow</span><span class="li">li</span></span>
+      </a>
+      <span>&#169; 2026 flowli &middot; כל הזכויות שמורות</span>
+      <a href="mailto:hadas@flowli.co.il" style="color:rgba(255,255,255,.3);text-decoration:none;">hadas@flowli.co.il</a>
+    </div>
+  </footer>
+
+</body>
+</html>
