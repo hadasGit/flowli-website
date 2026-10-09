@@ -31,14 +31,14 @@ Flowli offers a free initial diagnosis to identify automation opportunities in a
 
 Practical Hebrew guides on business automation, written to explain trade-offs rather than promise outcomes. Index: https://flowli.co.il/blog/
 
-- Choosing the first process to fix: https://flowli.co.il/blog/dont-start-with-automation.html
-- Automation vs. AI agents: https://flowli.co.il/blog/automation-vs-ai-agent-small-business.html
-- Comparing Make, Zapier and n8n: https://flowli.co.il/blog/make-vs-zapier-vs-n8n-israel.html
-- Off-the-shelf system vs. custom development: https://flowli.co.il/blog/off-the-shelf-vs-custom-business-system.html
-- Adding an automation layer over an existing ERP: https://flowli.co.il/blog/automation-layer-over-existing-system.html
-- What automation costs and how to read a quote: https://flowli.co.il/blog/automation-cost-small-business-israel.html
-- Appointment reminders and no-shows in private clinics: https://flowli.co.il/blog/clinic-no-show-automation.html
-- Answering stock availability questions on WhatsApp: https://flowli.co.il/blog/inventory-availability-whatsapp-small-business.html
+- Choosing the first process to fix: https://flowli.co.il/blog/dont-start-with-automation
+- Automation vs. AI agents: https://flowli.co.il/blog/automation-vs-ai-agent-small-business
+- Comparing Make, Zapier and n8n: https://flowli.co.il/blog/make-vs-zapier-vs-n8n-israel
+- Off-the-shelf system vs. custom development: https://flowli.co.il/blog/off-the-shelf-vs-custom-business-system
+- Adding an automation layer over an existing ERP: https://flowli.co.il/blog/automation-layer-over-existing-system
+- What automation costs and how to read a quote: https://flowli.co.il/blog/automation-cost-small-business-israel
+- Appointment reminders and no-shows in private clinics: https://flowli.co.il/blog/clinic-no-show-automation
+- Answering stock availability questions on WhatsApp: https://flowli.co.il/blog/inventory-availability-whatsapp-small-business
 
 ## Contact
 
