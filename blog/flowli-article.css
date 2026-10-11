@@ -116,6 +116,7 @@
   .footer-logo .fl{color:var(--ink)} .footer-logo .li{color:var(--orange)}
   footer p{font-size:12.5px;color:var(--muted)}
   footer a{color:var(--muted)}
+  .footer-legal{margin-top:10px}
 
   /* ---- components used by the GEO articles, matched to the production look ---- */
   .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--bg-warm);border-radius:12px}

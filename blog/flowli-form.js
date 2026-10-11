@@ -43,9 +43,10 @@
         '<input class="ff-field" id="ffPhone" type="tel" autocomplete="tel" placeholder="050-0000000">' +
         '<label class="ff-label" for="ffEmail">מייל</label>' +
         '<input class="ff-field" id="ffEmail" type="email" autocomplete="email" placeholder="name@email.com">' +
+        '<input type="text" id="ffHp" name="fl_extra_field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
         '<label class="ff-consent"><input type="checkbox" id="ffConsent">' +
           '<span>אני מאשר/ת קבלת תכנים מקצועיים ועדכונים מ-Flowli ומסכים/ה ל' +
-          '<a href="https://flowli.co.il/#privacy" target="_blank" rel="noopener">מדיניות הפרטיות</a>.</span>' +
+          '<a href="/privacy" target="_blank" rel="noopener">מדיניות הפרטיות</a>.</span>' +
         '</label>' +
         '<button class="ff-submit" id="ffSubmit" type="button" disabled>שלחו פרטים ←</button>' +
         '<div class="ff-note">🔒 הפרטים נשמרים בצורה מאובטחת. אפשר להסיר מהדיוור בכל עת.</div>' +
@@ -120,6 +121,12 @@
     err.style.display = 'none';
     btn.disabled = true;
     btn.textContent = 'שולח...';
+
+    if (document.getElementById('ffHp').value) {
+      document.getElementById('ffForm').style.display = 'none';
+      document.getElementById('ffDone').style.display = 'block';
+      return;
+    }
 
     fetch(ENDPOINT, {
       method: 'POST',

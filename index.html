@@ -3499,6 +3499,7 @@
           <input type="tel" class="lead-field" id="leadPhone" placeholder="050-0000000" required>
           <label class="lead-label" for="leadEmail">מייל</label>
           <input type="email" class="lead-field" id="leadEmail" placeholder="name@email.com" required>
+          <input type="text" id="leadHp" name="fl_extra_field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <label class="lead-consent">
             <input type="checkbox" id="leadConsent" onchange="document.getElementById('leadSubmit').disabled=!this.checked">
             <span>אני מאשר.ת קבלת תכנים מקצועיים ועדכונים מ-Flowli במייל ומסכימ.ה ל<a href="#" onclick="event.preventDefault();openPrivacyModal()" class="lead-consent-link">מדיניות הפרטיות</a></span>
@@ -3530,11 +3531,11 @@
       <span>&#169; 2026 flowli &middot; כל הזכויות שמורות</span>
       <a href="mailto:hadas@flowli.co.il" style="color:rgba(255,255,255,.3);text-decoration:none;">hadas@flowli.co.il</a>
       <div style="display:flex;align-items:center;gap:6px">
-        <button class="a11y-link" onclick="document.getElementById('privacyOverlay').classList.add('open')">מדיניות פרטיות</button>
+        <a class="a11y-link" href="/privacy">מדיניות פרטיות</a>
         <span style="color:rgba(255,255,255,.2)">|</span>
-        <button class="a11y-link" onclick="document.getElementById('a11yOverlay').classList.add('open')">הצהרת נגישות</button>
+        <a class="a11y-link" href="/accessibility">הצהרת נגישות</a>
         <span style="color:rgba(255,255,255,.2)">|</span>
-        <button class="a11y-link" onclick="document.getElementById('tosOverlay').classList.add('open')">תנאי שימוש</button>
+        <a class="a11y-link" href="/terms">תנאי שימוש</a>
       </div>
     </div>
   </footer>
@@ -3622,6 +3623,7 @@
       btn.textContent = 'שולח...';
       await new Promise(r => setTimeout(r, 600));
       try {
+        if (document.getElementById('demoHp')?.value) throw new Error('hp');
         const res = await fetch('https://whuuevjoqitwslnykvgd.supabase.co/rest/v1/leads_website', {
           method: 'POST',
           headers: {
@@ -3705,6 +3707,11 @@
       if (!name || !phone || !email) { alert('שם, טלפון ומייל הם שדות חובה'); return; }
       const btn = document.getElementById('leadSubmit');
       btn.disabled = true; btn.textContent = 'שולחת...';
+      if (document.getElementById('leadHp')?.value) {
+        document.getElementById('leadForm').style.display = 'none';
+        document.getElementById('leadSuccess').style.display = 'block';
+        return;
+      }
       try {
         const res = await fetch('https://whuuevjoqitwslnykvgd.supabase.co/rest/v1/leads_website', {
           method: 'POST',
@@ -3719,11 +3726,11 @@
         if (!res.ok) {
           const err = await res.text();
           console.error('Supabase error:', res.status, err);
-          alert('שגיאה בשמירה: ' + res.status + ' - ' + err);
+          alert('לא הצלחנו לשמור כרגע. אפשר לנסות שוב בעוד כמה דקות, או לכתוב לי בוואטסאפ.');
           btn.disabled = false; btn.textContent = 'שלחו פרטים ←';
           return;
         }
-      } catch(e) { console.error('fetch error', e); alert('שגיאת רשת: ' + e.message); return; }
+      } catch(e) { console.error('fetch error', e); alert('לא הצלחנו לשמור כרגע. כדאי לבדוק את החיבור לאינטרנט ולנסות שוב.'); btn.disabled = false; btn.textContent = 'שלחו פרטים ←'; return; }
       document.getElementById('leadForm').style.display = 'none';
       document.getElementById('leadSuccess').style.display = 'block';
     }
@@ -3885,6 +3892,7 @@
           <div class="demo-field">
             <label for="demoEmail">אימייל</label>
             <input type="email" id="demoEmail" placeholder="your@email.com" autocomplete="email">
+            <input type="text" id="demoHp" name="fl_extra_field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           </div>
           <label class="demo-consent">
             <input type="checkbox" id="demoConsent" onchange="updateDemoSubmit()">
