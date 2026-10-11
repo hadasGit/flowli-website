@@ -45,8 +45,10 @@
         '<input class="ff-field" id="ffEmail" type="email" autocomplete="email" placeholder="name@email.com">' +
         '<input type="text" id="ffHp" name="fl_extra_field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
         '<label class="ff-consent"><input type="checkbox" id="ffConsent">' +
-          '<span>אני מאשר/ת קבלת תכנים מקצועיים ועדכונים מ-Flowli ומסכים/ה ל' +
-          '<a href="/privacy" target="_blank" rel="noopener">מדיניות הפרטיות</a>.</span>' +
+          '<span>קראתי את <a href="/privacy" target="_blank" rel="noopener">מדיניות הפרטיות</a> ואני מסכים/ה לה.</span>' +
+        '</label>' +
+        '<label class="ff-consent" style="margin-top:-8px"><input type="checkbox" id="ffMarketing">' +
+          '<span>אשמח לקבל גם תכנים מקצועיים ועדכונים מ-Flowli במייל (לא חובה).</span>' +
         '</label>' +
         '<button class="ff-submit" id="ffSubmit" type="button" disabled>שלחו פרטים ←</button>' +
         '<div class="ff-note">🔒 הפרטים נשמרים בצורה מאובטחת. אפשר להסיר מהדיוור בכל עת.</div>' +
@@ -138,7 +140,7 @@
       },
       body: JSON.stringify({
         name: name, phone: phone, email: email || null,
-        consent: true, source: source
+        consent: !!document.getElementById('ffMarketing').checked, source: source
       })
     }).then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
