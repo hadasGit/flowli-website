@@ -2743,10 +2743,10 @@
       <p>אין חובה חוקית למסור מידע. המסירה תלויה ברצונך ובהסכמתך. בלי פרטי קשר לא נוכל לחזור אליך, ותוצאות האבחון מוצגות אחרי מילוי הפרטים.</p>
 
       <p><strong>4. למה המידע משמש</strong></p>
-      <ul><li>לחזור אליך בעקבות פנייה ולתאם שיחה.</li><li>להציג ולשלוח לך את תוצאות האבחון והתייחסות אישית אליהן.</li><li>לשלוח תכנים מקצועיים ועדכונים, רק אם סימנת שזה מעניין אותך.</li><li>לשפר את האתר והשירות על בסיס נתונים מצטברים ואנונימיים.</li><li>לעמוד בדרישות החוק.</li></ul>
+      <ul><li>לחזור אליך בעקבות פנייה ולתאם שיחה.</li><li>להציג ולשלוח לך את תוצאות האבחון והתייחסות אישית אליהן.</li><li>לשלוח תכנים מקצועיים ועדכונים, בהתאם לאישור שסימנת בטופס.</li><li>לשפר את האתר והשירות על בסיס נתונים מצטברים ואנונימיים.</li><li>לעמוד בדרישות החוק.</li></ul>
 
       <p><strong>5. דיוור</strong></p>
-      <p>תכנים שיווקיים נשלחים רק למי שאישר.ה זאת בנפרד, בתיבת סימון שאינה חובה. אפשר להסיר את עצמך בכל עת, בקישור ההסרה שבמייל או בפנייה אלינו.</p>
+      <p>תכנים שיווקיים נשלחים רק למי שאישר.ה זאת בתיבת סימון נפרדת בטופס. אפשר להסיר את עצמך בכל עת, בקישור ההסרה שבמייל או בפנייה אלינו.</p>
 
       <p><strong>6. שימוש בטכנולוגיות AI</strong></p>
       <p>השירות עושה שימוש בטכנולוגיות בינה מלאכותית לניתוח תשובות האבחון והתאמת ההמלצות. המידע אינו משמש לאימון ציבורי של מודלים. אין לראות בתוצאות האבחון ייעוץ מקצועי, משפטי, פיננסי או רפואי.</p>
@@ -3518,14 +3518,14 @@
           <input type="tel" class="lead-field" id="leadPhone" placeholder="050-0000000" required>
           <label class="lead-label" for="leadEmail">מייל</label>
           <input type="email" class="lead-field" id="leadEmail" placeholder="name@email.com" required>
-          <input type="text" id="leadHp" name="fl_extra_field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <input type="text" id="leadHp" name="fl_extra_field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);opacity:0;pointer-events:none">
           <label class="lead-consent">
-            <input type="checkbox" id="leadConsent" onchange="document.getElementById('leadSubmit').disabled=!this.checked">
+            <input type="checkbox" id="leadConsent" onchange="document.getElementById('leadSubmit').disabled=!(document.getElementById('leadConsent').checked&&document.getElementById('leadMarketing').checked)">
             <span>קראתי את <a href="#" onclick="event.preventDefault();openPrivacyModal()" class="lead-consent-link">מדיניות הפרטיות</a> ואני מסכימ.ה לה</span>
           </label>
           <label class="lead-consent">
-            <input type="checkbox" id="leadMarketing">
-            <span>אשמח לקבל גם תכנים מקצועיים ועדכונים מ-Flowli במייל (לא חובה)</span>
+            <input type="checkbox" id="leadMarketing" onchange="document.getElementById('leadSubmit').disabled=!(document.getElementById('leadConsent').checked&&document.getElementById('leadMarketing').checked)">
+            <span>אני מאשר.ת קבלת תכנים מקצועיים ועדכונים מ-Flowli במייל</span>
           </label>
           <button class="lead-submit" id="leadSubmit" onclick="submitLead()" disabled>שלחו פרטים &larr;</button>
           <p class="lead-privacy">&#128274; הפרטים שלך נשמרים בצורה מאובטחת. ניתן להסיר את עצמך מהדיוור בכל עת.</p>
@@ -3686,7 +3686,7 @@
       const n  = document.getElementById('demoName')?.value.trim();
       const p  = document.getElementById('demoPhone')?.value.trim();
       const em = document.getElementById('demoEmail')?.value.trim();
-      const c  = document.getElementById('demoConsent')?.checked;
+      const c  = document.getElementById('demoConsent')?.checked && document.getElementById('demoMarketing')?.checked;
       document.getElementById('demoSubmit').disabled = !(n && p && em && c);
     }
     ['demoName','demoPhone','demoEmail'].forEach(id => {
@@ -3935,15 +3935,15 @@
           <div class="demo-field">
             <label for="demoEmail">אימייל</label>
             <input type="email" id="demoEmail" placeholder="your@email.com" autocomplete="email">
-            <input type="text" id="demoHp" name="fl_extra_field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+            <input type="text" id="demoHp" name="fl_extra_field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);opacity:0;pointer-events:none">
           </div>
           <label class="demo-consent">
             <input type="checkbox" id="demoConsent" onchange="updateDemoSubmit()">
             <span>קראתי את <a href="#" onclick="event.preventDefault();openPrivacyModal()">מדיניות הפרטיות</a> ואני מסכימ.ה לה</span>
           </label>
           <label class="demo-consent">
-            <input type="checkbox" id="demoMarketing">
-            <span>אשמח לקבל גם תכנים מקצועיים ועדכונים מ-Flowli במייל (לא חובה)</span>
+            <input type="checkbox" id="demoMarketing" onchange="updateDemoSubmit()">
+            <span>אני מאשר.ת קבלת תכנים מקצועיים ועדכונים מ-Flowli במייל</span>
           </label>
           <button class="demo-submit" id="demoSubmit" onclick="submitDemo()" disabled>
             קובעים שיחה

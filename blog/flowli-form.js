@@ -43,12 +43,12 @@
         '<input class="ff-field" id="ffPhone" type="tel" autocomplete="tel" placeholder="050-0000000">' +
         '<label class="ff-label" for="ffEmail">מייל</label>' +
         '<input class="ff-field" id="ffEmail" type="email" autocomplete="email" placeholder="name@email.com">' +
-        '<input type="text" id="ffHp" name="fl_extra_field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
+        '<input type="text" id="ffHp" name="fl_extra_field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);opacity:0;pointer-events:none">' +
         '<label class="ff-consent"><input type="checkbox" id="ffConsent">' +
           '<span>קראתי את <a href="/privacy" target="_blank" rel="noopener">מדיניות הפרטיות</a> ואני מסכים/ה לה.</span>' +
         '</label>' +
         '<label class="ff-consent" style="margin-top:-8px"><input type="checkbox" id="ffMarketing">' +
-          '<span>אשמח לקבל גם תכנים מקצועיים ועדכונים מ-Flowli במייל (לא חובה).</span>' +
+          '<span>אני מאשר/ת קבלת תכנים מקצועיים ועדכונים מ-Flowli במייל.</span>' +
         '</label>' +
         '<button class="ff-submit" id="ffSubmit" type="button" disabled>שלחו פרטים ←</button>' +
         '<div class="ff-note">🔒 הפרטים נשמרים בצורה מאובטחת. אפשר להסיר מהדיוור בכל עת.</div>' +
@@ -78,9 +78,12 @@
     });
     overlay.querySelector('.ff-close').addEventListener('click', close);
     document.getElementById('ffBack').addEventListener('click', close);
-    document.getElementById('ffConsent').addEventListener('change', function () {
-      document.getElementById('ffSubmit').disabled = !this.checked;
-    });
+    function syncSubmit() {
+      document.getElementById('ffSubmit').disabled =
+        !(document.getElementById('ffConsent').checked && document.getElementById('ffMarketing').checked);
+    }
+    document.getElementById('ffConsent').addEventListener('change', syncSubmit);
+    document.getElementById('ffMarketing').addEventListener('change', syncSubmit);
     document.getElementById('ffSubmit').addEventListener('click', submit);
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && overlay.classList.contains('open')) close();
