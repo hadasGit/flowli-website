@@ -74,7 +74,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Assistant:wght@400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Assistant:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -447,6 +447,7 @@
       display: none;
       width: 100%;
       max-width: 340px;
+      height: auto;
       margin: 28px auto 0;
       border-radius: 14px;
       box-shadow: 0 16px 48px rgba(0,0,0,.14);
@@ -492,6 +493,7 @@
       position: relative;
       z-index: 1;
       width: 100%;
+      height: auto;
       border-radius: 18px;
       box-shadow: 0 28px 70px rgba(0,0,0,0.16), 0 8px 24px rgba(0,0,0,0.08);
       display: block;
@@ -581,9 +583,7 @@
       margin-bottom: 32px;
     }
     .qm-title em {
-      font-family: 'Frank Ruhl Libre', serif;
-      font-style: italic;
-      font-weight: 500;
+      font-style: normal;
       color: var(--orange-soft);
     }
     .qm-body {
@@ -678,8 +678,8 @@
       background: linear-gradient(to left, var(--orange), var(--orange-soft));
     }
     .moment-quote {
-      font-family: 'Frank Ruhl Libre', serif;
-      font-style: italic;
+      font-family: 'Assistant', sans-serif;
+      font-weight: 600;
       font-size: 1.18rem;
       color: var(--orange-deep);
       line-height: 1.45;
@@ -1393,8 +1393,8 @@
       margin-bottom: 24px;
     }
     .about-quote {
-      font-family: 'Frank Ruhl Libre', serif;
-      font-style: italic;
+      font-family: 'Assistant', sans-serif;
+      font-weight: 600;
       font-size: clamp(1.25rem, 2.2vw, 1.5rem);
       line-height: 1.55;
       color: var(--ink);
@@ -2875,7 +2875,7 @@
             </a>
           </div>
           <!-- תמונה למובייל בלבד -->
-          <img src="laptop.jpg" alt="סביבת עבודה עם לפטופ" class="hero-img-mobile" loading="lazy">
+          <img src="laptop.jpg" alt="סביבת עבודה עם לפטופ" class="hero-img-mobile" width="512" height="382" fetchpriority="high">
         </div>
 
         <!-- תמונת הלפטופ -->
@@ -2886,7 +2886,7 @@
               src="laptop.jpg"
               alt="סביבת עבודה מסודרת עם לפטופ ומערכת אוטומציה"
               class="hero-img"
-              loading="lazy"
+              width="512" height="382"
             />
           </div>
         </div>
