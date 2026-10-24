@@ -16,7 +16,7 @@
   .nav-inner{max-width:760px;margin:0 auto;padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between}
   .nav-logo{direction:ltr;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
   .nav-logo svg{width:30px;height:30px}
-  .nav-logo-text{font-family:'Inter',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.035em}
+  .nav-logo-text{font-family:'Rubik',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.035em}
   .nav-logo .fl{color:var(--ink)} .nav-logo .li{color:var(--orange)}
   .nav-cta{background:transparent;color:var(--orange);padding:8px 18px;border-radius:8px;border:2px solid var(--orange);font-family:'Rubik',sans-serif;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
   .nav-cta:hover{background:var(--orange);color:#fff}
@@ -40,6 +40,7 @@
   article h2{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(1.35rem,2.9vw,1.7rem);letter-spacing:-.02em;color:var(--ink);margin:56px 0 20px;border-top:1px solid var(--bg-warm);padding-top:30px;line-height:1.3}
   article h2:first-child{margin-top:0;border-top:none;padding-top:0}
   article h2::before{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--orange);margin-bottom:10px;content:attr(data-num)}
+  article h3{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.18rem;color:var(--ink);line-height:1.4;margin:34px 0 10px}
   article p{margin-bottom:18px;font-size:1.03rem}
   article ul,article ol{margin:0 0 20px;padding-inline-start:24px}
   article li{margin-bottom:10px;font-size:1.02rem}
@@ -112,7 +113,7 @@
   footer{border-top:1px solid var(--bg-warm);padding:36px 24px 60px;text-align:center}
   .footer-logo{direction:ltr;display:inline-flex;align-items:center;gap:6px;text-decoration:none;margin-bottom:10px}
   .footer-logo svg{width:24px;height:24px}
-  .footer-logo-text{font-family:'Inter',sans-serif;font-weight:800;font-size:17px;letter-spacing:-.035em}
+  .footer-logo-text{font-family:'Rubik',sans-serif;font-weight:800;font-size:17px;letter-spacing:-.035em}
   .footer-logo .fl{color:var(--ink)} .footer-logo .li{color:var(--orange)}
   footer p{font-size:12.5px;color:var(--muted)}
   footer a{color:var(--muted)}
