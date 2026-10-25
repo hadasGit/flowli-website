@@ -173,6 +173,19 @@
     .toc-chips{gap:6px}
     .toc-chip{font-size:.8rem;padding:5px 11px}
   }
+
+  /* --- טבלאות במובייל: מתקפלות לכרטיסים במקום גלילה אופקית --- */
+  @media(max-width:640px){
+    .table-wrap{overflow-x:visible;border:none;border-radius:0;margin:22px 0}
+    .compare-wrap{overflow:visible;border:none;border-radius:0;background:transparent;box-shadow:none;margin:22px 0}
+    .content-table,.compare-table{min-width:0;width:100%;display:block;background:transparent;font-size:.97rem}
+    .content-table tr,.compare-table tr{display:block;background:var(--cream);border:1px solid var(--bg-warm);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+    .content-table tr:first-child,.compare-table tr:first-child{display:none}
+    .content-table td,.compare-table td{display:block;border:none;padding:0;color:var(--text)}
+    .content-table td+td,.compare-table td+td{margin-top:10px}
+    .content-table td:first-child,.compare-table td:first-child{font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);font-size:1.04rem;line-height:1.4}
+    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:4px}
+  }
 </style>
 </head>
 <body>
@@ -260,7 +273,7 @@
     </div>
 
     <h2 id="not-replace" data-num="03">לא תמיד צריך להחליף מערכת</h2>
-    <p>אפשר להתחיל במקום מוסכם לבקשות, שדות חובה, אחריות ברורה ותזכורות לתאריכים חשובים. אם קיימת מערכת ERP או מערכת רכש, כדאי לבדוק קודם אם הפער נובע מהגדרה חסרה, מהטמעה חלקית או מכך שחלק מהעבודה ממשיך להתנהל מחוץ למערכת.</p><div class="compare-wrap"><table class="compare-table"><tr><th>מה נראה כמו בעיה במערכת</th><th>מה כדאי לבדוק לפני שמחליפים</th></tr><tr><td>בקשות מגיעות בכל דרך</td><td>אם קיים מקום מוסכם לבקשות ושדות חובה</td></tr><tr><td>אישורים נשכחים</td><td>אם האחריות ברורה ואם יש תזכורות לתאריכים חשובים</td></tr><tr><td>„המערכת לא עובדת”</td><td>אם הפער נובע מהגדרה חסרה או מהטמעה חלקית</td></tr><tr><td>חלק מהעבודה לא מתועד</td><td>אם חלק מהעבודה ממשיך להתנהל מחוץ למערכת</td></tr></table></div>
+    <p>אפשר להתחיל במקום מוסכם לבקשות, שדות חובה, אחריות ברורה ותזכורות לתאריכים חשובים. אם קיימת מערכת ERP או מערכת רכש, כדאי לבדוק קודם אם הפער נובע מהגדרה חסרה, מהטמעה חלקית או מכך שחלק מהעבודה ממשיך להתנהל מחוץ למערכת.</p><div class="compare-wrap"><table class="compare-table"><tr><th>מה נראה כמו בעיה במערכת</th><th>מה כדאי לבדוק לפני שמחליפים</th></tr><tr><td>בקשות מגיעות בכל דרך</td><td data-label="מה כדאי לבדוק לפני שמחליפים">אם קיים מקום מוסכם לבקשות ושדות חובה</td></tr><tr><td>אישורים נשכחים</td><td data-label="מה כדאי לבדוק לפני שמחליפים">אם האחריות ברורה ואם יש תזכורות לתאריכים חשובים</td></tr><tr><td>„המערכת לא עובדת”</td><td data-label="מה כדאי לבדוק לפני שמחליפים">אם הפער נובע מהגדרה חסרה או מהטמעה חלקית</td></tr><tr><td>חלק מהעבודה לא מתועד</td><td data-label="מה כדאי לבדוק לפני שמחליפים">אם חלק מהעבודה ממשיך להתנהל מחוץ למערכת</td></tr></table></div>
     <p>אוטומציה מתאימה כאשר יש תהליך מוסכם ופעולה חוזרת שאפשר להגדיר. היא פחות מתאימה כאשר כל בקשה מטופלת בדרך אחרת או כשהמידע הבסיסי אינו אמין.</p>
 
     <h2 id="start" data-num="04">איך מתחילים בלי להבטיח תוצאה</h2>

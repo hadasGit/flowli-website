@@ -172,6 +172,19 @@
     .toc-chips{gap:6px}
     .toc-chip{font-size:.8rem;padding:5px 11px}
   }
+
+  /* --- טבלאות במובייל: מתקפלות לכרטיסים במקום גלילה אופקית --- */
+  @media(max-width:640px){
+    .table-wrap{overflow-x:visible;border:none;border-radius:0;margin:22px 0}
+    .compare-wrap{overflow:visible;border:none;border-radius:0;background:transparent;box-shadow:none;margin:22px 0}
+    .content-table,.compare-table{min-width:0;width:100%;display:block;background:transparent;font-size:.97rem}
+    .content-table tr,.compare-table tr{display:block;background:var(--cream);border:1px solid var(--bg-warm);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+    .content-table tr:first-child,.compare-table tr:first-child{display:none}
+    .content-table td,.compare-table td{display:block;border:none;padding:0;color:var(--text)}
+    .content-table td+td,.compare-table td+td{margin-top:10px}
+    .content-table td:first-child,.compare-table td:first-child{font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);font-size:1.04rem;line-height:1.4}
+    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:4px}
+  }
 </style>
 </head>
 <body>
@@ -214,7 +227,7 @@
     <p><strong>התשובה הקצרה:</strong> CRM לקליניקה הוא כלי לניהול הקשר והתהליך התפעולי סביב המטופל - למשל פנייה, תור, תשלום ומשימה. הוא אינו בהכרח מערכת לניהול רשומה רפואית, ואסור להניח שכל כלי כללי מתאים לשמירת מידע רפואי.</p>
 
     <h2 id="process-first" data-num="01">מתחילים מהתהליך, לא משם המערכת</h2>
-    <p>המונח CRM מגיע מעולם ניהול הלקוחות והמכירות. לכן מערכות רבות כוללות משפכי מכירה, ניקוד לידים, קמפיינים ודוחות לצוות. בקליניקה פרטית השאלות שונות: איך נקבע תור, מי רשאי לראות אותו, איך עוקבים אחרי תשלום ומה קורה כשמטופל מבקש לשנות מועד.</p><div class="compare-wrap"><table class="compare-table"><tr><th></th><th>מערכות CRM מעולם המכירות</th><th>השאלות בקליניקה פרטית</th></tr><tr><td>מה במרכז</td><td>משפכי מכירה והזדמנויות</td><td>תור: איך הוא נקבע ומי רשאי לראות אותו</td></tr><tr><td>מה עוקבים אחריו</td><td>ניקוד לידים וקמפיינים</td><td>תשלום, ומה קורה כשמטופל מבקש לשנות מועד</td></tr><tr><td>דוחות</td><td>דוחות ביצועים לצוות</td><td>רצף העבודה מפנייה ראשונה ועד סיום הטיפול האדמיניסטרטיבי</td></tr></table></div>
+    <p>המונח CRM מגיע מעולם ניהול הלקוחות והמכירות. לכן מערכות רבות כוללות משפכי מכירה, ניקוד לידים, קמפיינים ודוחות לצוות. בקליניקה פרטית השאלות שונות: איך נקבע תור, מי רשאי לראות אותו, איך עוקבים אחרי תשלום ומה קורה כשמטופל מבקש לשנות מועד.</p><div class="compare-wrap"><table class="compare-table"><tr><th></th><th>מערכות CRM מעולם המכירות</th><th>השאלות בקליניקה פרטית</th></tr><tr><td>מה במרכז</td><td data-label="מערכות CRM מעולם המכירות">משפכי מכירה והזדמנויות</td><td data-label="השאלות בקליניקה פרטית">תור: איך הוא נקבע ומי רשאי לראות אותו</td></tr><tr><td>מה עוקבים אחריו</td><td data-label="מערכות CRM מעולם המכירות">ניקוד לידים וקמפיינים</td><td data-label="השאלות בקליניקה פרטית">תשלום, ומה קורה כשמטופל מבקש לשנות מועד</td></tr><tr><td>דוחות</td><td data-label="מערכות CRM מעולם המכירות">דוחות ביצועים לצוות</td><td data-label="השאלות בקליניקה פרטית">רצף העבודה מפנייה ראשונה ועד סיום הטיפול האדמיניסטרטיבי</td></tr></table></div>
     <p>לפני שמשווים מערכות, כתבו את רצף העבודה הקיים: מפנייה ראשונה ועד סיום הטיפול האדמיניסטרטיבי. כך אפשר לזהות אם חסר כלי, או שפשוט חסרה דרך עבודה מוסכמת.</p>
 
     <h2 id="capabilities" data-num="02">5 יכולות שכדאי לבדוק ב-CRM לקליניקה</h2>

@@ -172,6 +172,19 @@
     .toc-chips{gap:6px}
     .toc-chip{font-size:.8rem;padding:5px 11px}
   }
+
+  /* --- טבלאות במובייל: מתקפלות לכרטיסים במקום גלילה אופקית --- */
+  @media(max-width:640px){
+    .table-wrap{overflow-x:visible;border:none;border-radius:0;margin:22px 0}
+    .compare-wrap{overflow:visible;border:none;border-radius:0;background:transparent;box-shadow:none;margin:22px 0}
+    .content-table,.compare-table{min-width:0;width:100%;display:block;background:transparent;font-size:.97rem}
+    .content-table tr,.compare-table tr{display:block;background:var(--cream);border:1px solid var(--bg-warm);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+    .content-table tr:first-child,.compare-table tr:first-child{display:none}
+    .content-table td,.compare-table td{display:block;border:none;padding:0;color:var(--text)}
+    .content-table td+td,.compare-table td+td{margin-top:10px}
+    .content-table td:first-child,.compare-table td:first-child{font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);font-size:1.04rem;line-height:1.4}
+    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:4px}
+  }
 </style>
 </head>
 <body>
@@ -252,11 +265,11 @@
     <div class="compare-wrap">
       <table class="compare-table">
         <tr><th>מה קורה בפועל</th><th>מה כדאי לבדוק</th></tr>
-        <tr><td>אותה שאלה חוזרת מלקוחות או מהצוות</td><td>עמוד שאלות נפוצות, תבנית תשובה, או מענה אוטומטי ראשוני</td></tr>
-        <tr><td>מידע מפוזר בין וואטסאפ, מייל וגיליון</td><td>מקום מרכזי אחד לרישום, גם אם זה גיליון מסודר יותר</td></tr>
-        <tr><td>תזכורות ומעקבים נשכחים</td><td>תזכורת אוטומטית שמתחברת ליומן הקיים</td></tr>
-        <tr><td>הזנת אותו מידע פעמיים במערכות שונות</td><td>בדיקה אם המערכות הקיימות יכולות להתחבר זו לזו</td></tr>
-        <tr><td>דוח שנבנה ידנית כל חודש מכמה מקורות</td><td>ריכוז אוטומטי של המקורות למקום אחד לפני עיבוד הדוח</td></tr>
+        <tr><td>אותה שאלה חוזרת מלקוחות או מהצוות</td><td data-label="מה כדאי לבדוק">עמוד שאלות נפוצות, תבנית תשובה, או מענה אוטומטי ראשוני</td></tr>
+        <tr><td>מידע מפוזר בין וואטסאפ, מייל וגיליון</td><td data-label="מה כדאי לבדוק">מקום מרכזי אחד לרישום, גם אם זה גיליון מסודר יותר</td></tr>
+        <tr><td>תזכורות ומעקבים נשכחים</td><td data-label="מה כדאי לבדוק">תזכורת אוטומטית שמתחברת ליומן הקיים</td></tr>
+        <tr><td>הזנת אותו מידע פעמיים במערכות שונות</td><td data-label="מה כדאי לבדוק">בדיקה אם המערכות הקיימות יכולות להתחבר זו לזו</td></tr>
+        <tr><td>דוח שנבנה ידנית כל חודש מכמה מקורות</td><td data-label="מה כדאי לבדוק">ריכוז אוטומטי של המקורות למקום אחד לפני עיבוד הדוח</td></tr>
       </table>
     </div>
     <p>הטבלה היא נקודת מוצא לחשיבה, לא רשימת פתרונות מדף. הבחירה בפועל תלויה בכלים הקיימים, בתקציב ובאיכות המידע.</p>

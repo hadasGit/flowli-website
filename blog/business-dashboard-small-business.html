@@ -173,6 +173,19 @@
     .toc-chips{gap:6px}
     .toc-chip{font-size:.8rem;padding:5px 11px}
   }
+
+  /* --- טבלאות במובייל: מתקפלות לכרטיסים במקום גלילה אופקית --- */
+  @media(max-width:640px){
+    .table-wrap{overflow-x:visible;border:none;border-radius:0;margin:22px 0}
+    .compare-wrap{overflow:visible;border:none;border-radius:0;background:transparent;box-shadow:none;margin:22px 0}
+    .content-table,.compare-table{min-width:0;width:100%;display:block;background:transparent;font-size:.97rem}
+    .content-table tr,.compare-table tr{display:block;background:var(--cream);border:1px solid var(--bg-warm);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+    .content-table tr:first-child,.compare-table tr:first-child{display:none}
+    .content-table td,.compare-table td{display:block;border:none;padding:0;color:var(--text)}
+    .content-table td+td,.compare-table td+td{margin-top:10px}
+    .content-table td:first-child,.compare-table td:first-child{font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);font-size:1.04rem;line-height:1.4}
+    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:4px}
+  }
 </style>
 </head>
 <body>
@@ -240,10 +253,10 @@
     <div class="compare-wrap">
       <table class="compare-table">
         <tr><th>מה מוצג</th><th>למה הוא מופיע</th><th>מה צריך לדעת</th></tr>
-        <tr><td class="status">ממתין לבדיקה</td><td>קיימת רשומה שלא אושרה</td><td>מי האחראי ומתי עודכנה</td></tr>
-        <tr><td class="status">חסר מידע</td><td>שדה שהוגדר כחובה אינו מלא</td><td>איזה שדה חסר ומהו מקור הנתונים</td></tr>
-        <tr><td class="status">חריגה</td><td>התקיים תנאי שנקבע מראש</td><td>מהו התנאי ומי מוסמך לטפל</td></tr>
-        <tr><td class="status">הושלם</td><td>כל שלבי התהליך שסוכמו הסתיימו</td><td>מה נחשב השלמה ומי עדכן</td></tr>
+        <tr><td>קיימת רשומה שלא אושרה</td><td data-label="למה הוא מופיע">מי האחראי ומתי עודכנה</td></tr>
+        <tr><td>שדה שהוגדר כחובה אינו מלא</td><td data-label="למה הוא מופיע">איזה שדה חסר ומהו מקור הנתונים</td></tr>
+        <tr><td>התקיים תנאי שנקבע מראש</td><td data-label="למה הוא מופיע">מהו התנאי ומי מוסמך לטפל</td></tr>
+        <tr><td>כל שלבי התהליך שסוכמו הסתיימו</td><td data-label="למה הוא מופיע">מה נחשב השלמה ומי עדכן</td></tr>
       </table>
     </div>
 

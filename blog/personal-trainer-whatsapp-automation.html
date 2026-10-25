@@ -182,6 +182,19 @@
     .toc-chips{gap:6px}
     .toc-chip{font-size:.8rem;padding:5px 11px}
   }
+
+  /* --- טבלאות במובייל: מתקפלות לכרטיסים במקום גלילה אופקית --- */
+  @media(max-width:640px){
+    .table-wrap{overflow-x:visible;border:none;border-radius:0;margin:22px 0}
+    .compare-wrap{overflow:visible;border:none;border-radius:0;background:transparent;box-shadow:none;margin:22px 0}
+    .content-table,.compare-table{min-width:0;width:100%;display:block;background:transparent;font-size:.97rem}
+    .content-table tr,.compare-table tr{display:block;background:var(--cream);border:1px solid var(--bg-warm);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+    .content-table tr:first-child,.compare-table tr:first-child{display:none}
+    .content-table td,.compare-table td{display:block;border:none;padding:0;color:var(--text)}
+    .content-table td+td,.compare-table td+td{margin-top:10px}
+    .content-table td:first-child,.compare-table td:first-child{font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);font-size:1.04rem;line-height:1.4}
+    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:4px}
+  }
 </style>
 </head>
 <body>
@@ -228,10 +241,10 @@
     <div class="compare-wrap">
       <table class="compare-table">
         <tr><th>סוג תקשורת</th><th>דרך טיפול אפשרית</th></tr>
-        <tr><td>אישור מועד, כתובת או קישור לאימון</td><td>מידע תפעולי שחוזר על עצמו; אפשר לבחון תבנית או שליחה אוטומטית</td></tr>
-        <tr><td>קליטת לקוח חדש</td><td>טופס מסודר יכול לאסוף פרטים, אך המאמן צריך לעבור על התשובות ולקבל החלטות</td></tr>
-        <tr><td>תזכורת לתשלום</td><td>אפשר לשלוח לפי סטטוס אמין ממערכת התשלומים, עם מסלול לטיפול בחריגים</td></tr>
-        <tr><td>כאב, קושי, שינוי בתוכנית או משוב</td><td>תקשורת מקצועית או רגישה; לא כדאי להסתפק בתשובה אוטומטית</td></tr>
+        <tr><td>אישור מועד, כתובת או קישור לאימון</td><td data-label="דרך טיפול אפשרית">מידע תפעולי שחוזר על עצמו; אפשר לבחון תבנית או שליחה אוטומטית</td></tr>
+        <tr><td>קליטת לקוח חדש</td><td data-label="דרך טיפול אפשרית">טופס מסודר יכול לאסוף פרטים, אך המאמן צריך לעבור על התשובות ולקבל החלטות</td></tr>
+        <tr><td>תזכורת לתשלום</td><td data-label="דרך טיפול אפשרית">אפשר לשלוח לפי סטטוס אמין ממערכת התשלומים, עם מסלול לטיפול בחריגים</td></tr>
+        <tr><td>כאב, קושי, שינוי בתוכנית או משוב</td><td data-label="דרך טיפול אפשרית">תקשורת מקצועית או רגישה; לא כדאי להסתפק בתשובה אוטומטית</td></tr>
       </table>
     </div>
 

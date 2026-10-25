@@ -58,6 +58,19 @@
   .footer-logo-text{font-family:'Rubik',sans-serif;font-weight:800;font-size:17px}
   .footer-logo .fl{color:var(--ink)} .footer-logo .li{color:var(--orange)}
   footer p{font-size:12.5px;color:var(--muted)}
+
+  /* --- טבלאות במובייל: מתקפלות לכרטיסים במקום גלילה אופקית --- */
+  @media(max-width:640px){
+    .table-wrap{overflow-x:visible;border:none;border-radius:0;margin:22px 0}
+    .compare-wrap{overflow:visible;border:none;border-radius:0;background:transparent;box-shadow:none;margin:22px 0}
+    .content-table,.compare-table{min-width:0;width:100%;display:block;background:transparent;font-size:.97rem}
+    .content-table tr,.compare-table tr{display:block;background:var(--cream);border:1px solid var(--bg-warm);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+    .content-table tr:first-child,.compare-table tr:first-child{display:none}
+    .content-table td,.compare-table td{display:block;border:none;padding:0;color:var(--text)}
+    .content-table td+td,.compare-table td+td{margin-top:10px}
+    .content-table td:first-child,.compare-table td:first-child{font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);font-size:1.04rem;line-height:1.4}
+    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:4px}
+  }
 </style>
 </head>
 <body>
@@ -104,13 +117,6 @@
       <h2>מה זו אוטומציה בעסק, ולמה כדאי לכם בכלל?</h2>
       <p>אוטומציה לא מחליפה אותכם ואינה מערכת שקונים. שלוש דוגמאות מהיומיום, איפה זה נוגע במסע הלקוח, ומה דווקא לא מתאים לאוטומציה.</p>
       <div class="card-foot"><span>7 דקות קריאה</span><span class="card-status">חדש</span></div>
-    </a>
-
-    <a class="card" data-niche="טכנולוגיה" href="privacy-law-amendment-13-small-business-automation">
-      <div class="card-niche">רגולציה ופרטיות</div>
-      <h2>תיקון 13 לחוק הגנת הפרטיות - מה באמת השתנה לעסק קטן?</h2>
-      <p>חובת רישום המאגרים צומצמה, אבל האכיפה התרחבה. מה השתנה בפועל, למה זה נוגע למערכות שלכם, ומה כדאי שיהיה כתוב אצלכם.</p>
-      <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
     <a class="card" data-niche="טכנולוגיה" href="connecting-systems-data-checklist-small-business">

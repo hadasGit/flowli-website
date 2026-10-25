@@ -172,6 +172,19 @@
     .toc-chips{gap:6px}
     .toc-chip{font-size:.8rem;padding:5px 11px}
   }
+
+  /* --- טבלאות במובייל: מתקפלות לכרטיסים במקום גלילה אופקית --- */
+  @media(max-width:640px){
+    .table-wrap{overflow-x:visible;border:none;border-radius:0;margin:22px 0}
+    .compare-wrap{overflow:visible;border:none;border-radius:0;background:transparent;box-shadow:none;margin:22px 0}
+    .content-table,.compare-table{min-width:0;width:100%;display:block;background:transparent;font-size:.97rem}
+    .content-table tr,.compare-table tr{display:block;background:var(--cream);border:1px solid var(--bg-warm);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+    .content-table tr:first-child,.compare-table tr:first-child{display:none}
+    .content-table td,.compare-table td{display:block;border:none;padding:0;color:var(--text)}
+    .content-table td+td,.compare-table td+td{margin-top:10px}
+    .content-table td:first-child,.compare-table td:first-child{font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);font-size:1.04rem;line-height:1.4}
+    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:4px}
+  }
 </style>
 </head>
 <body>
@@ -240,7 +253,7 @@
 
     <h2 id="when-ai" data-num="02">מתי צריך AI ומתי לא</h2>
     <p>אם צריך לבדוק האם מספר ירד מסף מוגדר, האם תאריך חלף או האם שדה השתנה - כלל אוטומטי רגיל עשוי להספיק. הוא גם קל יותר לבדיקה, משום שהתוצאה הצפויה מוגדרת מראש.</p>
-    <p>רכיב AI יכול להיות שימושי כאשר המידע אינו מגיע בשדות קבועים: למשל סיכום מיילים בנוסחים שונים, סיווג פניות לפי נושא או חילוץ פרטים מטקסט. גם אז צריך להחליט מה קורה כשהמודל אינו בטוח או מחלץ מידע שגוי.</p><div class="compare-wrap"><table class="compare-table"><tr><th></th><th>אוטומציה רגילה</th><th>רכיב AI</th></tr><tr><td>סוג המידע</td><td>מגיע בשדות קבועים</td><td>אינו מגיע בשדות קבועים</td></tr><tr><td>דוגמאות</td><td>מספר שירד מסף מוגדר, תאריך שחלף, שדה שהשתנה</td><td>סיכום מיילים בנוסחים שונים, סיווג פניות לפי נושא, חילוץ פרטים מטקסט</td></tr><tr><td>בדיקת התוצאה</td><td>התוצאה הצפויה מוגדרת מראש, ולכן קל לבדוק</td><td>צריך להגדיר מה קורה כשהמודל אינו בטוח או מחלץ מידע שגוי</td></tr></table></div>
+    <p>רכיב AI יכול להיות שימושי כאשר המידע אינו מגיע בשדות קבועים: למשל סיכום מיילים בנוסחים שונים, סיווג פניות לפי נושא או חילוץ פרטים מטקסט. גם אז צריך להחליט מה קורה כשהמודל אינו בטוח או מחלץ מידע שגוי.</p><div class="compare-wrap"><table class="compare-table"><tr><th></th><th>אוטומציה רגילה</th><th>רכיב AI</th></tr><tr><td>סוג המידע</td><td data-label="אוטומציה רגילה">מגיע בשדות קבועים</td><td data-label="רכיב AI">אינו מגיע בשדות קבועים</td></tr><tr><td>דוגמאות</td><td data-label="אוטומציה רגילה">מספר שירד מסף מוגדר, תאריך שחלף, שדה שהשתנה</td><td data-label="רכיב AI">סיכום מיילים בנוסחים שונים, סיווג פניות לפי נושא, חילוץ פרטים מטקסט</td></tr><tr><td>בדיקת התוצאה</td><td data-label="אוטומציה רגילה">התוצאה הצפויה מוגדרת מראש, ולכן קל לבדוק</td><td data-label="רכיב AI">צריך להגדיר מה קורה כשהמודל אינו בטוח או מחלץ מידע שגוי</td></tr></table></div>
 
     <blockquote><strong>כלל אצבע:</strong> אם אפשר לנסח את הבדיקה כתנאי חד וברור, מתחילים מאוטומציה רגילה. מוסיפים AI רק כאשר יש צורך אמיתי בפרשנות של מידע לא מובנה.</blockquote>
 
