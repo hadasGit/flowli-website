@@ -84,7 +84,7 @@
       --text:        #2A2A2A;
       --muted:       #5C5751;
       --orange:      #F26B1F;
-      --orange-deep: #D45A12; --orange-text: #B04A0D; --orange-text-hover: #8E3B09;
+      --orange-deep: #D45A12;
       --orange-pale: #FEF0E7;
       --orange-mid:  #FDDDBD;
       --orange-soft: #F8B98C;
@@ -101,7 +101,7 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    ::selection { background: var(--orange-text); color: #fff; }
+    ::selection { background: var(--orange); color: #fff; }
 
     /* ─── REVEAL ANIMATIONS ─── */
     /* js-reveal class added by JS - without it everything stays visible */
@@ -159,7 +159,7 @@
     .nav-logo .li  { color: var(--orange); }
     .nav-cta {
       background: transparent;
-      color: var(--orange-text);
+      color: var(--orange);
       padding: 8px 20px;
       border-radius: 100px;
       border: 1.5px solid var(--orange);
@@ -171,7 +171,7 @@
       white-space: nowrap;
     }
     .nav-cta:hover {
-      background: var(--orange-text-hover);
+      background: var(--orange);
       color: #fff;
       transform: translateY(-1px);
     }
@@ -188,7 +188,7 @@
       text-decoration: none;
       transition: color .2s;
     }
-    .nav-link:hover { color: var(--orange-text-hover); }
+    .nav-link:hover { color: var(--orange); }
     @media (max-width: 580px) { .nav-links { gap: 16px; } .nav-link { font-size: 13px; } }
 
     /* ─── CONTAINER ─── */
@@ -202,7 +202,7 @@
       font-weight: 500;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--orange-text);
+      color: var(--orange);
       margin-bottom: 14px;
     }
 
@@ -233,7 +233,7 @@
       gap: 8px;
       background: var(--orange-pale);
       border: 1px solid var(--orange-mid);
-      color: var(--orange-text);
+      color: var(--orange-deep);
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       font-weight: 500;
@@ -277,7 +277,7 @@
       .hero-title .line { white-space: normal; }
     }
     .hero-title .accent {
-      color: var(--orange-deep);
+      color: var(--orange);
       position: relative;
       display: inline-block;
     }
@@ -309,7 +309,7 @@
       align-items: center;
     }
     .btn-primary {
-      background: var(--orange-text);
+      background: var(--orange);
       color: #fff;
       padding: 15px 28px;
       border-radius: 100px;
@@ -323,7 +323,7 @@
       gap: 8px;
     }
     .btn-primary:hover {
-      background: var(--orange-text-hover);
+      background: var(--orange-deep);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(242,107,31,.35);
     }
@@ -339,7 +339,7 @@
       padding-bottom: 2px;
       transition: border-color .2s, color .2s;
     }
-    .btn-secondary:hover { color: var(--orange-text-hover); border-color: var(--orange); }
+    .btn-secondary:hover { color: var(--orange); border-color: var(--orange); }
     .hero-proof {
       display: flex;
       align-items: center;
@@ -368,7 +368,7 @@
       color: var(--muted); text-decoration: none; border-bottom: 1.5px solid var(--orange-mid);
       padding-bottom: 2px; transition: color .2s, border-color .2s;
     }
-    .hero-scroll-link:hover { color: var(--orange-text-hover); border-color: var(--orange); }
+    .hero-scroll-link:hover { color: var(--orange-deep); border-color: var(--orange); }
 
     @keyframes bounce-down {
       0%, 100% { transform: translateY(0); }
@@ -383,7 +383,7 @@
       transition: color .2s, border-color .2s;
       padding-bottom: 1px;
     }
-    .hero-small-link:hover { color: var(--orange-text-hover); border-color: var(--orange); }
+    .hero-small-link:hover { color: var(--orange); border-color: var(--orange); }
     /* decorative blobs */
     .hero-blob {
       position: absolute;
@@ -679,7 +679,7 @@
       font-family: 'Assistant', sans-serif;
       font-weight: 600;
       font-size: 1.18rem;
-      color: var(--orange-text);
+      color: var(--orange-deep);
       line-height: 1.45;
       position: relative;
       text-align: center;
@@ -692,7 +692,7 @@
     .moment-quote::before {
       content: '”';
       font-size: 3.4rem;
-      color: var(--orange-text);
+      color: var(--orange);
       opacity: .3;
       line-height: 1;
       position: absolute;
@@ -703,7 +703,7 @@
     .moment-quote::after {
       content: '“';
       font-size: 3.4rem;
-      color: var(--orange-text);
+      color: var(--orange);
       opacity: .3;
       line-height: 0;
       position: absolute;
@@ -718,7 +718,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
       letter-spacing: .12em;
-      color: var(--orange-text);
+      color: var(--orange);
       opacity: .6;
       font-weight: 600;
     }
@@ -739,7 +739,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: var(--orange-text);
+      color: var(--orange);
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       letter-spacing: .06em;
@@ -805,7 +805,7 @@
     .cs-badge {
       display: inline-block;
       background: var(--orange-pale);
-      color: var(--orange-text);
+      color: var(--orange-deep);
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
       letter-spacing: .08em;
@@ -854,7 +854,7 @@
       font-weight: 800;
       font-size: 2.2rem;
       letter-spacing: -.04em;
-      color: var(--orange-text);
+      color: var(--orange);
       line-height: 1;
       margin-bottom: 8px;
     }
@@ -994,7 +994,7 @@
     }
     .dream-headline em {
       font-style: italic;
-      color: var(--orange-deep);
+      color: var(--orange);
     }
 
     /* בועות מחשבה */
@@ -1251,11 +1251,11 @@
       font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 20px;
-      color: var(--orange-deep);
+      color: var(--orange);
       margin: 0 auto 20px;
     }
     .step:last-child .step-num {
-      background: var(--orange-text);
+      background: var(--orange);
       border-color: var(--orange);
       color: #fff;
     }
@@ -1304,7 +1304,7 @@
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--orange-text);
+      color: var(--orange);
       margin-bottom: 28px;
     }
     .about-how-list {
@@ -1325,7 +1325,7 @@
       font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 11px;
-      color: var(--orange-text);
+      color: var(--orange);
       letter-spacing: .05em;
       min-width: 22px;
       padding-top: 2px;
@@ -1386,7 +1386,7 @@
       font-weight: 800;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       letter-spacing: -.025em;
-      color: var(--orange-text);
+      color: var(--orange);
       margin-bottom: 24px;
     }
     .about-quote {
@@ -1411,7 +1411,7 @@
       font-family: Georgia, serif;
       font-size: 5.5rem;
       line-height: 1;
-      color: var(--orange-text);
+      color: var(--orange);
       opacity: .25;
       font-style: normal;
     }
@@ -1423,7 +1423,7 @@
       font-family: Georgia, serif;
       font-size: 5.5rem;
       line-height: 1;
-      color: var(--orange-text);
+      color: var(--orange);
       opacity: .25;
       font-style: normal;
     }
@@ -1434,7 +1434,7 @@
       font-size: 11px;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--orange-text);
+      color: var(--orange-deep);
       margin-top: 14px;
       opacity: .85;
     }
@@ -1569,7 +1569,7 @@
       line-height: 1.75;
     }
     .btn-cta-final {
-      background: var(--orange-text);
+      background: var(--orange);
       color: #fff;
       padding: 16px 34px;
       border-radius: 100px;
@@ -1581,7 +1581,7 @@
       display: inline-block;
     }
     .btn-cta-final:hover {
-      background: var(--orange-text-hover);
+      background: var(--orange-deep);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(242,107,31,.4);
     }
@@ -1774,7 +1774,7 @@
       accent-color: var(--orange);
     }
     .lead-consent-link {
-      color: var(--orange-text);
+      color: var(--orange);
       text-decoration: underline;
     }
     .lead-submit:disabled {
@@ -1811,7 +1811,7 @@
     .lead-field::placeholder { color: var(--muted); }
     .lead-submit {
       width: 100%;
-      background: var(--orange-text);
+      background: var(--orange);
       color: #fff;
       border: none;
       border-radius: 100px;
@@ -1823,7 +1823,7 @@
       margin-top: 4px;
       transition: background .2s, transform .15s;
     }
-    .lead-submit:hover { background: var(--orange-text-hover); transform: translateY(-1px); }
+    .lead-submit:hover { background: var(--orange-deep); transform: translateY(-1px); }
     .lead-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
     .lead-success {
       display: none;
@@ -1943,8 +1943,8 @@
       color: var(--muted); cursor: pointer;
       transition: all .18s;
     }
-    .brief-tab-btn:hover { border-color: var(--orange); color: var(--orange-text-hover); }
-    .brief-tab-btn.active { background: var(--orange-text); border-color: var(--orange); color: #fff; }
+    .brief-tab-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .brief-tab-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
     .brief-tabs-sub {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px; color: #666; letter-spacing: .04em; margin-bottom: 20px;
@@ -1995,7 +1995,7 @@
     .brief-loading.visible { display: block; }
     .brief-loading-title {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px; color: var(--orange-text); margin-bottom: 18px; font-weight: 500;
+      font-size: 12px; color: var(--orange); margin-bottom: 18px; font-weight: 500;
     }
     .brief-progress-wrap {
       background: var(--bg-warm); border-radius: 4px; height: 4px;
@@ -2012,7 +2012,7 @@
       align-items: center; gap: 8px; transition: color .25s;
     }
     .brief-steps li.done { color: var(--text); }
-    .brief-steps li .bck { color: var(--orange-text); font-weight: 700; opacity: 0; transition: opacity .2s; }
+    .brief-steps li .bck { color: var(--orange); font-weight: 700; opacity: 0; transition: opacity .2s; }
     .brief-steps li.done .bck { opacity: 1; }
     .brief-found {
       margin-top: 20px;
@@ -2050,7 +2050,7 @@
       font-size: 14.5px; color: var(--ink);
       text-align: center; line-height: 1.5;
     }
-    .brief-insight strong { color: var(--orange-text); }
+    .brief-insight strong { color: var(--orange); }
     .brief-result-body { padding: 24px 28px; }
     .brief-result-group { margin-bottom: 18px; }
     .brief-result-group:last-child { margin-bottom: 0; }
@@ -2085,7 +2085,7 @@
     .brief-priority-item:last-child { margin-bottom: 0; }
     .brief-priority-num {
       font-family: 'JetBrains Mono', monospace;
-      color: var(--orange-text); font-weight: 700;
+      color: var(--orange); font-weight: 700;
       min-width: 18px; flex-shrink: 0;
     }
     .brief-disclaimer {
@@ -2117,14 +2117,14 @@
       align-items: flex-start; gap: 10px; flex-shrink: 0;
     }
     .btn-brief-primary {
-      display: inline-block; background: var(--orange-text); color: #fff;
+      display: inline-block; background: var(--orange); color: #fff;
       padding: 14px 28px; border-radius: 100px;
       font-family: 'Rubik', sans-serif; font-weight: 700; font-size: 14px;
       text-decoration: none;
       transition: background .2s, transform .15s, box-shadow .2s; white-space: nowrap;
     }
     .btn-brief-primary:hover {
-      background: var(--orange-text-hover); transform: translateY(-2px);
+      background: var(--orange-deep); transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(242,107,31,.4);
     }
     .brief-cta-note {
@@ -2372,11 +2372,11 @@
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
     }
-    .demo-consent a { color: var(--orange-text); font-weight: 600; }
+    .demo-consent a { color: var(--orange-deep); font-weight: 600; }
     .demo-submit {
       width: 100%;
       border: none;
-      background: var(--orange-text);
+      background: var(--orange);
       color: #fff;
       font-family: 'Rubik', sans-serif;
       font-weight: 700;
@@ -2392,7 +2392,7 @@
       transition: background .2s, transform .15s, box-shadow .2s;
     }
     .demo-submit:hover:not(:disabled) {
-      background: var(--orange-text-hover);
+      background: var(--orange-deep);
       transform: translateY(-1px);
       box-shadow: 0 12px 28px rgba(242,107,31,.34);
     }
@@ -2435,12 +2435,12 @@
       display: flex; gap: 10px; flex-shrink: 0;
     }
     #flowli-cookie-bar .btn-accept {
-      background: #B04A0D; color: #fff; border: none;
+      background: #F26B1F; color: #fff; border: none;
       border-radius: 8px; padding: 10px 20px;
       font-family: 'Assistant', sans-serif; font-weight: 700;
       font-size: 14px; cursor: pointer; transition: background .2s;
     }
-    #flowli-cookie-bar .btn-accept:hover { background: #8E3B09; }
+    #flowli-cookie-bar .btn-accept:hover { background: #D45A12; }
     #flowli-cookie-bar .btn-decline {
       background: transparent; color: #888;
       border: 1.5px solid #444; border-radius: 8px;
@@ -2500,7 +2500,7 @@
       color: var(--ink);
       line-height: 1.8;
     }
-    .a11y-modal .a11y-contact a { color: var(--orange-text); }
+    .a11y-modal .a11y-contact a { color: var(--orange-deep); }
     .a11y-close {
       position: absolute;
       top: 16px;
@@ -2590,7 +2590,7 @@
     .sticky-cta.visible { transform: translateY(0); }
     .sticky-cta a {
       display: block;
-      background: var(--orange-text);
+      background: var(--orange);
       color: #fff;
       padding: 14px;
       border-radius: 100px;
@@ -2794,7 +2794,7 @@
         <li>אפשר לנווט בכל האתר עם המקלדת בלבד. הרכיב שבפוקוס מסומן במסגרת בולטת.</li>
         <li>בחלונות קופצים (טופס יצירת קשר, תיאום הדגמה) הפוקוס עובר לתוך החלון ונשאר בו, מקש Esc סוגר אותו, ואחרי הסגירה הפוקוס חוזר למקום שבו היה.</li>
         <li>לכל שדה בטופס יש תווית, ולכל תמונה יש טקסט חלופי.</li>
-        <li>ניגודיות הצבעים בין טקסט לרקע נבדקה, וצבעים שלא עמדו בדרישה הוכהו, כולל הכתום של Flowli בטקסט קטן ובכפתורים.</li>
+        <li>ניגודיות הצבעים בין טקסט לרקע נבדקה, וגווני אפור שלא עמדו בדרישה תוקנו.</li>
         <li>הטקסט הנע בדף הבית נעצר בכפתור עצירה, וגם כשמעבירים עליו את העכבר או את הפוקוס. כשמוגדרת במכשיר "הפחתת תנועה", שום רכיב באתר לא זז.</li>
         <li>האתר מותאם לטלפונים ולהגדלת תצוגה, ונקרא בלי גלילה הצידה גם ברוחב מסך של 320 פיקסלים.</li>
         <li>השפה וכיוון הקריאה (עברית, מימין לשמאל) מוגדרים בכל עמוד.</li>
@@ -2804,6 +2804,7 @@
       <p><strong>מה עוד לא מושלם:</strong></p>
       <ul>
         <li>האתר עדיין לא נבדק עם תוכנת קורא מסך.</li>
+        <li>הכתום של Flowli בטקסט קטן ובכפתורים עדיין לא עומד ביחס הניגודיות הנדרש. אנחנו בוחנים פתרון שישמור על המראה של האתר.</li>
         <li>הלוגו נשאר בכתום של המותג (על לוגו לא חלה דרישת הניגודיות).</li>
         <li>רכיבים של צד שלישי, כמו תוסף הנגישות, וואטסאפ ו-Calendly, אינם בשליטתנו.</li>
         <li>האבחון בכתובת map.flowli.co.il הוא אתר נפרד, וההתאמה שלו נמצאת בתהליך.</li>
@@ -3297,7 +3298,7 @@
       <p style="font-size:17px;color:var(--muted);margin:0 0 18px;">
         גם אם אתם עובדים עם ERP או מערכת ותיקה, אפשר לבנות אוטומציות סביב מה שכבר קיים.
       </p>
-      <button type="button" onclick="openDemoModal('erp_strip')" style="background:none;border:none;cursor:pointer;color:var(--orange-text);font-size:16px;font-weight:600;font-family:inherit;">
+      <button type="button" onclick="openDemoModal('erp_strip')" style="background:none;border:none;cursor:pointer;color:var(--orange-deep);font-size:16px;font-weight:600;font-family:inherit;">
         בואו נראה איך זה נראה אצלכם &larr;
       </button>
     </div>
@@ -3981,7 +3982,7 @@
           </div>
           <h4 style="font-family:'Rubik',sans-serif;font-weight:700;font-size:22px;color:var(--ink);margin:0 0 8px;">קיבלנו! נדבר בקרוב</h4>
           <p style="font-size:15px;color:var(--muted);margin:0;line-height:1.6;">נחזור אליכם תוך יום עסקים אחד לתיאום השיחה.</p>
-          <button onclick="closeDemoModalDirect()" style="margin-top:24px;background:none;border:none;color:var(--orange-text);font-family:'Assistant',sans-serif;font-size:15px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 0;border-bottom:1px solid rgba(242,107,31,.4);">
+          <button onclick="closeDemoModalDirect()" style="margin-top:24px;background:none;border:none;color:var(--orange);font-family:'Assistant',sans-serif;font-size:15px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 0;border-bottom:1px solid rgba(242,107,31,.4);">
             בינתיים, המשיכו להכיר את Flowli &#x2193;
           </button>
         </div>
