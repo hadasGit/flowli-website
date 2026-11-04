@@ -16,9 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://flowli.co.il/blog/ai-agent-daily-monitoring-small-business">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Assistant:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/fonts/fonts.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,13 +46,13 @@
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{
     --bg:#EFEDE6;--bg-warm:#E8E4D6;--cream:#FAFAF7;--ink:#1A1A1A;--text:#2A2A2A;--muted:#5C5751;
-    --orange:#F26B1F;--orange-deep:#D45A12;--orange-pale:#FEF0E7;--orange-mid:#FDDDBD;--orange-soft:#F8B98C;
+    --orange:#F26B1F;--orange-deep:#D45A12; --orange-text: #B04A0D; --orange-text-hover: #8E3B09;--orange-pale:#FEF0E7;--orange-mid:#FDDDBD;--orange-soft:#F8B98C;
   }
   html{scroll-behavior:smooth}
   body{font-family:'Assistant',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
-  ::selection{background:var(--orange);color:#fff}
-  a{color:var(--orange-deep)}
-  a:hover{color:var(--orange)}
+  ::selection{background:var(--orange-text);color:#fff}
+  a{color: var(--orange-text)}
+  a:hover{color: var(--orange-text-hover)}
   img{max-width:100%}
   details>summary{list-style:none}
   details>summary::-webkit-details-marker{display:none}
@@ -65,14 +63,14 @@
   .nav-logo svg{width:30px;height:30px}
   .nav-logo-text{font-family:'Rubik',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.035em}
   .nav-logo .fl{color:var(--ink)} .nav-logo .li{color:var(--orange)}
-  .nav-cta{background:transparent;color:var(--orange);padding:8px 18px;border-radius:8px;border:2px solid var(--orange);font-family:'Rubik',sans-serif;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
-  .nav-cta:hover{background:var(--orange);color:#fff}
+  .nav-cta{background:transparent;color: var(--orange-text);padding:8px 18px;border-radius:8px;border:2px solid var(--orange);font-family:'Rubik',sans-serif;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+  .nav-cta:hover{background:var(--orange-text-hover);color:#fff}
 
   main{max-width:760px;margin:0 auto;padding:0 24px}
 
   header.article-head{padding:56px 0 36px;border-bottom:1px solid var(--bg-warm)}
-  .breadcrumb{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;background:var(--orange-pale);border:1px solid var(--orange-mid);padding:6px 14px;border-radius:20px}
-  .breadcrumb a{color:var(--orange);text-decoration:none}
+  .breadcrumb{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color: var(--orange-text);margin-bottom:20px;background:var(--orange-pale);border:1px solid var(--orange-mid);padding:6px 14px;border-radius:20px}
+  .breadcrumb a{color: var(--orange-text);text-decoration:none}
   h1{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(1.9rem,4.6vw,2.7rem);line-height:1.22;letter-spacing:-.03em;color:var(--ink);margin-bottom:20px}
   .lede{font-size:1.15rem;color:var(--muted);line-height:1.7;max-width:620px;border-inline-start:3px solid var(--orange);padding-inline-start:18px}
   .meta-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:26px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted)}
@@ -81,12 +79,12 @@
   .toc-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
   .toc-chips{display:flex;flex-wrap:wrap;gap:8px}
   .toc-chip{font-size:.9rem;text-decoration:none;color:var(--text);background:var(--bg);border:1px solid var(--bg-warm);padding:6px 14px;border-radius:20px;transition:.2s}
-  .toc-chip:hover{background:var(--orange-pale);border-color:var(--orange-mid);color:var(--orange-deep)}
+  .toc-chip:hover{background:var(--orange-pale);border-color:var(--orange-mid);color: var(--orange-text-hover)}
 
   article{padding:44px 0 20px}
   article h2{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(1.35rem,2.9vw,1.7rem);letter-spacing:-.02em;color:var(--ink);margin:56px 0 20px;border-top:1px solid var(--bg-warm);padding-top:30px;line-height:1.3}
   article h2:first-child{margin-top:0;border-top:none;padding-top:0}
-  article h2::before{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--orange);margin-bottom:10px;content:attr(data-num)}
+  article h2::before{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color: var(--orange-text);margin-bottom:10px;content:attr(data-num)}
   article p{margin-bottom:18px;font-size:1.03rem}
   article ul,article ol{margin:0 0 20px;padding-inline-start:24px}
   article li{margin-bottom:10px;font-size:1.02rem}
@@ -101,8 +99,8 @@
   .flow-steps{display:flex;flex-direction:column;gap:14px;margin:28px 0}
   .flow-step{display:flex;gap:18px;align-items:flex-start;background:var(--cream);border:1px solid var(--bg-warm);border-inline-start:3px solid var(--orange-mid);border-radius:12px;padding:20px 22px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
   .flow-step.final{background:var(--orange-pale);border-color:var(--orange-mid);border-inline-start-color:var(--orange)}
-  .flow-step-num{width:38px;height:38px;border-radius:50%;background:var(--orange-pale);border:2px solid var(--orange-mid);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:500;font-size:14px;color:var(--orange-deep);flex-shrink:0}
-  .flow-step.final .flow-step-num{background:var(--orange);border-color:var(--orange);color:#fff}
+  .flow-step-num{width:38px;height:38px;border-radius:50%;background:var(--orange-pale);border:2px solid var(--orange-mid);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:500;font-size:14px;color: var(--orange-text);flex-shrink:0}
+  .flow-step.final .flow-step-num{background:var(--orange-text);border-color:var(--orange);color:#fff}
   .flow-step-body strong{display:block;font-family:'Rubik',sans-serif;color:var(--ink);font-weight:700;font-size:1.05rem;margin-bottom:4px}
   .flow-step-body span{color:var(--muted);font-size:.97rem}
 
@@ -118,7 +116,7 @@
   .compare-table td:first-child{color:var(--text)}
   .compare-table td:last-child{color:var(--muted)}
 
-  .example-tag{display:inline-block;background:var(--orange-pale);color:var(--orange-deep);font-family:'JetBrains Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;padding:5px 14px;border-radius:20px;margin-bottom:14px}
+  .example-tag{display:inline-block;background:var(--orange-pale);color: var(--orange-text);font-family:'JetBrains Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;padding:5px 14px;border-radius:20px;margin-bottom:14px}
 
   .ps-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;border-radius:12px;overflow:hidden;border:1px solid var(--bg-warm);background:var(--orange-mid);margin:32px 0}
   .ps-side{padding:26px}
@@ -126,23 +124,23 @@
   .ps-side.solution{background:var(--orange-pale)}
   .ps-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
   .ps-side.pain .ps-label{color:var(--muted)}
-  .ps-side.solution .ps-label{color:var(--orange-deep)}
+  .ps-side.solution .ps-label{color: var(--orange-text)}
   .ps-side p{font-size:.97rem;color:var(--text)}
 
   .skip-list{background:var(--cream);border:1px solid var(--bg-warm);border-inline-start:3px solid var(--ink);border-radius:12px;padding:10px 26px;margin:28px 0;list-style:none;display:flex;flex-direction:column}
   .skip-list li{padding:15px 0;border-bottom:1px solid var(--bg-warm);font-size:1.01rem;display:flex;gap:12px;align-items:flex-start}
   .skip-list li:last-child{border-bottom:none}
-  .skip-list li::before{content:'✕';color:var(--orange-deep);font-weight:700;flex-shrink:0}
+  .skip-list li::before{content:'✕';color: var(--orange-text);font-weight:700;flex-shrink:0}
 
   .measure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:22px 0 20px}
   .measure-item{background:var(--cream);border:1px solid var(--bg-warm);border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
-  .measure-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--orange-deep);background:var(--orange-pale);border-radius:20px;padding:3px 9px;flex-shrink:0}
+  .measure-num{font-family:'JetBrains Mono',monospace;font-size:12px;color: var(--orange-text);background:var(--orange-pale);border-radius:20px;padding:3px 9px;flex-shrink:0}
   .measure-item span:last-child{font-size:.97rem;color:var(--text)}
 
   details.faq-item{background:var(--cream);border:1px solid var(--bg-warm);border-radius:12px;padding:18px 22px;transition:border-color .2s;margin-bottom:12px}
   details.faq-item:hover{border-color:var(--orange-mid)}
   details.faq-item summary{font-family:'Rubik',sans-serif;font-weight:700;font-size:1rem;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
-  details.faq-item summary::after{content:'+';font-family:'JetBrains Mono',monospace;color:var(--orange);font-size:1.3rem;flex-shrink:0}
+  details.faq-item summary::after{content:'+';font-family:'JetBrains Mono',monospace;color: var(--orange-text);font-size:1.3rem;flex-shrink:0}
   details.faq-item[open] summary::after{content:'-'}
   details.faq-item p{margin:14px 0 0;color:var(--muted);font-size:.98rem}
 
@@ -151,8 +149,8 @@
   .cta-eyebrow{position:relative;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-soft);margin-bottom:16px}
   .cta-title{position:relative;font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(1.4rem,3.2vw,1.9rem);color:#fff;line-height:1.32;letter-spacing:-.02em;margin-bottom:14px}
   .cta-sub{position:relative;color:rgba(255,255,255,.6);font-size:1rem;max-width:460px;margin:0 auto 28px;line-height:1.7}
-  .btn-primary{position:relative;display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;padding:15px 30px;border-radius:8px;font-family:'Rubik',sans-serif;font-weight:700;font-size:15px;text-decoration:none;transition:background .2s,transform .15s}
-  .btn-primary:hover{background:var(--orange-deep);transform:translateY(-1px)}
+  .btn-primary{position:relative;display:inline-flex;align-items:center;gap:8px;background:var(--orange-text);color:#fff;padding:15px 30px;border-radius:8px;font-family:'Rubik',sans-serif;font-weight:700;font-size:15px;text-decoration:none;transition:background .2s,transform .15s}
+  .btn-primary:hover{background:var(--orange-text-hover);transform:translateY(-1px)}
   .cta-secondary{position:relative;margin-top:18px;color:rgba(255,255,255,.45);font-size:12.5px}
   .cta-secondary a{color:rgba(255,255,255,.7)}
 
@@ -183,13 +181,16 @@
     .content-table td,.compare-table td{display:block;border:none;padding:0;color:var(--text)}
     .content-table td+td,.compare-table td+td{margin-top:10px}
     .content-table td:first-child,.compare-table td:first-child{font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);font-size:1.04rem;line-height:1.4}
-    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:4px}
+    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color: var(--orange-text);margin-bottom:4px}
   }
 </style>
+<link rel="stylesheet" href="/a11y.css">
+<script src="/a11y.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
 
-<nav>
+<nav aria-label="ראשי">
   <div class="nav-inner">
     <a class="nav-logo" href="https://flowli.co.il">
       <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -203,7 +204,7 @@
   </div>
 </nav>
 
-<main>
+<main id="main">
   <header class="article-head">
     <div class="breadcrumb"><a href="https://flowli.co.il">flowli</a> / בלוג / טכנולוגיה לעסקים</div>
     <h1>סוכן AI שבודק מידע מדי יום: איך זה עובד?</h1>
@@ -211,7 +212,7 @@
     <div class="meta-row"><span>מדריך מעשי</span><span>סוכני AI ואוטומציה לעסקים</span></div>
   </header>
 
-  <nav class="toc">
+  <nav class="toc" aria-label="תוכן העניינים">
     <div class="toc-label">במאמר הזה</div>
     <div class="toc-chips">
       <a class="toc-chip" href="#what-it-does">מה הסוכן עושה</a>
@@ -253,7 +254,7 @@
 
     <h2 id="when-ai" data-num="02">מתי צריך AI ומתי לא</h2>
     <p>אם צריך לבדוק האם מספר ירד מסף מוגדר, האם תאריך חלף או האם שדה השתנה - כלל אוטומטי רגיל עשוי להספיק. הוא גם קל יותר לבדיקה, משום שהתוצאה הצפויה מוגדרת מראש.</p>
-    <p>רכיב AI יכול להיות שימושי כאשר המידע אינו מגיע בשדות קבועים: למשל סיכום מיילים בנוסחים שונים, סיווג פניות לפי נושא או חילוץ פרטים מטקסט. גם אז צריך להחליט מה קורה כשהמודל אינו בטוח או מחלץ מידע שגוי.</p><div class="compare-wrap"><table class="compare-table"><tr><th></th><th>אוטומציה רגילה</th><th>רכיב AI</th></tr><tr><td>סוג המידע</td><td data-label="אוטומציה רגילה">מגיע בשדות קבועים</td><td data-label="רכיב AI">אינו מגיע בשדות קבועים</td></tr><tr><td>דוגמאות</td><td data-label="אוטומציה רגילה">מספר שירד מסף מוגדר, תאריך שחלף, שדה שהשתנה</td><td data-label="רכיב AI">סיכום מיילים בנוסחים שונים, סיווג פניות לפי נושא, חילוץ פרטים מטקסט</td></tr><tr><td>בדיקת התוצאה</td><td data-label="אוטומציה רגילה">התוצאה הצפויה מוגדרת מראש, ולכן קל לבדוק</td><td data-label="רכיב AI">צריך להגדיר מה קורה כשהמודל אינו בטוח או מחלץ מידע שגוי</td></tr></table></div>
+    <p>רכיב AI יכול להיות שימושי כאשר המידע אינו מגיע בשדות קבועים: למשל סיכום מיילים בנוסחים שונים, סיווג פניות לפי נושא או חילוץ פרטים מטקסט. גם אז צריך להחליט מה קורה כשהמודל אינו בטוח או מחלץ מידע שגוי.</p><div class="compare-wrap"><table class="compare-table"><tr><td></td><th>אוטומציה רגילה</th><th>רכיב AI</th></tr><tr><td>סוג המידע</td><td data-label="אוטומציה רגילה">מגיע בשדות קבועים</td><td data-label="רכיב AI">אינו מגיע בשדות קבועים</td></tr><tr><td>דוגמאות</td><td data-label="אוטומציה רגילה">מספר שירד מסף מוגדר, תאריך שחלף, שדה שהשתנה</td><td data-label="רכיב AI">סיכום מיילים בנוסחים שונים, סיווג פניות לפי נושא, חילוץ פרטים מטקסט</td></tr><tr><td>בדיקת התוצאה</td><td data-label="אוטומציה רגילה">התוצאה הצפויה מוגדרת מראש, ולכן קל לבדוק</td><td data-label="רכיב AI">צריך להגדיר מה קורה כשהמודל אינו בטוח או מחלץ מידע שגוי</td></tr></table></div>
 
     <blockquote><strong>כלל אצבע:</strong> אם אפשר לנסח את הבדיקה כתנאי חד וברור, מתחילים מאוטומציה רגילה. מוסיפים AI רק כאשר יש צורך אמיתי בפרשנות של מידע לא מובנה.</blockquote>
 

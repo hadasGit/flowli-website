@@ -26,9 +26,7 @@
   <link rel="canonical" href="https://flowli.co.il/demos/">
   
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Assistant:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -40,7 +38,7 @@
       --text:        #2A2A2A;
       --muted:       #5C5751;
       --orange:      #F26B1F;
-      --orange-deep: #D45A12;
+      --orange-deep: #D45A12; --orange-text: #B04A0D; --orange-text-hover: #8E3B09;
       --orange-pale: #FEF0E7;
       --orange-mid:  #FDDDBD;
       --orange-soft: #F8B98C;
@@ -57,7 +55,7 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    ::selection { background: var(--orange); color: #fff; }
+    ::selection { background: var(--orange-text); color: #fff; }
 
     /* ─── REVEAL ANIMATIONS ─── */
     /* js-reveal class added by JS - without it everything stays visible */
@@ -115,7 +113,7 @@
     .nav-logo .li  { color: var(--orange); }
     .nav-cta {
       background: transparent;
-      color: var(--orange);
+      color: var(--orange-text);
       padding: 8px 20px;
       border-radius: 100px;
       border: 1.5px solid var(--orange);
@@ -127,7 +125,7 @@
       white-space: nowrap;
     }
     .nav-cta:hover {
-      background: var(--orange);
+      background: var(--orange-text-hover);
       color: #fff;
       transform: translateY(-1px);
     }
@@ -144,7 +142,7 @@
       text-decoration: none;
       transition: color .2s;
     }
-    .nav-link:hover { color: var(--orange); }
+    .nav-link:hover { color: var(--orange-text-hover); }
     @media (max-width: 580px) { .nav-links { gap: 16px; } .nav-link { font-size: 13px; } }
 
     /* ─── CONTAINER ─── */
@@ -158,7 +156,7 @@
       font-weight: 500;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--orange-text);
       margin-bottom: 14px;
     }
 
@@ -189,7 +187,7 @@
       gap: 8px;
       background: var(--orange-pale);
       border: 1px solid var(--orange-mid);
-      color: var(--orange-deep);
+      color: var(--orange-text);
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       font-weight: 500;
@@ -233,7 +231,7 @@
       .hero-title .line { white-space: normal; }
     }
     .hero-title .accent {
-      color: var(--orange);
+      color: var(--orange-deep);
       position: relative;
       display: inline-block;
     }
@@ -265,7 +263,7 @@
       align-items: center;
     }
     .btn-primary {
-      background: var(--orange);
+      background: var(--orange-text);
       color: #fff;
       padding: 15px 28px;
       border-radius: 100px;
@@ -279,7 +277,7 @@
       gap: 8px;
     }
     .btn-primary:hover {
-      background: var(--orange-deep);
+      background: var(--orange-text-hover);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(242,107,31,.35);
     }
@@ -295,7 +293,7 @@
       padding-bottom: 2px;
       transition: border-color .2s, color .2s;
     }
-    .btn-secondary:hover { color: var(--orange); border-color: var(--orange); }
+    .btn-secondary:hover { color: var(--orange-text-hover); border-color: var(--orange); }
     .hero-proof {
       display: flex;
       align-items: center;
@@ -324,7 +322,7 @@
       color: var(--muted); text-decoration: none; border-bottom: 1.5px solid var(--orange-mid);
       padding-bottom: 2px; transition: color .2s, border-color .2s;
     }
-    .hero-scroll-link:hover { color: var(--orange-deep); border-color: var(--orange); }
+    .hero-scroll-link:hover { color: var(--orange-text-hover); border-color: var(--orange); }
 
     @keyframes bounce-down {
       0%, 100% { transform: translateY(0); }
@@ -339,7 +337,7 @@
       transition: color .2s, border-color .2s;
       padding-bottom: 1px;
     }
-    .hero-small-link:hover { color: var(--orange); border-color: var(--orange); }
+    .hero-small-link:hover { color: var(--orange-text-hover); border-color: var(--orange); }
     /* decorative blobs */
     .hero-blob {
       position: absolute;
@@ -487,7 +485,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
       letter-spacing: .04em;
-      color: rgba(255,255,255,.45);
+      color: rgba(255,255,255,.62);
       white-space: nowrap;
     }
     .ticker-item .sep { color: var(--orange); }
@@ -601,7 +599,7 @@
       font-family: 'Assistant', sans-serif;
       font-weight: 600;
       font-size: 1.18rem;
-      color: var(--orange-deep);
+      color: var(--orange-text);
       line-height: 1.45;
       position: relative;
       text-align: center;
@@ -614,7 +612,7 @@
     .moment-quote::before {
       content: '”';
       font-size: 3.4rem;
-      color: var(--orange);
+      color: var(--orange-text);
       opacity: .3;
       line-height: 1;
       position: absolute;
@@ -625,7 +623,7 @@
     .moment-quote::after {
       content: '“';
       font-size: 3.4rem;
-      color: var(--orange);
+      color: var(--orange-text);
       opacity: .3;
       line-height: 0;
       position: absolute;
@@ -640,7 +638,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
       letter-spacing: .12em;
-      color: var(--orange);
+      color: var(--orange-text);
       opacity: .6;
       font-weight: 600;
     }
@@ -661,7 +659,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: var(--orange);
+      color: var(--orange-text);
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       letter-spacing: .06em;
@@ -727,7 +725,7 @@
     .cs-badge {
       display: inline-block;
       background: var(--orange-pale);
-      color: var(--orange-deep);
+      color: var(--orange-text);
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
       letter-spacing: .08em;
@@ -755,7 +753,7 @@
     }
     .cs-built {
       font-size: 14.5px;
-      color: rgba(255,255,255,.45);
+      color: rgba(255,255,255,.62);
       line-height: 1.75;
     }
     .cs-built strong { color: rgba(255,255,255,.7); }
@@ -776,7 +774,7 @@
       font-weight: 800;
       font-size: 2.2rem;
       letter-spacing: -.04em;
-      color: var(--orange);
+      color: var(--orange-text);
       line-height: 1;
       margin-bottom: 8px;
     }
@@ -916,7 +914,7 @@
     }
     .dream-headline em {
       font-style: italic;
-      color: var(--orange);
+      color: var(--orange-deep);
     }
 
     /* בועות מחשבה */
@@ -960,7 +958,7 @@
     .dream-closing {
       font-family: 'Assistant', sans-serif;
       font-size: clamp(1rem, 2vw, 1.2rem);
-      color: rgba(255,255,255,.45);
+      color: rgba(255,255,255,.62);
       line-height: 1.8;
       max-width: 520px;
       margin: 0 auto 12px;
@@ -1063,7 +1061,7 @@
     .crm-meta-item {
       font-family: 'Assistant', sans-serif;
       font-size: 12px;
-      color: rgba(255,255,255,.45);
+      color: rgba(255,255,255,.62);
       display: flex;
       align-items: center;
       gap: 6px;
@@ -1173,11 +1171,11 @@
       font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 20px;
-      color: var(--orange);
+      color: var(--orange-deep);
       margin: 0 auto 20px;
     }
     .step:last-child .step-num {
-      background: var(--orange);
+      background: var(--orange-text);
       border-color: var(--orange);
       color: #fff;
     }
@@ -1226,7 +1224,7 @@
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--orange-text);
       margin-bottom: 28px;
     }
     .about-how-list {
@@ -1247,8 +1245,7 @@
       font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 11px;
-      color: var(--orange);
-      opacity: .5;
+      color: var(--orange-text);
       letter-spacing: .05em;
       min-width: 22px;
       padding-top: 2px;
@@ -1309,7 +1306,7 @@
       font-weight: 800;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       letter-spacing: -.025em;
-      color: var(--orange);
+      color: var(--orange-text);
       margin-bottom: 24px;
     }
     .about-quote {
@@ -1334,7 +1331,7 @@
       font-family: Georgia, serif;
       font-size: 5.5rem;
       line-height: 1;
-      color: var(--orange);
+      color: var(--orange-text);
       opacity: .25;
       font-style: normal;
     }
@@ -1346,7 +1343,7 @@
       font-family: Georgia, serif;
       font-size: 5.5rem;
       line-height: 1;
-      color: var(--orange);
+      color: var(--orange-text);
       opacity: .25;
       font-style: normal;
     }
@@ -1357,7 +1354,7 @@
       font-size: 11px;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--orange-deep);
+      color: var(--orange-text);
       margin-top: 14px;
       opacity: .85;
     }
@@ -1492,7 +1489,7 @@
       line-height: 1.75;
     }
     .btn-cta-final {
-      background: var(--orange);
+      background: var(--orange-text);
       color: #fff;
       padding: 16px 34px;
       border-radius: 100px;
@@ -1504,14 +1501,14 @@
       display: inline-block;
     }
     .btn-cta-final:hover {
-      background: var(--orange-deep);
+      background: var(--orange-text-hover);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(242,107,31,.4);
     }
     .cta-note {
       margin-top: 24px;
       font-size: 14px;
-      color: rgba(255,255,255,.45);
+      color: rgba(255,255,255,.62);
       font-family: 'Assistant', sans-serif;
       letter-spacing: .04em;
     }
@@ -1697,7 +1694,7 @@
       accent-color: var(--orange);
     }
     .lead-consent-link {
-      color: var(--orange);
+      color: var(--orange-text);
       text-decoration: underline;
     }
     .lead-submit:disabled {
@@ -1734,7 +1731,7 @@
     .lead-field::placeholder { color: var(--muted); }
     .lead-submit {
       width: 100%;
-      background: var(--orange);
+      background: var(--orange-text);
       color: #fff;
       border: none;
       border-radius: 100px;
@@ -1746,7 +1743,7 @@
       margin-top: 4px;
       transition: background .2s, transform .15s;
     }
-    .lead-submit:hover { background: var(--orange-deep); transform: translateY(-1px); }
+    .lead-submit:hover { background: var(--orange-text-hover); transform: translateY(-1px); }
     .lead-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
     .lead-success {
       display: none;
@@ -1777,7 +1774,7 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      color: rgba(255,255,255,.3);
+      color: rgba(255,255,255,.62);
       font-size: 13px;
     }
     .footer-logo {
@@ -1866,8 +1863,8 @@
       color: var(--muted); cursor: pointer;
       transition: all .18s;
     }
-    .brief-tab-btn:hover { border-color: var(--orange); color: var(--orange); }
-    .brief-tab-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
+    .brief-tab-btn:hover { border-color: var(--orange); color: var(--orange-text-hover); }
+    .brief-tab-btn.active { background: var(--orange-text); border-color: var(--orange); color: #fff; }
     .brief-tabs-sub {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px; color: #666; letter-spacing: .04em; margin-bottom: 20px;
@@ -1918,7 +1915,7 @@
     .brief-loading.visible { display: block; }
     .brief-loading-title {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px; color: var(--orange); margin-bottom: 18px; font-weight: 500;
+      font-size: 12px; color: var(--orange-text); margin-bottom: 18px; font-weight: 500;
     }
     .brief-progress-wrap {
       background: var(--bg-warm); border-radius: 4px; height: 4px;
@@ -1935,7 +1932,7 @@
       align-items: center; gap: 8px; transition: color .25s;
     }
     .brief-steps li.done { color: var(--text); }
-    .brief-steps li .bck { color: var(--orange); font-weight: 700; opacity: 0; transition: opacity .2s; }
+    .brief-steps li .bck { color: var(--orange-text); font-weight: 700; opacity: 0; transition: opacity .2s; }
     .brief-steps li.done .bck { opacity: 1; }
     .brief-found {
       margin-top: 20px;
@@ -1973,7 +1970,7 @@
       font-size: 14.5px; color: var(--ink);
       text-align: center; line-height: 1.5;
     }
-    .brief-insight strong { color: var(--orange); }
+    .brief-insight strong { color: var(--orange-text); }
     .brief-result-body { padding: 24px 28px; }
     .brief-result-group { margin-bottom: 18px; }
     .brief-result-group:last-child { margin-bottom: 0; }
@@ -2008,7 +2005,7 @@
     .brief-priority-item:last-child { margin-bottom: 0; }
     .brief-priority-num {
       font-family: 'JetBrains Mono', monospace;
-      color: var(--orange); font-weight: 700;
+      color: var(--orange-text); font-weight: 700;
       min-width: 18px; flex-shrink: 0;
     }
     .brief-disclaimer {
@@ -2040,14 +2037,14 @@
       align-items: flex-start; gap: 10px; flex-shrink: 0;
     }
     .btn-brief-primary {
-      display: inline-block; background: var(--orange); color: #fff;
+      display: inline-block; background: var(--orange-text); color: #fff;
       padding: 14px 28px; border-radius: 100px;
       font-family: 'Rubik', sans-serif; font-weight: 700; font-size: 14px;
       text-decoration: none;
       transition: background .2s, transform .15s, box-shadow .2s; white-space: nowrap;
     }
     .btn-brief-primary:hover {
-      background: var(--orange-deep); transform: translateY(-2px);
+      background: var(--orange-text-hover); transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(242,107,31,.4);
     }
     .brief-cta-note {
@@ -2295,11 +2292,11 @@
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
     }
-    .demo-consent a { color: var(--orange-deep); font-weight: 600; }
+    .demo-consent a { color: var(--orange-text); font-weight: 600; }
     .demo-submit {
       width: 100%;
       border: none;
-      background: var(--orange);
+      background: var(--orange-text);
       color: #fff;
       font-family: 'Rubik', sans-serif;
       font-weight: 700;
@@ -2315,7 +2312,7 @@
       transition: background .2s, transform .15s, box-shadow .2s;
     }
     .demo-submit:hover:not(:disabled) {
-      background: var(--orange-deep);
+      background: var(--orange-text-hover);
       transform: translateY(-1px);
       box-shadow: 0 12px 28px rgba(242,107,31,.34);
     }
@@ -2358,12 +2355,12 @@
       display: flex; gap: 10px; flex-shrink: 0;
     }
     #flowli-cookie-bar .btn-accept {
-      background: #F26B1F; color: #fff; border: none;
+      background: #B04A0D; color: #fff; border: none;
       border-radius: 8px; padding: 10px 20px;
       font-family: 'Assistant', sans-serif; font-weight: 700;
       font-size: 14px; cursor: pointer; transition: background .2s;
     }
-    #flowli-cookie-bar .btn-accept:hover { background: #D45A12; }
+    #flowli-cookie-bar .btn-accept:hover { background: #8E3B09; }
     #flowli-cookie-bar .btn-decline {
       background: transparent; color: #888;
       border: 1.5px solid #444; border-radius: 8px;
@@ -2423,7 +2420,7 @@
       color: var(--ink);
       line-height: 1.8;
     }
-    .a11y-modal .a11y-contact a { color: var(--orange-deep); }
+    .a11y-modal .a11y-contact a { color: var(--orange-text); }
     .a11y-close {
       position: absolute;
       top: 16px;
@@ -2440,13 +2437,13 @@
       background: none;
       border: none;
       cursor: pointer;
-      color: rgba(255,255,255,.3);
+      color: rgba(255,255,255,.62);
       font-size: 13px;
       text-decoration: underline;
       font-family: inherit;
       padding: 0;
     }
-    .a11y-link:hover { color: rgba(255,255,255,.6); }
+    .a11y-link:hover { color: #fff; }
 
     /* ─── 1. SCROLL PROGRESS BAR ─── */
     .scroll-progress {
@@ -2513,7 +2510,7 @@
     .sticky-cta.visible { transform: translateY(0); }
     .sticky-cta a {
       display: block;
-      background: var(--orange);
+      background: var(--orange-text);
       color: #fff;
       padding: 14px;
       border-radius: 100px;
@@ -2606,8 +2603,11 @@
       footer { padding-bottom: 92px; }
     }
   </style>
+<link rel="stylesheet" href="/a11y.css">
+<script src="/a11y.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
 
   <!-- 1. SCROLL PROGRESS BAR -->
   <div class="scroll-progress" aria-hidden="true">
@@ -2616,7 +2616,7 @@
 
   <!-- COOKIE BANNER -->
   <div id="flowli-cookie-bar" role="region" aria-label="הסכמה למדידת שימוש">
-    <p>אנחנו מודדים שימוש באתר באופן אנונימי כדי לשפר אותו, ושומרים בדפדפן שלך העדפות. אפשר לסרב למדידה. <a onclick="document.getElementById('privacyOverlay').classList.add('open')" tabindex="0">מדיניות פרטיות</a></p>
+    <p>אנחנו מודדים שימוש באתר באופן אנונימי כדי לשפר אותו, ושומרים בדפדפן שלך העדפות. אפשר לסרב למדידה. <a href="/privacy">מדיניות פרטיות</a></p>
     <div class="cookie-btns">
       <button class="btn-accept" onclick="flowliAcceptCookies()">מסכימ.ה ✓</button>
       <button class="btn-decline" onclick="flowliDeclineCookies()">לא תודה</button>
@@ -2706,18 +2706,29 @@
     <div class="a11y-modal">
       <button class="a11y-close" onclick="document.getElementById('a11yOverlay').classList.remove('open')" aria-label="סגור">✕</button>
       <h2>הצהרת נגישות</h2>
-      <p>Flowli מחויבת להנגשת האתר והשירותים הדיגיטליים שלה לכלל המשתמשים, מתוך אמונה כי לכל אדם מגיעה האפשרות לגלוש באתר בצורה שוויונית, מכבדת ונוחה.</p>
-      <p>האתר שואף לעמוד בדרישות התקן הישראלי ת"י 5568 וברמת AA של הנחיות הנגישות WCAG 2.1.</p>
-      <p><strong>במסגרת מאמצי ההנגשה:</strong></p>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:12px">עודכן לאחרונה: נובמבר 2026</p>
+      <p>Flowli מחויבת להנגשת האתר לכלל המשתמשים, כולל אנשים עם מוגבלות. פעלנו להתאים את האתר לתקן הישראלי ת"י 5568 (WCAG) ברמה AA.</p>
+      <p><strong>מה נעשה באתר:</strong></p>
       <ul>
-        <li>האתר תומך בניווט באמצעות מקלדת.</li>
-        <li>האתר תומך בקוראי מסך.</li>
-        <li>ניתן להגדיל טקסט ולשנות ניגודיות באמצעות תפריט הנגישות.</li>
-        <li>האתר מותאם לשפה העברית ולקריאה מימין לשמאל (RTL).</li>
-        <li>נעשה מאמץ לשמור על מבנה תוכן ברור ונגיש בכל עמודי האתר.</li>
+        <li>בתחילת כל עמוד יש קישור "דילוג לתוכן הראשי", ולכל עמוד מבנה של ראש עמוד, תוכן ראשי ותחתית.</li>
+        <li>אפשר לנווט בכל האתר עם המקלדת בלבד. הרכיב שבפוקוס מסומן במסגרת בולטת.</li>
+        <li>בחלונות קופצים (טופס יצירת קשר, תיאום הדגמה) הפוקוס עובר לתוך החלון ונשאר בו, מקש Esc סוגר אותו, ואחרי הסגירה הפוקוס חוזר למקום שבו היה.</li>
+        <li>לכל שדה בטופס יש תווית, ולכל תמונה יש טקסט חלופי.</li>
+        <li>ניגודיות הצבעים בין טקסט לרקע נבדקה, וצבעים שלא עמדו בדרישה הוכהו, כולל הכתום של Flowli בטקסט קטן ובכפתורים.</li>
+        <li>הטקסט הנע בדף הבית נעצר בכפתור עצירה, וגם כשמעבירים עליו את העכבר או את הפוקוס. כשמוגדרת במכשיר "הפחתת תנועה", שום רכיב באתר לא זז.</li>
+        <li>האתר מותאם לטלפונים ולהגדלת תצוגה, ונקרא בלי גלילה הצידה גם ברוחב מסך של 320 פיקסלים.</li>
+        <li>השפה וכיוון הקריאה (עברית, מימין לשמאל) מוגדרים בכל עמוד.</li>
+        <li>תוסף נגישות (הכפתור בפינת המסך) מאפשר בנוסף להגדיל טקסט ולשנות ניגודיות.</li>
       </ul>
-      <p>למרות מאמצינו להנגיש את כלל חלקי האתר, ייתכן שיתגלו רכיבים שטרם הונגשו באופן מלא. אם נתקלתם בבעיה או בקושי כלשהו, נשמח לקבל משוב ולטפל בכך בהקדם.</p>
-      <p style="font-size:12px;color:var(--muted);margin-top:8px">הצהרה זו עודכנה לאחרונה: יוני 2026.</p>
+      <p><strong>איך זה נבדק:</strong> בנובמבר 2026 נבדקו כל סוגי העמודים באתר: דף הבית, דף ההדגמות, הבלוג, מאמרים, עמודי המדיניות ועמוד השגיאה. הבדיקה כללה כלי בדיקה אוטומטי (axe), ובדיקה ידנית של ניווט במקלדת, של החלונות הקופצים ושל תצוגה ברוחב 320 פיקסלים.</p>
+      <p><strong>מה עוד לא מושלם:</strong></p>
+      <ul>
+        <li>האתר עדיין לא נבדק עם תוכנת קורא מסך.</li>
+        <li>הלוגו נשאר בכתום של המותג (על לוגו לא חלה דרישת הניגודיות).</li>
+        <li>רכיבים של צד שלישי, כמו תוסף הנגישות, וואטסאפ ו-Calendly, אינם בשליטתנו.</li>
+        <li>האבחון בכתובת map.flowli.co.il הוא אתר נפרד, וההתאמה שלו נמצאת בתהליך.</li>
+      </ul>
+      <p>נתקלתם בבעיה? נשמח שתכתבו או תתקשרו, ונטפל בזה. <a href="/accessibility">ההצהרה המלאה</a></p>
       <div class="a11y-contact">
         <strong>פרטי רכזת הנגישות:</strong><br>
         הדס גרינברג<br>
@@ -2758,6 +2769,7 @@
       </div>
     </div>
   </nav>
+  <main id="main">
 
   <!-- CASE STUDY -->
   <section id="case-study">
@@ -2854,7 +2866,7 @@
         בואו נבין יחד<br>
         <span class="accent">מה ייצור הכי הרבה שקט בעסק שלכם.</span>
       </h2>
-      <p class="reveal delay-2" style="font-size:15px;color:var(--muted);margin-bottom:24px;">יש יותר מדרך אחת להתחיל. בחרו את זו שמתאימה לכם.</p>
+      <p class="reveal delay-2" style="font-size:15px;color:rgba(255,255,255,.7);margin-bottom:24px;">יש יותר מדרך אחת להתחיל. בחרו את זו שמתאימה לכם.</p>
       <div class="cta-final-actions reveal delay-3">
         <button type="button" class="btn-cta-final" onclick="openDemoModal('cta_final')">
           רוצים לראות איך Flowli יעבוד אצלכם?
@@ -2866,6 +2878,8 @@
       <p class="cta-note reveal delay-4">שתי האפשרויות ללא עלות וללא התחייבות.</p>
     </div>
   </section>
+
+  </main>
 
   <!-- LEAD POPUP -->
   <div class="lead-overlay" id="leadOverlay" onclick="closeLeadPopup(event)">
@@ -2924,7 +2938,7 @@
         <span><span class="fl">flow</span><span class="li">li</span></span>
       </a>
       <span>&#169; 2026 flowli &middot; כל הזכויות שמורות</span>
-      <a href="mailto:hadas@flowli.co.il" style="color:rgba(255,255,255,.3);text-decoration:none;">hadas@flowli.co.il</a>
+      <a href="mailto:hadas@flowli.co.il" style="color:rgba(255,255,255,.62);text-decoration:none;">hadas@flowli.co.il</a>
       <div style="display:flex;align-items:center;gap:6px">
         <a class="a11y-link" href="/privacy">מדיניות פרטיות</a>
         <span style="color:rgba(255,255,255,.2)">|</span>
@@ -3286,7 +3300,7 @@
           </div>
           <h4 style="font-family:'Rubik',sans-serif;font-weight:700;font-size:22px;color:var(--ink);margin:0 0 8px;">קיבלנו! נדבר בקרוב</h4>
           <p style="font-size:15px;color:var(--muted);margin:0;line-height:1.6;">נחזור אליכם תוך יום עסקים אחד לתיאום השיחה.</p>
-          <button onclick="closeDemoModalDirect()" style="margin-top:24px;background:none;border:none;color:var(--orange);font-family:'Assistant',sans-serif;font-size:15px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 0;border-bottom:1px solid rgba(242,107,31,.4);">
+          <button onclick="closeDemoModalDirect()" style="margin-top:24px;background:none;border:none;color:var(--orange-text);font-family:'Assistant',sans-serif;font-size:15px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 0;border-bottom:1px solid rgba(242,107,31,.4);">
             בינתיים, המשיכו להכיר את Flowli &#x2193;
           </button>
         </div>

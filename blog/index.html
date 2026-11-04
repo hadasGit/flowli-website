@@ -7,18 +7,16 @@
 <meta name="description" content="מדריכים מעשיים לאוטומציה, AI וחיבור מערכות בעסקים בישראל. מה כדאי לבדוק לפני שמחליטים, בלי הבטחות ובלי מספרים שלא נמדדו.">
 <link rel="canonical" href="https://flowli.co.il/blog/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Assistant:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{
     --bg:#EFEDE6;--bg-warm:#E8E4D6;--cream:#FAFAF7;--ink:#1A1A1A;--text:#2A2A2A;--muted:#5C5751;
-    --orange:#F26B1F;--orange-deep:#D45A12;--orange-pale:#FEF0E7;--orange-mid:#FDDDBD;
+    --orange:#F26B1F;--orange-deep:#D45A12; --orange-text: #B04A0D; --orange-text-hover: #8E3B09;--orange-pale:#FEF0E7;--orange-mid:#FDDDBD;
   }
   body{font-family:'Assistant',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
-  a{color:var(--orange-deep)}
-  a:hover{color:var(--orange)}
+  a{color: var(--orange-text)}
+  a:hover{color: var(--orange-text-hover)}
 
   nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--bg-warm)}
   .nav-inner{max-width:960px;margin:0 auto;padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between}
@@ -26,13 +24,13 @@
   .nav-logo svg{width:30px;height:30px}
   .nav-logo-text{font-family:'Rubik',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.035em}
   .nav-logo .fl{color:var(--ink)} .nav-logo .li{color:var(--orange)}
-  .nav-cta{background:transparent;color:var(--orange);padding:8px 18px;border-radius:8px;border:2px solid var(--orange);font-family:'Rubik',sans-serif;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap;transition:.2s}
-  .nav-cta:hover{background:var(--orange);color:#fff}
+  .nav-cta{background:transparent;color: var(--orange-text);padding:8px 18px;border-radius:8px;border:2px solid var(--orange);font-family:'Rubik',sans-serif;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap;transition:.2s}
+  .nav-cta:hover{background:var(--orange-text-hover);color:#fff}
 
   main{max-width:960px;margin:0 auto;padding:0 24px}
   .hero{padding:56px 0 40px;border-bottom:1px solid var(--bg-warm)}
-  .breadcrumb{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:16px}
-  .breadcrumb a{color:var(--orange-deep);text-decoration:none}
+  .breadcrumb{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color: var(--orange-text);margin-bottom:16px}
+  .breadcrumb a{color: var(--orange-text);text-decoration:none}
   h1{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,2.8rem);line-height:1.2;letter-spacing:-.025em;color:var(--ink);margin-bottom:16px}
   .hero p{font-size:1.1rem;color:var(--muted);max-width:600px}
 
@@ -44,11 +42,11 @@
   @media(max-width:700px){.grid{grid-template-columns:1fr}}
   .card{background:var(--cream);border:1px solid var(--bg-warm);border-radius:18px;padding:28px;display:flex;flex-direction:column;text-decoration:none;transition:.2s;height:100%}
   .card:hover{transform:translateY(-3px);border-color:var(--orange-mid);box-shadow:0 12px 30px rgba(0,0,0,.06)}
-  .card-niche{font-family:'JetBrains Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--orange-deep);margin-bottom:12px}
+  .card-niche{font-family:'JetBrains Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color: var(--orange-text);margin-bottom:12px}
   .card h2{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.18rem;color:var(--ink);line-height:1.35;margin-bottom:12px}
   .card p{font-size:.94rem;color:var(--muted);flex:1;margin-bottom:16px}
   .card-foot{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);border-top:1px solid var(--bg-warm);padding-top:14px}
-  .card-status{background:var(--orange-pale);color:var(--orange-deep);padding:3px 10px;border-radius:100px;font-weight:600}
+  .card-status{background:var(--orange-pale);color: var(--orange-text);padding:3px 10px;border-radius:100px;font-weight:600}
   .card-status.featured{background:var(--ink);color:#fff}
   .card.is-featured{border-color:var(--orange-mid);background:linear-gradient(180deg,var(--orange-pale) 0%,var(--cream) 60%)}
 
@@ -69,13 +67,16 @@
     .content-table td,.compare-table td{display:block;border:none;padding:0;color:var(--text)}
     .content-table td+td,.compare-table td+td{margin-top:10px}
     .content-table td:first-child,.compare-table td:first-child{font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);font-size:1.04rem;line-height:1.4}
-    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:4px}
+    .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color: var(--orange-text);margin-bottom:4px}
   }
 </style>
+<link rel="stylesheet" href="/a11y.css">
+<script src="/a11y.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
 
-<nav>
+<nav aria-label="ראשי">
   <div class="nav-inner">
     <a class="nav-logo" href="https://flowli.co.il">
       <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +90,7 @@
   </div>
 </nav>
 
-<main>
+<main id="main">
   <div class="hero">
     <div class="breadcrumb"><a href="https://flowli.co.il">flowli</a> / בלוג</div>
     <h1>מה כדאי לבדוק לפני שמחליטים</h1>

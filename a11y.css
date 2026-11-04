@@ -1,0 +1,63 @@
+/* Flowli - shared accessibility layer (all pages). Loaded after each page's own styles. */
+
+/* skip link: hidden until it receives keyboard focus */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  right: 12px;
+  z-index: 10000;
+  background: #1A1A1A;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 0 0 10px 10px;
+  font-family: 'Assistant', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+/* one clear focus ring for keyboard users, on light and dark backgrounds */
+:focus-visible {
+  outline: 3px solid #B04A0D !important;
+  outline-offset: 2px !important;
+}
+footer :focus-visible,
+.cta-inner :focus-visible,
+#flowli-cookie-bar :focus-visible {
+  outline-color: #F8B98C !important;
+}
+main:focus { outline: none; }
+
+/* moving text strip: pause button, and it also stops on hover / focus */
+.ticker-wrap { position: relative; }
+.ticker-wrap.is-paused .ticker-track,
+.ticker-wrap:hover .ticker-track,
+.ticker-wrap:focus-within .ticker-track { animation-play-state: paused !important; }
+.ticker-pause {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.55);
+  background: #1A1A1A;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* "reduce motion" on the device: nothing moves */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, .reveal-scale { opacity: 1 !important; transform: none !important; }
+}
