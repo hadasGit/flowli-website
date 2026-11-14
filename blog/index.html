@@ -69,6 +69,92 @@
     .content-table td:first-child,.compare-table td:first-child{font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);font-size:1.04rem;line-height:1.4}
     .content-table td[data-label]::before,.compare-table td[data-label]::before{content:attr(data-label);display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:4px}
   }
+  /* --- רענון עמוד הבלוג --- */
+  .nav-inner{max-width:1040px}
+  .nav-links{display:flex;align-items:center;gap:24px}
+  .nav-link{font-family:'Assistant',sans-serif;font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;transition:color .2s}
+  .nav-link:hover{color:var(--orange)}
+  .nav-link[aria-current="page"]{color:var(--ink)}
+  @media(max-width:760px){.nav-links{gap:14px}.nav-link{font-size:13px}.nav-cta{display:none}}
+  @media(max-width:400px){.nav-links{gap:11px}.nav-link{font-size:12.5px}}
+  .breadcrumb{font-family:'Assistant',sans-serif;font-size:14px;font-weight:600;letter-spacing:0;text-transform:none}
+  .hero p{font-size:1.15rem}
+  /* 1. מה מציק לכם */
+  .pains{margin-top:30px}
+  .pains-q{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:12px}
+  .pains-list{display:flex;flex-wrap:wrap;gap:10px}
+  .pain{font:inherit;font-size:15.5px;font-weight:600;color:var(--text);background:#fff;border:1px solid var(--bg-warm);border-radius:14px;padding:9px 16px;cursor:pointer;text-align:start;transition:border-color .2s,background .2s,color .2s}
+  .pain:hover{border-color:var(--orange-mid);background:var(--orange-pale)}
+  .pain[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+  .pains-more{display:none;font:inherit;font-size:15px;font-weight:700;color:var(--orange-deep);background:none;border:1px dashed var(--orange-mid);border-radius:14px;padding:9px 16px;cursor:pointer}
+  @media(max-width:600px){
+    .pain{font-size:15px;padding:8px 14px}
+    .pains:not(.show-all) .pain.extra:not([aria-pressed="true"]){display:none}
+    .pains:not(.show-all) .pains-more{display:inline-block}
+  }
+  .pains-result{flex-basis:100%;margin:6px 0 8px;background:var(--cream);border:1px solid var(--orange-mid);border-radius:18px;padding:18px;animation:prIn .35s ease}
+  @keyframes prIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.pains-result{animation:none}}
+  .pr-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-weight:700;color:var(--ink)}
+  .pr-clear{font:inherit;font-size:14px;font-weight:600;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px}
+  .pr-clear:hover{color:var(--orange-deep)}
+  .pr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .pr-card{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"ico t" "ico d";column-gap:12px;row-gap:4px;background:#fff;border:1px solid var(--bg-warm);border-radius:14px;padding:14px;text-decoration:none;transition:border-color .2s}
+  .pr-card:hover{border-color:var(--orange)}
+  .pr-card .card-ico{grid-area:ico}
+  .pr-t{grid-area:t;font-family:'Rubik',sans-serif;font-weight:700;color:var(--ink);line-height:1.35}
+  .pr-d{grid-area:d;font-size:.92rem;color:var(--muted);line-height:1.5}
+
+  /* 2. מפת קווים */
+  .paths{padding:44px 0 8px}
+  .paths h2,.all-title{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.45rem;color:var(--ink);margin-bottom:6px}
+  .paths-sub{color:var(--muted);margin-bottom:22px}
+  .all-title{margin:48px 0 0}
+  .metro{background:var(--cream);border:1px solid var(--bg-warm);border-radius:20px;padding:10px 26px}
+  .line{--c:var(--orange);display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:start;padding:22px 0}
+  .line+.line{border-top:1px dashed var(--bg-warm)}
+  .line-2{--c:var(--ink)} .line-3{--c:#8A7F72}
+  .line-head h3{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.08rem;color:var(--ink);display:flex;align-items:center;gap:8px}
+  .line-head h3::before{content:'';width:22px;height:5px;border-radius:3px;background:var(--c);flex:none}
+  .line-head p{font-size:.92rem;color:var(--muted);line-height:1.5;margin-top:4px}
+  .stops{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);position:relative}
+  .stops::before{content:'';position:absolute;top:15px;inset-inline:16.66%;height:4px;border-radius:2px;background:var(--c)}
+  .stops a{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:0 10px;text-decoration:none;color:var(--text)}
+  .dot{width:34px;height:34px;border-radius:50%;background:#fff;border:4px solid var(--c);display:flex;align-items:center;justify-content:center;font-family:'Rubik',sans-serif;font-weight:700;font-size:14px;color:var(--ink);transition:background .2s,color .2s}
+  .stop-t{font-size:.95rem;font-weight:600;line-height:1.4}
+  .stops a:hover .dot{background:var(--c);color:#fff}
+  .stops a:hover .stop-t{color:var(--orange-deep)}
+  @media(max-width:820px){
+    .metro{padding:4px 18px}
+    .line{grid-template-columns:1fr;gap:14px}
+    .stops{grid-template-columns:1fr;gap:14px}
+    .stops::before{top:17px;bottom:17px;inset-inline:auto;inset-inline-start:15px;width:4px;height:auto}
+    .stops a{flex-direction:row;align-items:center;text-align:start;padding:0}
+    .dot{flex:none}
+  }
+
+  /* 4. אייקון לכל נושא */
+  .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .card-top .card-niche{margin:0}
+  .card-ico{width:36px;height:36px;flex:none;border-radius:10px;background:var(--orange-pale);color:var(--orange-deep);display:flex;align-items:center;justify-content:center}
+  .card-ico svg{width:20px;height:20px}
+  .filters{align-items:center;padding:18px 0 0}
+  .filters-label{font-size:15px;font-weight:700;color:var(--ink);margin-inline-end:4px}
+  .filter-tag{font-family:'Assistant',sans-serif;font-size:14.5px;font-weight:600;text-transform:none;letter-spacing:0;padding:7px 16px}
+  .filter-tag .n{font-weight:400;opacity:.7;margin-inline-start:2px}
+  .grid{padding:24px 0 40px}
+  .card-niche{font-family:'Assistant',sans-serif;font-size:13.5px;font-weight:600;text-transform:none;letter-spacing:0;color:var(--muted)}
+  .card-aud{color:var(--orange-deep);font-weight:700}
+  .card p{font-size:1rem}
+  .card-foot{font-family:'Assistant',sans-serif;font-size:13.5px}
+  .end-cta{background:var(--ink);color:#fff;border-radius:22px;padding:40px 36px;margin:0 0 20px;text-align:center}
+  .end-cta h2{font-family:'Rubik',sans-serif;font-weight:700;font-size:clamp(1.35rem,3vw,1.7rem);margin-bottom:10px}
+  .end-cta p{color:#D9D4CC;max-width:520px;margin:0 auto 22px;font-size:1.05rem}
+  .end-actions{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .end-btn{background:var(--orange);color:#fff;font-family:'Rubik',sans-serif;font-weight:700;padding:13px 26px;border-radius:10px;text-decoration:none}
+  .end-btn:hover{background:var(--orange-deep);color:#fff}
+  .end-link{color:#fff;font-weight:600}
+  .end-link:hover{color:var(--orange-mid)}
 </style>
 <link rel="stylesheet" href="/a11y.css">
 <script src="/a11y.js" defer></script>
@@ -86,7 +172,13 @@
       </svg>
       <span class="nav-logo-text"><span class="fl">flow</span><span class="li">li</span></span>
     </a>
-    <a class="nav-cta" href="https://flowli.co.il/#check" data-flowli-form="nav">בדיקת התאמה</a>
+    <div class="nav-links">
+      <a href="https://flowli.co.il/#flowli-brief" class="nav-link">Flowli בפעולה</a>
+      <a href="https://flowli.co.il/#about" class="nav-link">אודות</a>
+      <a href="/blog/" class="nav-link" aria-current="page">בלוג</a>
+      <a href="https://flowli.co.il/#cta-final" class="nav-link">יצירת קשר</a>
+      <a class="nav-cta" href="https://flowli.co.il/#cta-final" data-flowli-form="nav">בדיקת התאמה</a>
+    </div>
   </div>
 </nav>
 
@@ -94,169 +186,254 @@
   <div class="hero">
     <div class="breadcrumb"><a href="https://flowli.co.il">flowli</a> / בלוג</div>
     <h1>מה כדאי לבדוק לפני שמחליטים</h1>
-    <p>מה באמת עוזר לעסק קטן להפסיק לטבוע במשימות שחוזרות על עצמן - בלי הבטחות, עם דוגמאות מסומנות בבירור.</p>
+    <p>מה באמת עוזר לעסק להפסיק לטבוע במשימות שחוזרות על עצמן - בלי הבטחות, עם דוגמאות מסומנות בבירור.</p>
+    <div class="pains" role="group" aria-labelledby="pains-q">
+      <p id="pains-q" class="pains-q">מה מציק לכם עכשיו?</p>
+      <div class="pains-list">
+      <button type="button" class="pain" aria-pressed="false" data-slugs="do-you-need-a-crm-small-business what-is-business-automation personal-trainer-whatsapp-automation">פניות נופלות בין הכיסאות</button>
+      <button type="button" class="pain" aria-pressed="false" data-slugs="dont-start-with-automation what-is-business-automation automation-cost-small-business-israel">לא ברור לי מאיפה להתחיל</button>
+      <button type="button" class="pain" aria-pressed="false" data-slugs="why-no-one-uses-the-system-you-bought automation-layer-over-existing-system off-the-shelf-vs-custom-business-system">קנינו מערכת ואף אחד לא משתמש בה</button>
+      <button type="button" class="pain" aria-pressed="false" data-slugs="connecting-systems-data-checklist-small-business make-vs-zapier-vs-n8n-israel business-dashboard-small-business">יש יותר מדי כלים שלא מדברים ביניהם</button>
+      <button type="button" class="pain" aria-pressed="false" data-slugs="inventory-availability-whatsapp-small-business service-call-machine-history-small-business">כל היום שואלים אותי &quot;יש במלאי?&quot;</button>
+      <button type="button" class="pain extra" aria-pressed="false" data-slugs="procurement-mistakes-small-business import-shipment-tracking-automation">הזמנות כפולות ואישורים שנשכחים</button>
+      <button type="button" class="pain extra" aria-pressed="false" data-slugs="clinic-no-show-automation clinic-crm-what-you-need">מטופלים לא מגיעים לתורים</button>
+      <button type="button" class="pain extra" aria-pressed="false" data-slugs="abandoned-cart-woocommerce-israel automation-cost-small-business-israel">עגלות נטושות בחנות באתר</button>
+      <button type="button" class="pain extra" aria-pressed="false" data-slugs="automation-vs-ai-agent-small-business ai-agent-daily-monitoring-small-business">האם AI מתאים לעסק שלי?</button>
+      <button type="button" class="pains-more" aria-expanded="false">עוד מצבים +</button>
+      <div class="pains-result" id="painsResult" aria-live="polite" hidden></div>
+      </div>
+    </div>
   </div>
 
-  <div class="filters" id="filters">
-    <button class="filter-tag active" data-filter="all">הכל</button>
-    <button class="filter-tag" data-filter="קליניקאיות">קליניקאיות ומטפלים</button>
-    <button class="filter-tag" data-filter="רכש">רכש / יבוא / שילוח</button>
-    <button class="filter-tag" data-filter="B2B">עסקים קטנים</button>
-    <button class="filter-tag" data-filter="טכנולוגיה">טכנולוגיה לעסקים</button>
+  <section class="paths" aria-labelledby="paths-title">
+    <h2 id="paths-title">מאיפה מתחילים?</h2>
+    <p class="paths-sub">שלושה קווים, שלוש תחנות בכל אחד. בוחרים את הקו שמתאים לכם וקוראים לפי הסדר.</p>
+    <div class="metro">
+      <div class="line line-1">
+        <div class="line-head"><h3>רק מתחילים</h3><p>עוד לא ברור מה כדאי לסדר קודם</p></div>
+        <ol class="stops">
+          <li><a href="what-is-business-automation"><span class="dot">1</span><span class="stop-t">מה זו אוטומציה בעסק, ולמה כדאי לכם בכלל?</span></a></li>
+          <li><a href="dont-start-with-automation"><span class="dot">2</span><span class="stop-t">לא מתחילים מאוטומציה: 4 שלבים לבחירת התהליך הראשון שכדאי לסדר בעסק</span></a></li>
+          <li><a href="automation-cost-small-business-israel"><span class="dot">3</span><span class="stop-t">כמה עולה אוטומציה לעסק קטן? כך קוראים הצעת מחיר</span></a></li>
+        </ol>
+      </div>
+      <div class="line line-2">
+        <div class="line-head"><h3>יש לנו כבר מערכת</h3><p>רוצים שתעבוד טוב יותר, בלי להחליף הכול</p></div>
+        <ol class="stops">
+          <li><a href="automation-layer-over-existing-system"><span class="dot">1</span><span class="stop-t">"יש לנו כבר מערכת" - מה אפשר לעשות מעליה?</span></a></li>
+          <li><a href="connecting-systems-data-checklist-small-business"><span class="dot">2</span><span class="stop-t">מה לבדוק לפני שמחברים מערכת חדשה לעסק?</span></a></li>
+          <li><a href="why-no-one-uses-the-system-you-bought"><span class="dot">3</span><span class="stop-t">למה אף אחד לא משתמש במערכת שקניתם?</span></a></li>
+        </ol>
+      </div>
+      <div class="line line-3">
+        <div class="line-head"><h3>מתלבטים איזו מערכת</h3><p>לפני שקונים, משווים או מתחייבים</p></div>
+        <ol class="stops">
+          <li><a href="do-you-need-a-crm-small-business"><span class="dot">1</span><span class="stop-t">האם אתם בכלל צריכים CRM?</span></a></li>
+          <li><a href="off-the-shelf-vs-custom-business-system"><span class="dot">2</span><span class="stop-t">מערכת מוכנה או פיתוח מותאם - איך מחליטים באמת?</span></a></li>
+          <li><a href="make-vs-zapier-vs-n8n-israel"><span class="dot">3</span><span class="stop-t">Make, Zapier או n8n - מה מתאים לעסק ישראלי קטן?</span></a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="all-title">כל המאמרים</h2>
+  <div class="filters" id="filters" role="group" aria-label="סינון לפי סוג העסק">
+    <span class="filters-label">למי זה:</span>
+    <button class="filter-tag active" data-filter="any" aria-pressed="true">הכל <span class="n">20</span></button>
+    <button class="filter-tag" data-filter="all" aria-pressed="false">כל עסק <span class="n">13</span></button>
+    <button class="filter-tag" data-filter="clinic" aria-pressed="false">קליניקות ומאמנים <span class="n">3</span></button>
+    <button class="filter-tag" data-filter="trade" aria-pressed="false">יבוא, רכש ושירות <span class="n">4</span></button>
   </div>
 
   <div class="grid" id="grid">
-    <a class="card is-featured" data-niche="B2B" href="dont-start-with-automation" style="grid-column:1/-1">
-      <div class="card-niche">עסקים קטנים · המאמר המרכזי</div>
+    <a class="card is-featured" data-aud="all" data-slug="dont-start-with-automation" href="dont-start-with-automation" style="grid-column:1/-1">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · איפה מתחילים · המאמר המרכזי</div></div>
       <h2>לא מתחילים מאוטומציה: 4 שלבים לבחירת התהליך הראשון שכדאי לסדר בעסק</h2>
       <p>לפני שבוחרים כלי, כדאי לדעת מה בכלל כדאי לתקן קודם. שיטת Flowli: ממפים, מתעדפים, מחברים, מודדים.</p>
       <div class="card-foot"><span>8 דקות קריאה</span><span class="card-status featured">מאמר דגל</span></div>
     </a>
 
-    <a class="card" data-niche="B2B" href="what-is-business-automation">
-      <div class="card-niche">מה זו אוטומציה · למתחילים</div>
+    <a class="card" data-aud="all" data-slug="what-is-business-automation" href="what-is-business-automation">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · איפה מתחילים</div></div>
       <h2>מה זו אוטומציה בעסק, ולמה כדאי לכם בכלל?</h2>
       <p>אוטומציה לא מחליפה אותכם ואינה מערכת שקונים. שלוש דוגמאות מהיומיום, איפה זה נוגע במסע הלקוח, ומה דווקא לא מתאים לאוטומציה.</p>
       <div class="card-foot"><span>7 דקות קריאה</span><span class="card-status">חדש</span></div>
     </a>
 
-    <a class="card" data-niche="טכנולוגיה" href="connecting-systems-data-checklist-small-business">
-      <div class="card-niche">חיבור מערכות</div>
+    <a class="card" data-aud="all" data-slug="connecting-systems-data-checklist-small-business" href="connecting-systems-data-checklist-small-business">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · חיבור מערכות</div></div>
       <h2>מה לבדוק לפני שמחברים מערכת חדשה לעסק?</h2>
       <p>כל כלי חדש מייצר עוד עותק של המידע. צ'קליסט מעשי: מיפוי בגיליון אחד, חמש שאלות לפני חיבור, הרשאות ומפתחות וספקים חיצוניים.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="B2B" href="do-you-need-a-crm-small-business">
-      <div class="card-niche">בחירת מערכת</div>
+    <a class="card" data-aud="all" data-slug="do-you-need-a-crm-small-business" href="do-you-need-a-crm-small-business">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6h10"/><path d="M10 12h10"/><path d="M10 18h10"/><path d="M4 6l1.5 1.5L8 5"/><path d="M4 12l1.5 1.5L8 11"/><path d="M4 18l1.5 1.5L8 17"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · בחירת מערכת</div></div>
       <h2>האם אתם בכלל צריכים CRM?</h2>
       <p>לפני שבוחרים מערכת כדאי לשאול אם צריך אחת. מה CRM באמת פותר, מתי גיליון עדיין מספיק, וחמישה סימנים שהגיע הזמן לעבור.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="B2B" href="why-no-one-uses-the-system-you-bought">
-      <div class="card-niche">הטמעה ואימוץ</div>
+    <a class="card" data-aud="all" data-slug="why-no-one-uses-the-system-you-bought" href="why-no-one-uses-the-system-you-bought">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5a3 3 0 0 1 0 6"/><path d="M18 20a6 6 0 0 0-2.5-4.8"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · הטמעה</div></div>
       <h2>למה אף אחד לא משתמש במערכת שקניתם?</h2>
       <p>קניתם, הוקם, הייתה הדרכה - ואחרי חודשיים כולם חזרו לוואטסאפ. חמש סיבות שהטמעה נכשלת, ומה עושים כשזה כבר קרה.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="קליניקאיות" href="clinic-no-show-automation">
-      <div class="card-niche">קליניקאיות פרטיות</div>
+    <a class="card" data-aud="clinic" data-slug="clinic-no-show-automation" href="clinic-no-show-automation">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg></span><div class="card-niche"><span class="card-aud">קליניקות ומאמנים</span> · תורים ותזכורות</div></div>
       <h2>תזכורות לתורים בקליניקה: איך לבנות תהליך נכון</h2>
       <p>תזכורת יכולה לעזור למטופל לזכור את התור - היא לא מבטיחה הגעה. איך בונים סביב זה תהליך מלא: אישור, תזכורת, ביטול וטיפול בחריגים.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="קליניקאיות" href="clinic-crm-what-you-need">
-      <div class="card-niche">קליניקאיות פרטיות</div>
+    <a class="card" data-aud="clinic" data-slug="clinic-crm-what-you-need" href="clinic-crm-what-you-need">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6h10"/><path d="M10 12h10"/><path d="M10 18h10"/><path d="M4 6l1.5 1.5L8 5"/><path d="M4 12l1.5 1.5L8 11"/><path d="M4 18l1.5 1.5L8 17"/></svg></span><div class="card-niche"><span class="card-aud">קליניקות ומאמנים</span> · בחירת מערכת</div></div>
       <h2>CRM לקליניקה פרטית: מה צריך לבדוק לפני שבוחרים</h2>
       <p>קליניקה לא צריכה בהכרח מערכת גדולה - היא צריכה דרך ברורה לנהל תורים, תשלומים ומידע רגיש. איך מגדירים את הצורך לפני שבוחרים כלי.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="קליניקאיות" href="personal-trainer-whatsapp-automation">
-      <div class="card-niche">מאמנים אישיים / PT</div>
+    <a class="card" data-aud="clinic" data-slug="personal-trainer-whatsapp-automation" href="personal-trainer-whatsapp-automation">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.1A8 8 0 1 1 21 12z"/></svg></span><div class="card-niche"><span class="card-aud">קליניקות ומאמנים</span> · וואטסאפ</div></div>
       <h2>אוטומציית וואטסאפ למאמני כושר: מה מתאים ומה נשאר אישי</h2>
       <p>לא כל הודעה בוואטסאפ דורשת תשובה אישית, ולא כל שיחה מתאימה לאוטומציה. ההבחנה בין תקשורת תפעולית לליווי אישי.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="רכש" href="procurement-mistakes-small-business">
-      <div class="card-niche">רכש / יבוא / שילוח</div>
+    <a class="card" data-aud="trade" data-slug="procurement-mistakes-small-business" href="procurement-mistakes-small-business">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11h10.2l2-8H6.2"/><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg></span><div class="card-niche"><span class="card-aud">יבוא, רכש ושירות</span> · רכש</div></div>
       <h2>5 נקודות כשל בתהליך הרכש ואיך לצמצם אותן</h2>
       <p>הזמנה כפולה או אישור שנשכח אינם בהכרח טעות של אדם אחד. חמישה תרחישים אפשריים והבדיקות שכדאי לבצע לפני שקונים כלי חדש.</p>
       <div class="card-foot"><span>7 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="רכש" href="import-shipment-tracking-automation">
-      <div class="card-niche">רכש / יבוא / שילוח</div>
+    <a class="card" data-aud="trade" data-slug="import-shipment-tracking-automation" href="import-shipment-tracking-automation">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span><div class="card-niche"><span class="card-aud">יבוא, רכש ושירות</span> · מעקב משלוחים</div></div>
       <h2>מעקב משלוחים ליבואנים: ריכוז סטטוסים ועדכוני לקוחות</h2>
       <p>מערכת מעקב טובה לא ממציאה ודאות - היא מרכזת מידע ממקורות שהוגדרו ומפרידה בין מידע שאפשר להעביר ללקוח לבין חריג שמחייב בדיקה.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="B2B" href="automation-cost-small-business-israel">
-      <div class="card-niche">עסקים קטנים</div>
+    <a class="card" data-aud="all" data-slug="automation-cost-small-business-israel" href="automation-cost-small-business-israel">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · מחיר</div></div>
       <h2>כמה עולה אוטומציה לעסק קטן? כך קוראים הצעת מחיר</h2>
       <p>בלי להכיר את התהליך אי אפשר לתת מחיר אחראי. מה אמור להיכלל בהצעה, ואילו שאלות עוזרות להשוות בין פתרונות.</p>
       <div class="card-foot"><span>7 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="טכנולוגיה" href="business-dashboard-small-business">
-      <div class="card-niche">טכנולוגיה לעסקים</div>
+    <a class="card" data-aud="all" data-slug="business-dashboard-small-business" href="business-dashboard-small-business">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V11"/><path d="M11 20V5"/><path d="M17 20v-6"/><path d="M3 20h18"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · דשבורד</div></div>
       <h2>דשבורד לעסק קטן: מה כדאי להציג ואיך מתחילים</h2>
       <p>דשבורד טוב לא נמדד במספר הגרפים שבו - הוא עונה על שאלות עסקיות ברורות ומראה מאיפה הגיע המידע ומתי עודכן.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="טכנולוגיה" href="automation-vs-ai-agent-small-business">
-      <div class="card-niche">טכנולוגיה לעסקים</div>
+    <a class="card" data-aud="all" data-slug="automation-vs-ai-agent-small-business" href="automation-vs-ai-agent-small-business">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · AI</div></div>
       <h2>אוטומציה רגילה או סוכן AI: מה ההבדל ומה מתאים לעסק?</h2>
       <p>אוטומציה מבצעת כללים שהוגדרו מראש. סוכן AI מפרש מידע ובוחר צעד. הבחירה תלויה ביציבות התהליך וברמת הסיכון, לא ב"מה חדש יותר".</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="טכנולוגיה" href="ai-agent-daily-monitoring-small-business">
-      <div class="card-niche">טכנולוגיה לעסקים</div>
+    <a class="card" data-aud="all" data-slug="ai-agent-daily-monitoring-small-business" href="ai-agent-daily-monitoring-small-business">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · AI</div></div>
       <h2>סוכן AI שבודק מידע מדי יום: איך זה עובד?</h2>
       <p>סוכן כזה יכול לגשת למקור שהוגדר, לבדוק אם משהו השתנה ולהתריע כשנדרש טיפול - אבל הוא לא יודע מעצמו מה חשוב לעסק.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="רכש" href="service-call-machine-history-small-business">
-      <div class="card-niche">שירות ותחזוקה לציוד</div>
+    <a class="card" data-aud="trade" data-slug="service-call-machine-history-small-business" href="service-call-machine-history-small-business">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></span><div class="card-niche"><span class="card-aud">יבוא, רכש ושירות</span> · שירות ותחזוקה</div></div>
       <h2>למה שיחת שירות קצרה הופכת לבירור ארוך?</h2>
       <p>כשהלקוח מתקשר צריך לזהות את הציוד, לבדוק אחריות ולהבין מה כבר תוקן. איך כרטיס מכונה מרכז את המידע - ומה אפשר לסדר בלי להחליף מערכת.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="רכש" href="inventory-availability-whatsapp-small-business">
-      <div class="card-niche">יבואנים וסיטונאים</div>
+    <a class="card" data-aud="trade" data-slug="inventory-availability-whatsapp-small-business" href="inventory-availability-whatsapp-small-business">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span><div class="card-niche"><span class="card-aud">יבוא, רכש ושירות</span> · מלאי</div></div>
       <h2>"יש במלאי?" - איך עונים ללקוח בלי להטעות אותו</h2>
       <p>מענה אוטומטי לא מתקן מלאי לא מעודכן. איך מגדירים זיהוי מוצר, מקור מלאי ורמת ודאות - ומתי נכון להעביר את הפנייה לאדם.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="טכנולוגיה" href="off-the-shelf-vs-custom-business-system">
-      <div class="card-niche">בחירת מערכת</div>
+    <a class="card" data-aud="all" data-slug="off-the-shelf-vs-custom-business-system" href="off-the-shelf-vs-custom-business-system">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6h10"/><path d="M10 12h10"/><path d="M10 18h10"/><path d="M4 6l1.5 1.5L8 5"/><path d="M4 12l1.5 1.5L8 11"/><path d="M4 18l1.5 1.5L8 17"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · בחירת מערכת</div></div>
       <h2>מערכת מוכנה או פיתוח מותאם - איך מחליטים באמת?</h2>
       <p>הבחירה אינה רק בין לקנות ולבנות. חמש שאלות שמפרידות בין ייחוד אמיתי להרגל עבודה, ומה חייבים להשוות מעבר למחיר ההקמה.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="טכנולוגיה" href="automation-layer-over-existing-system">
-      <div class="card-niche">ERP ומערכות קיימות</div>
+    <a class="card" data-aud="all" data-slug="automation-layer-over-existing-system" href="automation-layer-over-existing-system">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · מערכת קיימת</div></div>
       <h2>"יש לנו כבר מערכת" - מה אפשר לעשות מעליה?</h2>
       <p>שכבת אוטומציה אינה בהכרח "לא נוגעת בדאטה". מה ההבדל בין קריאה, כתיבה וסנכרון, ומתי המגבלות מצדיקות החלפה.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="B2B" href="abandoned-cart-woocommerce-israel">
-      <div class="card-niche">חנויות אונליין</div>
+    <a class="card" data-aud="all" data-slug="abandoned-cart-woocommerce-israel" href="abandoned-cart-woocommerce-israel">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · חנויות אונליין</div></div>
       <h2>עגלה נטושה ב-WooCommerce - מה באמת כדאי לבדוק?</h2>
       <p>עגלה שלא הסתיימה ברכישה אינה בהכרח כסף שאפשר להחזיר. איך מגדירים נטישה, בוחרים ערוץ ומודדים בלי לייחס לפנייה רכישה שהייתה מתבצעת ממילא.</p>
       <div class="card-foot"><span>6 דקות קריאה</span></div>
     </a>
 
-    <a class="card" data-niche="טכנולוגיה" href="make-vs-zapier-vs-n8n-israel">
-      <div class="card-niche">כלי אוטומציה</div>
+    <a class="card" data-aud="all" data-slug="make-vs-zapier-vs-n8n-israel" href="make-vs-zapier-vs-n8n-israel">
+      <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="M4.9 4.9L7 7"/><path d="M17 17l2.1 2.1"/><path d="M4.9 19.1L7 17"/><path d="M17 7l2.1-2.1"/></svg></span><div class="card-niche"><span class="card-aud">כל עסק</span> · כלי אוטומציה</div></div>
       <h2>Make, Zapier או n8n - מה מתאים לעסק ישראלי קטן?</h2>
       <p>שלושה כלים, שלושה מודלי שימוש ושאלה אחת חשובה: מה מתאים לתהליך ולמי שיתחזק אותו. השוואה שמפנה למקורות הרשמיים במקום למספר שמתיישן.</p>
       <div class="card-foot"><span>7 דקות קריאה</span></div>
     </a>
   </div>
 
+  <section class="end-cta">
+    <h2>לא בטוחים מה לסדר קודם אצלכם?</h2>
+    <p>שאלון קצר מראה איפה הזמן והאנרגיה הולכים לאיבוד בעסק שלכם, ומה שווה לסדר ראשון. לא שיחת מכירה.</p>
+    <div class="end-actions">
+      <a class="end-btn" href="https://flowli.co.il/#cta-final" data-flowli-form="blog-end">לבדיקת התאמה</a>
+      <a class="end-link" href="https://flowli.co.il/#about">או להכיר אותי קודם ←</a>
+    </div>
+  </section>
+
 <script>
   document.getElementById('filters').addEventListener('click', function(e){
-    if(!e.target.classList.contains('filter-tag')) return;
-    document.querySelectorAll('.filter-tag').forEach(function(t){t.classList.remove('active')});
-    e.target.classList.add('active');
-    var f = e.target.dataset.filter;
+    var btn = e.target.closest('.filter-tag'); if(!btn) return;
+    document.querySelectorAll('.filter-tag').forEach(function(t){t.classList.remove('active'); t.setAttribute('aria-pressed','false')});
+    btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
+    var f = btn.dataset.filter;
     document.querySelectorAll('#grid .card').forEach(function(card){
-      card.style.display = (f === 'all' || card.dataset.niche === f) ? 'flex' : 'none';
+      card.style.display = (f === 'any' || card.dataset.aud === f) ? 'flex' : 'none';
     });
   });
+</script>
+<script>
+  (function(){
+    var box = document.querySelector('.pains'); if(!box) return;
+    var out = document.getElementById('painsResult');
+    box.addEventListener('click', function(e){
+      var more = e.target.closest('.pains-more');
+      if(more){ box.classList.add('show-all'); more.setAttribute('aria-expanded','true'); return; }
+      var clear = e.target.closest('.pr-clear');
+      var b = e.target.closest('.pain');
+      if(!b && !clear) return;
+      var on = b && b.getAttribute('aria-pressed') !== 'true';
+      box.querySelectorAll('.pain').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+      if(!on){ out.hidden = true; out.innerHTML = ''; return; }
+      b.setAttribute('aria-pressed','true');
+      var html = b.dataset.slugs.split(' ').map(function(s){
+        var c = document.querySelector('#grid .card[data-slug="'+s+'"]'); if(!c) return '';
+        return '<a class="pr-card" href="'+c.getAttribute('href')+'">'+c.querySelector('.card-ico').outerHTML+
+          '<span class="pr-t">'+c.querySelector('h2').textContent+'</span><span class="pr-d">'+c.querySelector('p').textContent+'</span></a>';
+      }).join('');
+      out.innerHTML = '<div class="pr-head"><span>כדאי להתחיל מכאן:</span><button type="button" class="pr-clear">לנקות ✕</button></div><div class="pr-grid">'+html+'</div>';
+      // בטלפון התשובה נפתחת ממש מתחת למשפט שנבחר; במחשב מתחת לכל המשפטים, כדי שלא יזוזו
+      if (matchMedia('(max-width: 600px)').matches) b.after(out); else b.parentNode.appendChild(out);
+      out.hidden = false;
+      var r = out.getBoundingClientRect();
+      if (r.bottom > innerHeight) out.scrollIntoView({ block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    });
+  })();
 </script>
 </main>
 
