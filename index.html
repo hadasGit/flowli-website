@@ -2828,23 +2828,6 @@
     .about-how-text { font-size: 16px; }
     .faq-a { font-size: 16.5px; line-height: 1.75; }
     .cta-note { font-size: 15px; }
-    /* מהשטח */
-    #work { padding: 88px 0; }
-    .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 30px; }
-    .work-card { display: flex; flex-direction: column; gap: 10px; background: var(--cream, #FAFAF7); border: 1px solid var(--bg-warm); border-radius: 22px; padding: 30px; text-decoration: none; color: inherit; transition: border-color .2s, box-shadow .2s, transform .2s; }
-    .work-card:hover { border-color: var(--orange-mid); box-shadow: 0 14px 34px rgba(0,0,0,.07); transform: translateY(-3px); }
-    .work-tag { font-size: 14px; font-weight: 700; color: var(--orange-deep); }
-    .work-big { display: flex; align-items: baseline; gap: 12px; font-family: 'Rubik', sans-serif; font-weight: 800; line-height: 1; margin: 6px 0 2px; }
-    .work-big b { font-size: 3.4rem; color: var(--ink); }
-    .work-big b.o { color: var(--orange); }
-    .work-big i { font-style: normal; font-size: 1.6rem; color: var(--muted); }
-    .work-big small { font-size: 1.3rem; color: var(--ink); font-weight: 700; }
-    .work-lead { font-family: 'Rubik', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--ink); line-height: 1.4; }
-    .work-text { font-size: 16.5px; color: var(--muted); line-height: 1.65; flex: 1; }
-    .work-more { font-weight: 700; color: var(--orange-deep); margin-top: 6px; }
-    @media (max-width: 820px) { .work-grid { grid-template-columns: 1fr; } #work { padding: 64px 0; } .work-card { padding: 24px; } }
-    @media (prefers-reduced-motion: reduce) { .work-card { transition: none; } .work-card:hover { transform: none; } }
-
   </style>
 <link rel="stylesheet" href="/a11y.css">
 <script src="/a11y.js" defer></script>
@@ -3002,7 +2985,6 @@
     <a class="fx-logo" href="/" aria-label="Flowli - לדף הבית"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 30 Q25 15 40 30 Q55 45 70 30" stroke="#2A2A2A" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M10 45 Q25 30 40 45 Q55 60 70 45" stroke="#2A2A2A" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M10 60 Q25 45 40 60 Q55 75 70 60" stroke="#F26B1F" stroke-width="6" fill="none" stroke-linecap="round"/></svg><span class="fx-wm"><span class="fl">flow</span><span class="li">li</span></span></a>
     <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-links" aria-label="פתיחת התפריט"><svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav class="fx-links" id="fx-links" aria-label="ראשי">
-      <a class="fx-link" data-key="work" href="/#work">דוגמאות</a>
       <a class="fx-link" href="/#about">אודות</a>
       <a class="fx-link" data-key="blog" href="/blog/">בלוג</a>
       <a class="fx-link" href="/#cta-final">יצירת קשר</a>
@@ -3516,29 +3498,6 @@
     </div>
   </section>
 
-  <!-- מהשטח: שתי דוגמאות -->
-  <section id="work">
-    <div class="container">
-      <div class="section-label reveal">מהשטח</div>
-      <h2 class="reveal delay-1">שתי דוגמאות מהחודשים האחרונים</h2>
-      <div class="work-grid">
-        <a class="work-card reveal" href="/work/bridal-salon-whatsapp-leads">
-          <span class="work-tag">סלון שמלות כלה · וואטסאפ ופרסום</span>
-          <span class="work-big"><b>80</b><i aria-hidden="true">←</i><b class="o">1</b></span>
-          <span class="work-lead">Meta דיווחה על 80 לידים. בוואטסאפ כתבה כלה אחת ממודעה.</span>
-          <span class="work-text">מערכת שמחברת בין הלחיצה באתר לשיחה בוואטסאפ, ומראה איזה פרסום באמת מביא פניות. הבעלים ממשיך לענות מהטלפון כרגיל.</span>
-          <span class="work-more">לסיפור המלא ←</span>
-        </a>
-        <a class="work-card reveal delay-1" href="/work/online-store-shipping-cheetah">
-          <span class="work-tag">חנות אונליין · משלוחים לצ'יטה</span>
-          <span class="work-big"><b class="o">1</b><small>לחיצה</small></span>
-          <span class="work-lead">משלוח, מדבקה ומעקב, מתוך האתר עצמו.</span>
-          <span class="work-text">מסך משלוחים בתוך ווקומרס במקום מערכת חיצונית בתשלום חודשי. המעבר נעשה באמצע שבוע עבודה רגיל, בלי משלוחים כפולים.</span>
-          <span class="work-more">לסיפור המלא ←</span>
-        </a>
-      </div>
-    </div>
-  </section>
 
 
 
