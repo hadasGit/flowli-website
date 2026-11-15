@@ -4128,7 +4128,7 @@
               void stage.offsetHeight;
               stage.style.height = (stage.clientWidth * 382 / 512) + 'px';
               stage.classList.remove('lp-hide');
-              at(700, () => { stage.style.height = ''; });
+              at(700, () => { stage.style.height = ''; layout(false); });
               at(2300, () => screen.classList.add('gone'));
             });
           }));
@@ -4143,6 +4143,7 @@
       if (calm) { zoomed = false; screen.classList.add('gone'); if (!wide.matches) stage.classList.add('lp-end'); }
       layout(false);
       addEventListener('resize', () => layout(false));
+      if (window.ResizeObserver) new ResizeObserver(() => { if (!wide.matches && stage.classList.contains('lp-end')) layout(false); }).observe(stage);
       document.getElementById('hdReplay').addEventListener('click', run);
       if (!calm) {
         // מתחילה רק כשההדגמה נראית (בטלפון היא מתחת לטקסט), ורק פעם אחת
