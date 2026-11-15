@@ -2752,6 +2752,20 @@
 
     /* 1ב. זום בין הלפטופ לפניות (רק במחשב; בטלפון רואים את הכרטיס לבד) */
     .lp-img { display: none; }
+
+    /* טלפון: בסוף ההדגמה הכרטיס נכנס ללפטופ */
+    @media (max-width: 900px) {
+      .lp-frame { width: 100%; max-width: 470px; }
+      .lp-stage { transition: opacity .45s ease, height .6s ease; }
+      .lp-stage.lp-hide { opacity: 0; }
+      .lp-stage.lp-end { position: relative; width: 100%; aspect-ratio: 512 / 382; overflow: hidden; border-radius: 22px; clip-path: inset(0 round 22px); background: #EDE6D8; }
+      .lp-stage.lp-end .lp-zoom { position: absolute; top: 0; left: 0; transform-origin: 0 0; }
+      .lp-stage.lp-end .lp-img { display: block; position: absolute; inset: 0; width: 100%; height: 100%; }
+      .lp-stage.lp-end .lp-screen { position: absolute; left: 22.46%; top: 37.43%; width: 37.5%; height: 37.17%; background: #F5EFE0; transition: opacity 1.1s ease; }
+      .lp-stage.lp-end .lp-screen.gone { opacity: 0; }
+      .lp-stage.lp-end .hd-card { position: absolute; left: 50%; top: 50%; width: 440px; max-width: none; transform-origin: center; }
+    }
+    @media (max-width: 900px) and (prefers-reduced-motion: reduce) { .lp-stage { transition: none; } }
     @media (min-width: 901px) {
       .lp-stage { position: relative; z-index: 1; width: 100%; max-width: 560px; aspect-ratio: 1.12; overflow: hidden; border-radius: 28px; clip-path: inset(0 round 28px); isolation: isolate; background: #EDE6D8; }
       .lp-frame { position: relative; z-index: 1; width: 100%; max-width: 560px; border-radius: 28px; box-shadow: 0 24px 60px rgba(58,53,48,.12); }
@@ -4067,8 +4081,9 @@
       const at = (ms, fn) => timers.push(setTimeout(fn, ms));
 
       function layout(animate) {
-        if (!wide.matches) { zoom.removeAttribute('style'); card.style.transform = ''; return; }
-        const W = stage.clientWidth, H = stage.clientHeight, zw = H * 512 / 382, zl = (W - zw) / 2;
+        const end = !wide.matches && stage.classList.contains('lp-end');
+        if (!wide.matches && !end) { zoom.removeAttribute('style'); card.style.transform = ''; return; }
+        const W = stage.clientWidth, H = end ? W * 382 / 512 : stage.clientHeight, zw = H * 512 / 382, zl = (W - zw) / 2;
         zoom.style.width = zw + 'px'; zoom.style.height = H + 'px';
         const sx = .2246 * zw, sy = .3743 * H, sw = .375 * zw, sh = .3717 * H;
         const cw = 440, ch = card.offsetHeight;
@@ -4100,14 +4115,32 @@
       }
       function run() {
         timers.forEach(clearTimeout); timers = [];
-        if (!wide.matches) { sort(); return; }
+        if (!wide.matches) {
+          // טלפון: ההדגמה בגודל מלא, ובסוף הכרטיס נכנס ללפטופ ואז עיגולי התהליך
+          stage.classList.remove('lp-end', 'lp-hide'); stage.style.height = ''; screen.classList.remove('gone'); zoomed = false; layout(false);
+          sort(() => at(900, () => {
+            const h0 = stage.offsetHeight;
+            stage.style.height = h0 + 'px';
+            stage.classList.add('lp-hide');
+            at(450, () => {
+              stage.classList.add('lp-end');
+              layout(false);
+              void stage.offsetHeight;
+              stage.style.height = (stage.clientWidth * 382 / 512) + 'px';
+              stage.classList.remove('lp-hide');
+              at(700, () => { stage.style.height = ''; });
+              at(2300, () => screen.classList.add('gone'));
+            });
+          }));
+          return;
+        }
         screen.classList.remove('gone');
         setZoom(true, false);
         // אחרי הזום החוצה הפניות מתחלפות בעיגולי התהליך שעל מסך הלפטופ בתמונה
         sort(() => at(900, () => { setZoom(false, true); at(2000, () => screen.classList.add('gone')); }));
       }
 
-      if (calm) { zoomed = false; screen.classList.add('gone'); }
+      if (calm) { zoomed = false; screen.classList.add('gone'); if (!wide.matches) stage.classList.add('lp-end'); }
       layout(false);
       addEventListener('resize', () => layout(false));
       document.getElementById('hdReplay').addEventListener('click', run);
