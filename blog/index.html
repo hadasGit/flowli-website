@@ -110,28 +110,28 @@
   .paths h2,.all-title{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.45rem;color:var(--ink);margin-bottom:6px}
   .paths-sub{color:var(--muted);margin-bottom:22px}
   .all-title{margin:48px 0 0}
-  .metro{background:var(--cream);border:1px solid var(--bg-warm);border-radius:20px;padding:10px 26px}
-  .line{--c:var(--orange);display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:start;padding:22px 0}
-  .line+.line{border-top:1px dashed var(--bg-warm)}
-  .line-2{--c:var(--ink)} .line-3{--c:#8A7F72}
-  .line-head h3{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.08rem;color:var(--ink);display:flex;align-items:center;gap:8px}
-  .line-head h3::before{content:'';width:22px;height:5px;border-radius:3px;background:var(--c);flex:none}
-  .line-head p{font-size:.92rem;color:var(--muted);line-height:1.5;margin-top:4px}
-  .stops{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);position:relative}
-  .stops::before{content:'';position:absolute;top:15px;inset-inline:16.66%;height:4px;border-radius:2px;background:var(--c)}
-  .stops a{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:0 10px;text-decoration:none;color:var(--text)}
-  .dot{width:34px;height:34px;border-radius:50%;background:#fff;border:4px solid var(--c);display:flex;align-items:center;justify-content:center;font-family:'Rubik',sans-serif;font-weight:700;font-size:14px;color:var(--ink);transition:background .2s,color .2s}
-  .stop-t{font-size:.95rem;font-weight:600;line-height:1.4}
-  .stops a:hover .dot{background:var(--c);color:#fff}
+  .metro{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .line{--c:var(--orange);--bg:#FEF0E7;background:linear-gradient(160deg,var(--bg) 0%,var(--cream) 75%);border:1px solid #F3D7C2;border-radius:20px;padding:20px 20px 22px;box-shadow:0 6px 18px rgba(212,90,18,.07)}
+  .line-2{--c:#C9540F;--bg:#FBE7D9} .line-3{--c:#D9822B;--bg:#FCEFDC}
+  .line-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px}
+  .line-tile{width:46px;height:46px;flex:none;border-radius:14px;background:#fff;border:1px solid #F3D7C2;color:var(--c);display:flex;align-items:center;justify-content:center}
+  .line-tile svg{width:23px;height:23px}
+  .line-head h3{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.12rem;color:var(--ink);line-height:1.3}
+  .line-head p{font-size:.92rem;color:var(--muted);line-height:1.45;margin-top:2px}
+  .line-head .line-meta{color:#8A5A3A;font-weight:700;font-size:.86rem;margin-top:4px}
+  .stops{list-style:none;display:flex;flex-direction:column;gap:14px;position:relative}
+  .stops::before{content:'';position:absolute;top:18px;bottom:18px;inset-inline-start:16px;width:4px;border-radius:2px;background:linear-gradient(var(--c),#FDDDBD)}
+  .stops a{position:relative;display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+  .dot{width:36px;height:36px;flex:none;border-radius:50%;background:var(--c);box-shadow:0 0 0 4px #fff;display:flex;align-items:center;justify-content:center;font-family:'Rubik',sans-serif;font-weight:700;font-size:15px;color:#fff;transition:transform .2s}
+  .stop-t{font-size:.98rem;font-weight:600;line-height:1.4}
+  .stop-t .start{display:inline-block;font-style:normal;font-size:12px;font-weight:700;background:var(--ink);color:#fff;border-radius:100px;padding:1px 9px;margin-inline-start:6px;vertical-align:2px}
+  .stops a:hover .dot{transform:scale(1.08)}
   .stops a:hover .stop-t{color:var(--orange-deep)}
-  @media(max-width:820px){
-    .metro{padding:4px 18px}
-    .line{grid-template-columns:1fr;gap:14px}
-    .stops{grid-template-columns:1fr;gap:14px}
-    .stops::before{top:17px;bottom:17px;inset-inline:auto;inset-inline-start:15px;width:4px;height:auto}
-    .stops a{flex-direction:row;align-items:center;text-align:start;padding:0}
-    .dot{flex:none}
-  }
+  @media(max-width:900px){.metro{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.dot{transition:none}.stops a:hover .dot{transform:none}}
+  .hero .eyebrow{display:inline-block;background:var(--orange-pale);border:1px solid var(--orange-mid);color:var(--orange-deep);font-weight:700;font-size:14px;border-radius:100px;padding:4px 12px;margin-bottom:12px}
+  .hero h1 span{color:var(--orange)}
+  .pains-help{font-size:15px;color:var(--muted);margin:-6px 0 12px}
 
   /* 4. אייקון לכל נושא */
   .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
@@ -181,10 +181,12 @@
 <main id="main">
   <div class="hero">
     <div class="breadcrumb"><a href="https://flowli.co.il">flowli</a> / בלוג</div>
-    <h1>מה כדאי לבדוק לפני שמחליטים</h1>
-    <p>מה באמת עוזר לעסק להפסיק לטבוע במשימות שחוזרות על עצמן - בלי הבטחות, עם דוגמאות מסומנות בבירור.</p>
+    <div class="eyebrow">הבלוג של Flowli</div>
+    <h1>מדריכים קצרים, <span>לפני שמחליטים</span></h1>
+    <p>20 מדריכים על אוטומציה, מערכות ו-AI לעסקים. בלי הבטחות, עם דוגמאות.</p>
     <div class="pains" role="group" aria-labelledby="pains-q">
       <p id="pains-q" class="pains-q">מה מציק לכם עכשיו?</p>
+      <p class="pains-help">בחרו משפט, ונראה לכם איזה מדריך לקרוא.</p>
       <div class="pains-list">
       <button type="button" class="pain" aria-pressed="false" data-slugs="do-you-need-a-crm-small-business what-is-business-automation personal-trainer-whatsapp-automation">פניות נופלות בין הכיסאות</button>
       <button type="button" class="pain" aria-pressed="false" data-slugs="dont-start-with-automation what-is-business-automation automation-cost-small-business-israel">לא ברור לי מאיפה להתחיל</button>
@@ -203,18 +205,18 @@
 
   <section class="paths" aria-labelledby="paths-title">
     <h2 id="paths-title">מאיפה מתחילים?</h2>
-    <p class="paths-sub">שלושה קווים, שלוש תחנות בכל אחד. בוחרים את הקו שמתאים לכם וקוראים לפי הסדר.</p>
+    <p class="paths-sub">שלושה מסלולים קצרים. בוחרים אחד וקוראים לפי הסדר.</p>
     <div class="metro">
       <div class="line line-1">
-        <div class="line-head"><h3>רק מתחילים</h3><p>עוד לא ברור מה כדאי לסדר קודם</p></div>
+        <div class="line-head"><span class="line-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></span><div><h3>רק מתחילים</h3><p>עוד לא ברור מה כדאי לסדר קודם</p><p class="line-meta">3 מדריכים · 22 דק' קריאה</p></div></div>
         <ol class="stops">
-          <li><a href="what-is-business-automation"><span class="dot">1</span><span class="stop-t">מה זו אוטומציה בעסק, ולמה כדאי לכם בכלל?</span></a></li>
+          <li><a href="what-is-business-automation"><span class="dot">1</span><span class="stop-t">מה זו אוטומציה בעסק, ולמה כדאי לכם בכלל?<em class="start">מתחילים כאן</em></span></a></li>
           <li><a href="dont-start-with-automation"><span class="dot">2</span><span class="stop-t">לא מתחילים מאוטומציה: 4 שלבים לבחירת התהליך הראשון שכדאי לסדר בעסק</span></a></li>
           <li><a href="automation-cost-small-business-israel"><span class="dot">3</span><span class="stop-t">כמה עולה אוטומציה לעסק קטן? כך קוראים הצעת מחיר</span></a></li>
         </ol>
       </div>
       <div class="line line-2">
-        <div class="line-head"><h3>יש לנו כבר מערכת</h3><p>רוצים שתעבוד טוב יותר, בלי להחליף הכול</p></div>
+        <div class="line-head"><span class="line-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><div><h3>יש לנו כבר מערכת</h3><p>רוצים שתעבוד טוב יותר, בלי להחליף הכול</p><p class="line-meta">3 מדריכים · 18 דק' קריאה</p></div></div>
         <ol class="stops">
           <li><a href="automation-layer-over-existing-system"><span class="dot">1</span><span class="stop-t">"יש לנו כבר מערכת" - מה אפשר לעשות מעליה?</span></a></li>
           <li><a href="connecting-systems-data-checklist-small-business"><span class="dot">2</span><span class="stop-t">מה לבדוק לפני שמחברים מערכת חדשה לעסק?</span></a></li>
@@ -222,7 +224,7 @@
         </ol>
       </div>
       <div class="line line-3">
-        <div class="line-head"><h3>מתלבטים איזו מערכת</h3><p>לפני שקונים, משווים או מתחייבים</p></div>
+        <div class="line-head"><span class="line-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6h10"/><path d="M10 12h10"/><path d="M10 18h10"/><path d="M4 6l1.5 1.5L8 5"/><path d="M4 12l1.5 1.5L8 11"/><path d="M4 18l1.5 1.5L8 17"/></svg></span><div><h3>מתלבטים איזו מערכת</h3><p>לפני שקונים, משווים או מתחייבים</p><p class="line-meta">3 מדריכים · 19 דק' קריאה</p></div></div>
         <ol class="stops">
           <li><a href="do-you-need-a-crm-small-business"><span class="dot">1</span><span class="stop-t">האם אתם בכלל צריכים CRM?</span></a></li>
           <li><a href="off-the-shelf-vs-custom-business-system"><span class="dot">2</span><span class="stop-t">מערכת מוכנה או פיתוח מותאם - איך מחליטים באמת?</span></a></li>
