@@ -2751,6 +2751,14 @@
     }
 
     /* 1ב. זום בין הלפטופ לפניות (רק במחשב; בטלפון רואים את הכרטיס לבד) */
+    /* כפתור הפעולה בפתיחה (16.11). 19px מודגש = טקסט גדול, ניגודיות 3 מספיקה */
+    .hero-actions { flex-wrap: wrap; row-gap: 12px; }
+    .btn-hero { background: var(--orange); color: #fff; border: 0; cursor: pointer; padding: 14px 32px; border-radius: 100px; font-family: 'Rubik', sans-serif; font-weight: 700; font-size: 19px; line-height: 1.2; min-height: 48px; transition: background .2s, transform .15s, box-shadow .2s; margin-inline-end: 10px; }
+    .btn-hero:hover { background: var(--orange-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(242,107,31,.35); }
+    .btn-hero:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    @media (max-width: 600px) { .btn-hero { width: 100%; margin-inline-end: 0; } }
+    @media (prefers-reduced-motion: reduce) { .btn-hero { transition: none; } .btn-hero:hover { transform: none; } }
+
     .lp-img { display: none; }
 
     /* טלפון: זום אמיתי מהכרטיס אל הלפטופ */
@@ -3035,6 +3043,7 @@
             אני קודם ממפה איפה העבודה נתקעת, ורק אז בונה. לפעמים שינוי קטן בדרך העבודה הוא כל מה שצריך.
           </p>
           <div class="hero-actions reveal visible delay-3">
+            <button type="button" class="btn-hero" onclick="openDemoModal('hero')">בדיקת התאמה</button>
             <a href="#quiet-mind" class="hero-scroll-link">איך זה עובד</a>
             <a href="#quiet-mind" class="hero-scroll-arrow" aria-label="גללו למטה">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -3485,7 +3494,7 @@
         </div>
         <div class="brief-cta-actions">
           <button type="button" class="btn-brief-primary" onclick="openDemoModal('brief_section')">
-            קבלו הדגמה מותאמת לעסק שלכם &larr;
+            בדיקת התאמה &larr;
           </button>
           <span class="brief-cta-note">בלי להתחייב לכלום</span>
         </div>
@@ -3506,7 +3515,7 @@
         גם אם אתם עובדים עם ERP או מערכת ותיקה, אפשר לבנות אוטומציות סביב מה שכבר קיים.
       </p>
       <button type="button" onclick="openDemoModal('erp_strip')" style="background:none;border:none;cursor:pointer;color:var(--orange-deep);font-size:16px;font-weight:600;font-family:inherit;">
-        בואו נראה איך זה נראה אצלכם &larr;
+        בדיקת התאמה &larr;
       </button>
     </div>
   </section>
@@ -3715,7 +3724,7 @@
       <p class="reveal delay-2" style="font-size:15px;color:rgba(255,255,255,.7);margin-bottom:24px;">יש יותר מדרך אחת להתחיל. בחרו את זו שמתאימה לכם.</p>
       <div class="cta-final-actions reveal delay-3">
         <button type="button" class="btn-cta-final" onclick="openDemoModal('cta_final')">
-          רוצים לראות איך Flowli יעבוד אצלכם?
+          בדיקת התאמה
         </button>
         <a href="https://map.flowli.co.il/flowli-diagnose-intro?source=website" class="btn-cta-secondary" target="_blank" onclick="trackClick('funnel_link','cta_final')">
           קבלו מפת עומסים אישית
