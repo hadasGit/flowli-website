@@ -2397,6 +2397,18 @@
       box-shadow: 0 12px 28px rgba(242,107,31,.34);
     }
     .demo-submit:disabled { opacity: .45; cursor: not-allowed; }
+    .demo-err {
+      display: none;
+      margin: 0 0 14px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #FDF0EE;
+      border: 1px solid #F1C9C2;
+      color: #8E2A18;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .demo-err a { color: #8E2A18; font-weight: 700; text-decoration: underline; }
     .demo-privacy {
       display: flex;
       align-items: center;
@@ -3879,6 +3891,7 @@
       trackClick('demo_modal', source || 'unknown');
       document.getElementById('demoForm').style.display = '';
       document.getElementById('demoSuccess').style.display = 'none';
+      document.getElementById('demoErr').style.display = 'none';
       document.getElementById('demoName').value = '';
       document.getElementById('demoPhone').value = '';
       document.getElementById('demoEmail').value = '';
@@ -3905,9 +3918,11 @@
       const btn = document.getElementById('demoSubmit');
       btn.disabled = true;
       btn.textContent = 'שולח...';
+      document.getElementById('demoErr').style.display = 'none';
       await new Promise(r => setTimeout(r, 600));
+      let saved = false;
       try {
-        if (document.getElementById('demoHp')?.value) throw new Error('hp');
+        if (document.getElementById('demoHp')?.value) { saved = true; throw new Error('hp'); }
         const res = await fetch('https://whuuevjoqitwslnykvgd.supabase.co/rest/v1/leads_website', {
           method: 'POST',
           headers: {
@@ -3919,7 +3934,17 @@
           body: JSON.stringify({ name, phone, email, consent: !!document.getElementById('demoMarketing')?.checked, source: 'demo_modal' })
         });
         if (!res.ok) { throw new Error(res.status); }
+        saved = true;
       } catch(e) { console.error(e); }
+      if (!saved) {
+        const wa = 'https://wa.me/972528966998?text=' + encodeURIComponent('היי הדס, ניסיתי להשאיר פרטים באתר ולא הצלחתי. אני ' + name);
+        const err = document.getElementById('demoErr');
+        err.innerHTML = 'לא הצלחנו לשמור את הפרטים כרגע. אפשר לנסות שוב, או <a href="' + wa + '" target="_blank" rel="noopener">לכתוב לי בוואטסאפ</a> ואחזור אליכם.';
+        err.style.display = 'block';
+        btn.textContent = 'לנסות שוב';
+        updateDemoSubmit();
+        return;
+      }
       document.getElementById('demoForm').style.display = 'none';
       document.getElementById('demoSuccess').style.display = 'block';
     }
@@ -4310,6 +4335,7 @@
             <input type="checkbox" id="demoMarketing" onchange="updateDemoSubmit()">
             <span>אני מאשר.ת קבלת תכנים מקצועיים ועדכונים מ-Flowli במייל</span>
           </label>
+          <div class="demo-err" id="demoErr" role="alert"></div>
           <button class="demo-submit" id="demoSubmit" onclick="submitDemo()" disabled>
             קובעים שיחה
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
