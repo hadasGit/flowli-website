@@ -27,6 +27,13 @@ Israeli small and medium businesses — service providers, clinics, agencies, co
 
 Flowli offers a free initial diagnosis to identify automation opportunities in any business.
 
+## Case Studies (real completed client projects)
+
+These are real projects completed for paying clients, published with the client's approval and without the client's name. They are not illustrations or mock-ups. The interactive demos on the home page are separate and use sample data.
+
+- Bridal salon, knowing which advertising brought each WhatsApp inquiry: https://flowli.co.il/work/bridal-salon-whatsapp-leads
+  The salon could only see clicks on its WhatsApp button. Flowli built a system that records the real source of every WhatsApp inquiry (Google search, Instagram bio, paid ads), without changing how the owner answers customers. In the last 30 days: 150 inquiries, each with its source. The page includes a testimonial from the salon owner, Lior.
+
 ## Blog
 
 Practical Hebrew guides on business automation, written to explain trade-offs rather than promise outcomes. Index: https://flowli.co.il/blog/
